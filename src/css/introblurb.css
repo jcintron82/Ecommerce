@@ -1,0 +1,24 @@
+.introBlurbWrap {
+	border-style: solid;
+	border-color: black;
+	height: 75vh;
+	display: flex;
+
+}
+
+
+.introImageWrap {
+	min-width: 50vw;
+	border-style: solid;
+	border-color: black;
+}
+
+.introImage{
+	width: 100%;
+	height: 100%;
+}
+
+.introBlurb {
+	border-style: solid;
+	border-color: black;
+}

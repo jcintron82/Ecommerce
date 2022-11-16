@@ -1,0 +1,25 @@
+.productsWrap {
+	display: flex;
+	flex-flow: row wrap;
+	border-style: solid;
+	border-color: black;
+}
+
+.productTiles {
+	border-style: solid;
+	border-color: black;
+	display: flex;
+	width: 20vw;
+	height: 20vh;
+	margin: 5vw;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.productTilesImage {
+	height: 125px;
+	width: 125px;
+	border-style: solid;
+	border-color: black;
+}
