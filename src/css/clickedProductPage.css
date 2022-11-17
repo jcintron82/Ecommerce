@@ -1,0 +1,72 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}  
+
+.locationDiv {
+	border-style: solid;
+	border-color: black;
+}
+
+.productNameHeader {
+	border-style: solid;
+	border-color: black;
+}
+
+.productNameWrap{
+	border-style: solid;
+	border-color: black;
+}
+
+.imagesAndDescFlexWrap {
+	display: flex;
+	flex-direction: column;
+}
+
+.productImageWrap{
+	border-style: solid;
+	border-color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.productWrap {
+	border-style: solid;
+	border-color: black;
+	width:13rem;
+	height: 12rem;
+	margin: 10px;
+}
+
+.descriptionWrap {
+	border-style: solid;
+	border-color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.productDescription {
+	border-style: solid;
+	border-color: black;
+	text-align: center;
+}
+
+.addToCartBtn {
+	width: 150px;
+}
+
+.mayAlsoLikeWrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.mayAlsoLikeTilesWrap {
+	border-style: solid;
+	border-color: black;
+	display: flex;
+}

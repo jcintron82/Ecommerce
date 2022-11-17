@@ -1,5 +1,6 @@
 import Header from './components/header'
 import './css/header.css';
+import './css/clickedProductPage.css';
 import './css/introblurb.css';
 import './css/products.css';
 import IntroBlurbWrap from './components/introblurbwrap.js';

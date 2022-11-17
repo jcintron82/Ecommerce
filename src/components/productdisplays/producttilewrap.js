@@ -12,18 +12,18 @@ export function ProductTileWrap () {
 	const [tile5, setTile5] = useState();
 	const [tile6, setTile6] = useState();
 
-	const onClick = (e) => {
-		console.log(e)
+	const onClick = (tile) => {
+		
 	}
 
 	return (
 		<div className='productsWrap' >
-		<ProductTiles onClick={ onClick }/>
-		<ProductTiles onClick={ onClick }/>
-		<ProductTiles />
-		<ProductTiles />
-		<ProductTiles />
-		<ProductTiles />
+		<ProductTiles onClick={ onClick } className='productTiles'/>
+		<ProductTiles onClick={ onClick } className='productTiles'/>
+		<ProductTiles onClick={ onClick } className='productTiles'/>
+		<ProductTiles onClick={ onClick } className='productTiles'/>
+		<ProductTiles onClick={ onClick } className='productTiles'/>
+		<ProductTiles onClick={ onClick } className='productTiles'/>
 		</div>
 		);
 

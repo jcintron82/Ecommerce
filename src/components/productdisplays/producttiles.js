@@ -1,10 +1,10 @@
 import stock from '../../images/stock.avif';
 import { Button } from '../buttons'
 
-export function ProductTiles ({ onClick }) {
+export function ProductTiles ({ onClick, className }) {
 	return (
 		
-		<div className='productTiles' onClick={onClick}>
+		<div className={ className } onClick={onClick}>
 
 		<div> <img className='productTilesImage' 
 		src={stock}></img>
