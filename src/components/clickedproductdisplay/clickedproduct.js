@@ -1,18 +1,39 @@
 import Header from '../header.js'
 import Button from '../buttons.js';
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { ProductTiles } from '../productdisplays/producttiles.js'
+import {arr} from '../productdisplays/producttilewrap.js'
 
 export const ClickedProduct = () => {
+
+	
+		const [productName, setProductName] = useState('');
+	
+		const setValue = () => {
+			setProductName(arr[0].name)
+		}
+
+		 useEffect(() => {
+    
+    	setValue()
+  });
+
+	const onClick = () => {
+		navigate('/home');
+		arr.splice(0)
+		console.log(arr)
+	}
+
 	const navigate = useNavigate();
 	return(
 		<div>
 		<Header />
 		<div className='locationDiv'><Button text='Home'
-		 onClick={e => navigate('/home') }/>, current page</div>
+		 onClick={ onClick }/>, current page</div>
 
 		<div className="productNameWrap"> <div className="productNameHeader">
-		ProductName</div>
+		{ productName }</div>
 		Price </div> 
 		<div className='imagesAndDescFlexWrap'>
 		<div className='productImageWrap'> 

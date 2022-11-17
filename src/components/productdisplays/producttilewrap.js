@@ -2,7 +2,9 @@ import { ProductTiles } from './producttiles.js'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import stock from '../../images/stock.avif'
+import jarredStock from '../../images/jarredStock.avif'
 
+export const arr = [];
 
 const prod1 = {
 	name: 'Stock',
@@ -11,9 +13,13 @@ const prod1 = {
 	image: stock
 };
 
-const productArr = [ 
+const prod2 = {
+	name: 'Jarred Stock',
+	price: '$1000',
+	description: 'A jar of Fine Stock',
+	image: jarredStock
+};
 
-	];
 
 export function ProductTileWrap () {
 	const navigate = useNavigate();
@@ -25,14 +31,21 @@ export function ProductTileWrap () {
 	const [tile5, setTile5] = useState();
 	const [tile6, setTile6] = useState();
 
-	const onClick = (product) => {
-		console.log(product.name)
+	const onClick = (x) => {
+		navigate('/clickedproduct');
+		arr.push(x)
+		console.log(arr)
+
+		
 	}
 
 	return (
 		<div className='productsWrap' >
-		<ProductTiles onClick={e => navigate('/clickedproduct') } className='productTiles' img={stock}
+		<ProductTiles onClick={e => onClick(prod1)} className='productTiles' img={stock}
 		name={ prod1.name } description={ prod1.description }/>
+
+		<ProductTiles onClick={e => onClick(prod2)} className='productTiles' img={jarredStock}
+		name={ prod2.name } description={ prod2.description }/>
 
 
 
