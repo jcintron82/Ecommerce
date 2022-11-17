@@ -1,6 +1,6 @@
 .productsWrap {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column nowrap;
 	border-style: solid;
 	border-color: black;
 }
@@ -9,17 +9,26 @@
 	border-style: solid;
 	border-color: black;
 	display: flex;
-	width: 20vw;
-	height: 20vh;
+	width: 90%;
+	min-height: 30vh;
 	margin: 5vw;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
+.imgWrap {
+	display: flex;
+	justify-content: center;
+}
 .productTilesImage {
-	height: 125px;
-	width: 125px;
+	height: 100%;
+	width: 80%;
 	border-style: solid;
 	border-color: black;
 }
+/** {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+}*/

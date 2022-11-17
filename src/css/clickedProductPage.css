@@ -31,6 +31,11 @@ html, body {
 	align-items: center;
 }
 
+.clickedProductImages{
+	width: 100%;
+	height: 100%;
+}
+
 .productWrap {
 	border-style: solid;
 	border-color: black;

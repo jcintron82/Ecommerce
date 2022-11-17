@@ -5,7 +5,7 @@ export function ProductTiles ({ onClick, className, img, name, description }) {
 		
 		<div className={ className } onClick={ onClick }>
 
-		<div> <img className='productTilesImage' 
+		<div className='imgWrap'> <img className='productTilesImage' 
 		src={ img }></img>
 		</div>
 		<div>{ name }</div>

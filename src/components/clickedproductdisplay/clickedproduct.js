@@ -1,67 +1,73 @@
-import Header from '../header.js'
-import Button from '../buttons.js';
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { ProductTiles } from '../productdisplays/producttiles.js'
-import {arr} from '../productdisplays/producttilewrap.js'
+import Header from "../header.js";
+import Button from "../buttons.js";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { ProductTiles } from "../productdisplays/producttiles.js";
+import { arr } from "../productdisplays/producttilewrap.js";
 
 export const ClickedProduct = () => {
+  const [productName, setProductName] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+  const [productDescription, setProductDescription] = useState("");
+  const [productImage1, setProductImage1] = useState("");
 
-	
-		const [productName, setProductName] = useState('');
-	
-		const setValue = () => {
-			setProductName(arr[0].name)
-		}
+  const setValue = () => {
+    setProductName(arr[0].name);
+    setProductPrice(arr[0].price);
+    setProductDescription(arr[0].description);
+    setProductImage1("d");
+  };
 
-		 useEffect(() => {
-    
-    	setValue()
+  useEffect(() => {
+    setValue();
   });
 
-	const onClick = () => {
-		navigate('/home');
-		arr.splice(0)
-		console.log(arr)
-	}
+  const onClick = () => {
+    navigate("/home");
+    arr.splice(0);
+    console.log(arr);
+  };
 
-	const navigate = useNavigate();
-	return(
-		<div>
-		<Header />
-		<div className='locationDiv'><Button text='Home'
-		 onClick={ onClick }/>, current page</div>
+  const navigate = useNavigate();
+  return (
+    <div>
+      <Header />
+      <div className="locationDiv">
+        <Button text="Home" onClick={onClick} />, current page
+      </div>
 
-		<div className="productNameWrap"> <div className="productNameHeader">
-		{ productName }</div>
-		Price </div> 
-		<div className='imagesAndDescFlexWrap'>
-		<div className='productImageWrap'> 
-		<div className='productWrap'> img</div>
-		<div className='productWrap'> img</div>
-		<div className='productWrap'> img</div>
-		<Button text='See More' />
-		</div>
-		<div className='descriptionWrap'> 
-			<div className='productDescription'>Product Description</div>
-			<Button text='Add To Cart' className='addToCartBtn' />
-		</div>
-		</div>
-		<div className="detailsMenuWrap"> Details drop down menu </div>
-		<div className="mayAlsoLikeWrap"> 
-			<div> You may also like..</div>
-			<div className="mayAlsoLikeTilesWrap"> 
-			 <ProductTiles />
-			 <ProductTiles />
-			 <ProductTiles />
-			 </div>
-			 <div>Footer</div>
-
-		 </div>
-		</div>
-
-
-		)
-}
+      <div className="productNameWrap">
+        {" "}
+        <div className="productNameHeader">{productName}</div>
+        {productPrice}
+      </div>
+      <div className="imagesAndDescFlexWrap">
+        <div className="productImageWrap">
+          <div className="productWrap">
+            {" "}
+            <img className="clickedProductImages" src={arr[0].image1}></img>
+          </div>
+          <div className="productWrap"> img</div>
+          <div className="productWrap"> img</div>
+          <Button text="See More" />
+        </div>
+        <div className="descriptionWrap">
+          <div className="productDescription">{productDescription}</div>
+          <Button text="Add To Cart" className="addToCartBtn" />
+        </div>
+      </div>
+      <div className="detailsMenuWrap"> Details drop down menu </div>
+      <div className="mayAlsoLikeWrap">
+        <div> You may also like..</div>
+        <div className="mayAlsoLikeTilesWrap">
+          <ProductTiles />
+          <ProductTiles />
+          <ProductTiles />
+        </div>
+        <div>Footer</div>
+      </div>
+    </div>
+  );
+};
 
 export default ClickedProduct;
