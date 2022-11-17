@@ -1,12 +1,16 @@
 import Header from '../header.js'
 import Button from '../buttons.js';
+import { useNavigate } from 'react-router-dom';
 import { ProductTiles } from '../productdisplays/producttiles.js'
 
 export const ClickedProduct = () => {
+	const navigate = useNavigate();
 	return(
 		<div>
 		<Header />
-		<div className='locationDiv'>home, current page</div>
+		<div className='locationDiv'><Button text='Home'
+		 onClick={e => navigate('/home') }/>, current page</div>
+
 		<div className="productNameWrap"> <div className="productNameHeader">
 		ProductName</div>
 		Price </div> 
@@ -30,6 +34,7 @@ export const ClickedProduct = () => {
 			 <ProductTiles />
 			 <ProductTiles />
 			 </div>
+			 <div>Footer</div>
 
 		 </div>
 		</div>
