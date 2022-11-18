@@ -2,5 +2,7 @@
 	border-style: solid;
 	border-collapse: black;
 	display: flex;
+	justify-content: space-between;
+	padding: 10px;
 
 }

@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ProductTiles } from "../productdisplays/producttiles.js";
 import { arr } from "../productdisplays/producttilewrap.js";
+import { userCartArr } from '../cartPage/UserCart.js';
+
+
 
 export const ClickedProduct = () => {
   const [productName, setProductName] = useState("");
@@ -11,6 +14,11 @@ export const ClickedProduct = () => {
   const [productDescription, setProductDescription] = useState("");
   const [productImage1, setProductImage1] = useState("");
 
+const addToCartClick = () => {
+  userCartArr.push(arr[0]);
+  console.log(userCartArr)
+}
+  
   const setValue = () => {
     setProductName(arr[0].name);
     setProductPrice(arr[0].price);
@@ -53,7 +61,7 @@ export const ClickedProduct = () => {
         </div>
         <div className="descriptionWrap">
           <div className="productDescription">{productDescription}</div>
-          <Button text="Add To Cart" className="addToCartBtn" />
+          <Button text="Add To Cart" className="addToCartBtn" onClick={ addToCartClick } />
         </div>
       </div>
       <div className="detailsMenuWrap"> Details drop down menu </div>
