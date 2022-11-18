@@ -1,11 +1,15 @@
 import Header from '../header.js';
-import Button from '../buttons.js'
-
-export const userCartArr = [];
+import Button from '../buttons.js';
+import { ParsedCart } from './ParsedCart.js';
 
 
 
 export function UserCart() {
+
+
+
+	
+
 	return(
 		<div>
 		<Header />
@@ -14,6 +18,7 @@ export function UserCart() {
 		<div> Item #s and Total</div> <Button text='Checkout' /></div>
 		
 		<div className='cartBodyWrapper'>
+		<ParsedCart />
 		</div>
 		<div className='orderSummaryWrapper'>
 			<div>Order Summary</div>

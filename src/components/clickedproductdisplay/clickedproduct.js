@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ProductTiles } from "../productdisplays/producttiles.js";
 import { arr } from "../productdisplays/producttilewrap.js";
-import { userCartArr } from '../cartPage/UserCart.js';
+import { userCartArr } from '../cartPage/ParsedCart.js';
 
 
 

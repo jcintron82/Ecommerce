@@ -34,3 +34,8 @@
 	display: flex;
 	justify-content: space-between;
 }
+
+.cartWrap {
+	border-style: solid;
+	border-color: black;
+}
