@@ -6,8 +6,44 @@
 .cartBodyWrapper {
 	border-style: solid;
 	border-color: black;
-	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
+
+.cartWrap {
+	width: 100%;
+	margin: 1rem;
+	display: flex;;
+}
+
+.userCartProductImages {
+	border-style: solid;
+	border-color: black;
+}
+
+.cartProductInfoWrap {
+	display: flex;
+	flex-direction: column;
+}
+.cartProductsDescriptionWrap {
+	border-style: solid;
+	border-color: black;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	
+}
+
+.cartProductsPriceQtyWrap {
+	border-style: solid;
+	border-color: black;
+	display: flex;
+	justify-content: space-between;
+}
+
 
 .orderSummaryWrapper {
 	border-style: solid;
@@ -38,4 +74,6 @@
 .cartWrap {
 	border-style: solid;
 	border-color: black;
+	height: 100%;
+	margin-bottom: 5vh;
 }
