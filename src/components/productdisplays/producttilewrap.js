@@ -3,21 +3,33 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import stock from "../../images/stock.avif";
 import jarredStock from "../../images/jarredStock.avif";
+export { arr, productFloat}
+ const arr = [];
 
-export const arr = [];
+ const productFloat = {};
+
+
 
 const prod1 = {
   name: "Stock",
-  price: "$100",
+  price: 100,
   description: "A good chicken stock",
   image1: stock,
+  stockQty: 10,
+  orderQty:1,
+  orderTotal:0,
+  
 };
 
 const prod2 = {
   name: "Jarred Stock",
-  price: "$1000",
+  price: 1000,
   description: "A jar of Fine Stock",
   image1: jarredStock,
+  stockQty:10,
+  orderQty:1,
+  orderTotal:0,
+
 };
 
 export function ProductTileWrap() {
@@ -30,10 +42,11 @@ export function ProductTileWrap() {
   const [tile5, setTile5] = useState();
   const [tile6, setTile6] = useState();
 
-  const onClick = (x) => {
-    navigate("/clickedproduct");
-    arr.push(x);
+  const onClick = (product) => {
+    arr.push(product);
     console.log(arr);
+    console.log(productFloat);
+    navigate("/clickedproduct");
   };
 
   return (

@@ -3,20 +3,35 @@ import Button from "../buttons.js";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ProductTiles } from "../productdisplays/producttiles.js";
-import { arr } from "../productdisplays/producttilewrap.js";
+import { arr, productFloat } from "../productdisplays/producttilewrap.js";
 import { userCartArr } from '../cartPage/ParsedCart.js';
 
-
+let found = 'x';
 
 export const ClickedProduct = () => {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productImage1, setProductImage1] = useState("");
+ 
 
-const addToCartClick = () => {
-  userCartArr.push(arr[0]);
+const func = () => {
+
+}
+
+const addToCartClick = (product) => {
+  if (userCartArr.includes(product)){
+    console.log('yes 2');
+    product.orderQty++;
+    product.orderTotal = (product.price * product.orderQty);
+  }
+  else {
+    userCartArr.push(product)
+    console.log('yes 2');
+  }
   console.log(userCartArr)
+
+ 
 }
   
   const setValue = () => {
@@ -24,6 +39,7 @@ const addToCartClick = () => {
     setProductPrice(arr[0].price);
     setProductDescription(arr[0].description);
     setProductImage1("d");
+   console.log(productFloat)
   };
 
   useEffect(() => {
@@ -61,7 +77,7 @@ const addToCartClick = () => {
         </div>
         <div className="descriptionWrap">
           <div className="productDescription">{productDescription}</div>
-          <Button text="Add To Cart" className="addToCartBtn" onClick={ addToCartClick } />
+          <Button text="Add To Cart" className="addToCartBtn" onClick={e => addToCartClick(arr[0])} />
         </div>
       </div>
       <div className="detailsMenuWrap"> Details drop down menu </div>

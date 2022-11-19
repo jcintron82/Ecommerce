@@ -1,8 +1,8 @@
 
-export const userCartArr = [];
-
+export { userCartArr }
+let userCartArr = [];
 export function ParsedCart() {
-
+    
     return(
         <div>
             {
@@ -11,13 +11,13 @@ export function ParsedCart() {
 
                         <div className="userCartProductImages">
                             <div>{ product.image1 }</div></div>
-                            <div className="cartProductInfoWrap">
+                            <div>
                         <div className="cartProductsDescriptionWrap">                
                     <h2 className="cartProductsName">{product.name}</h2>
                     <div>{ product.description }</div></div>
                     <div className="cartProductsPriceQtyWrap">
                     <div>{product.price}</div>
-                    <div>qty</div>
+                    <div>{ product.qty }</div>
                     </div></div></div>
 
                   
