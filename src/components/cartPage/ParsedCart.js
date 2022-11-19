@@ -16,8 +16,8 @@ export function ParsedCart() {
                     <h2 className="cartProductsName">{product.name}</h2>
                     <div>{ product.description }</div></div>
                     <div className="cartProductsPriceQtyWrap">
-                    <div>{product.price}</div>
-                    <div>{ product.qty }</div>
+                    <div>{product.orderTotal}</div>
+                    <div>{ product.orderQty }</div>
                     </div></div></div>
 
                   
