@@ -12,11 +12,11 @@ export { arr, productFloat}
 
 const prod1 = {
   name: "Stock",
-  price: 100,
+  price: 106,
   description: "A good chicken stock",
   image1: stock,
   stockQty: 10,
-  orderQty:1,
+  orderQty:0,
   orderTotal:0,
   
 };
@@ -27,7 +27,7 @@ const prod2 = {
   description: "A jar of Fine Stock",
   image1: jarredStock,
   stockQty:10,
-  orderQty:1,
+  orderQty:0,
   orderTotal:0,
 
 };

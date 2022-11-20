@@ -26,6 +26,8 @@ const addToCartClick = (product) => {
     product.orderTotal = (product.price * product.orderQty);
   }
   else {
+    product.orderQty++;
+    product.orderTotal = (product.price * product.orderQty);
     userCartArr.push(product)
     console.log('yes 2');
   }

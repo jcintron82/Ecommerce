@@ -1,14 +1,15 @@
 import {ReactComponent as Cart} from './cart.svg';
 import {ReactComponent as HomeIcon} from './home.svg';
 import { useNavigate } from 'react-router-dom'
-import stock from '../images/stock.avif'
+import {arr} from './productdisplays/producttilewrap.js'
 
 
 export function Header() {
 	const navigate = useNavigate();
 
 	const homeClick = () => {
-		navigate('/home')
+		navigate('/home');
+		arr.splice(0);
 	}
 	
 

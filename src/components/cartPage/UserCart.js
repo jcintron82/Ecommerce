@@ -1,15 +1,23 @@
 import Header from '../header.js';
 import Button from '../buttons.js';
 import { useState } from 'react';
-import { ParsedCart } from './ParsedCart.js';
+import { ParsedCart, userCartArr } from './ParsedCart.js';
 
-
+export const cartDataFloat = {};
 
 export function UserCart() {
 
+	const [totalQty, setTotalQty] = useState();
+	const [orderSubTotal, setOrderSubTotal] = useState();
+	const [orderTaxAmt, setorderTaxAmt] = useState();
+	const [orderTotal, setOrderTotal] = useState('place');
 
-
-	
+	cartDataFloat.setData = function setData(qty, subTotal, tax, total) {
+		setTotalQty(qty);
+		setOrderSubTotal(subTotal);
+		setorderTaxAmt(tax);
+		setOrderTotal(total);
+	}
 
 	return(
 		<div>
@@ -23,9 +31,9 @@ export function UserCart() {
 		</div>
 		<div className='orderSummaryWrapper'>
 			<div>Order Summary</div>
-			<div className='itemQtyWrap'>Item Qty <div>Subtotal</div></div>
-			<div className='salesTaxWrap'>Sales Tax<div>Tax Amount</div></div>
-			<div className='totalPriceWrap'>Total<div>Total $$$</div></div>
+			<div className='itemQtyWrap'>Order Qty: { totalQty }<div>Subtotal: { orderSubTotal }</div></div>
+			<div className='salesTaxWrap'>Sales Tax 7%<div>Tax Amount: { orderTaxAmt }</div></div>
+			<div className='totalPriceWrap'>Total: { orderTotal } <div>Total $$$</div></div>
 			<Button text='Checkout' />
 		</div>
 
