@@ -32,3 +32,15 @@
     color: #0f0 !important;
     outline: solid #f00 1px !important;
 }*/
+.detailsWrap {
+	color: blue;
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+;}
+.collapsibleDetailsBtn {
+	border-color: black;
+	border-style: solid;
+	color: red;
+	position: absolute
+}
