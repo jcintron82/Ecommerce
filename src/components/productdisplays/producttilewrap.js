@@ -1,8 +1,10 @@
 import { ProductTiles } from "./producttiles.js";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import stock from "../../images/stock.avif";
-import jarredStock from "../../images/jarredStock.avif";
+
+//Imports for the product section photos
+import mainElectronics from "../../images/electronics/mainElectronics.avif";
+import homeGoodsMain from "../../images/homeGoods/homeGoodsMain.avif";
 export { arr, productFloat}
  const arr = [];
 
@@ -10,22 +12,22 @@ export { arr, productFloat}
 
 
 
-const prod1 = {
+const electronics = {
   name: "Stock",
   price: 106,
   description: "A good chicken stock",
-  image1: stock,
+  image1: mainElectronics,
   stockQty: 10,
   orderQty:0,
   orderTotal:0,
   
 };
 
-const prod2 = {
+const homeGoods = {
   name: "Jarred Stock",
   price: 1000,
   description: "A jar of Fine Stock",
-  image1: jarredStock,
+  image1: homeGoodsMain,
   stockQty:10,
   orderQty:0,
   orderTotal:0,
@@ -42,29 +44,30 @@ export function ProductTileWrap() {
   const [tile5, setTile5] = useState();
   const [tile6, setTile6] = useState();
 
-  const onClick = (product) => {
-    arr.push(product);
-    console.log(arr);
-    console.log(productFloat);
-    navigate("/clickedproduct");
+  const onClick = (section) => {
+    // arr.push(product);
+    // console.log(arr);
+    // console.log(productFloat);
+    let formattedArg = '/' + section;
+    navigate(formattedArg);
   };
 
   return (
     <div className="productsWrap">
       <ProductTiles
-        onClick={(e) => onClick(prod1)}
+        onClick={(e) => onClick('electronics')}
         className="productTiles"
-        img={prod1.image1}
-        name={prod1.name}
-        description={prod1.description}
+        img={electronics.image1}
+        name={electronics.name}
+        description={electronics.description}
       />
 
       <ProductTiles
-        onClick={(e) => onClick(prod2)}
+        onClick={(e) => onClick('homeGoods')}
         className="productTiles"
-        img={prod2.image1}
-        name={prod2.name}
-        description={prod2.description}
+        img={homeGoods.image1}
+        name={homeGoods.name}
+        description={homeGoods.description}
       />
 
       <ProductTiles onClick={onClick} className="productTiles" />
