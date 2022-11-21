@@ -31,16 +31,23 @@ html, body {
 	align-items: center;
 	height: 50vh;
 	overflow-x: hidden;
-}
+	width: 50%;
+	height: 50vh;
+	align-self: center;
 
+}
+.imagesliderWrap{
+	border-style: solid;
+	border-color: black;
+	height: 40vh;
+	position: relative;
+}
 .clickedProductImages{
-	width: 100%;
-	height: 100%;
+	
 }
 
 .productWrap {
-	border-style: solid;
-	border-color: black;
+	
 	width: 20rem;
 	height: 20rem;
 	margin: 10px;
