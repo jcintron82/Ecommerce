@@ -6,7 +6,7 @@ import { ProductTiles } from "../productdisplays/producttiles.js";
 import { arr, productFloat } from "../productdisplays/producttilewrap.js";
 import { userCartArr } from '../cartPage/ParsedCart.js';
 
-let found = 'x';
+
 
 export const ClickedProduct = () => {
   const [productName, setProductName] = useState("");
@@ -14,10 +14,6 @@ export const ClickedProduct = () => {
   const [productDescription, setProductDescription] = useState("");
   const [productImage1, setProductImage1] = useState("");
  
-
-const func = () => {
-
-}
 
 const addToCartClick = (product) => {
   if (userCartArr.includes(product)){
@@ -75,7 +71,7 @@ const addToCartClick = (product) => {
           </div>
           <div className="productWrap"> img</div>
           <div className="productWrap"> img</div>
-          <Button text="See More" />
+          <Button text="See More"  />
         </div>
         <div className="descriptionWrap">
           <div className="productDescription">{productDescription}</div>

@@ -2,49 +2,96 @@ html, body {
   margin: 0;
   padding: 0;
 }  
-
-.locationDiv {
-	border-style: solid;
-	border-color: black;
-}
-
+body {min-height: 100vh;
+display: flex;
+flex-direction: column;}
 .productNameHeader {
-	border-style: solid;
-	border-color: black;
+	font-size: 1.2em;
+	padding: 10px;
+	font-weight: bold;
 }
 
-.productNameWrap{
-	border-style: solid;
-	border-color: black;
-}
 
 .imagesAndDescFlexWrap {
 	display: flex;
 	flex-direction: column;
+	border-style: solid;
+	border-color: black;
+	max-width: 100%;
+
 }
 
 .productImageWrap{
-	border-style: solid;
-	border-color: black;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	height: 50vh;
 	overflow-x: hidden;
-	width: 50%;
+	width: 90%;
 	height: 50vh;
 	align-self: center;
 
 }
-.imagesliderWrap{
+
+.priceWrap {
+	padding-left: .5rem;
+	font-size: .95em;
+}
+
+.img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 3rem;
 	border-style: solid;
-	border-color: black;
+	border-color: red;
+	max-width: 90%;
+	height: 35vh;
+	align-self: center;
+}
+.imageFadeIn-enter {
+	opacity: 0.01;
+	width: 75%;
+	height: 75%;
+  }
+  .imageFadeIn-enter-active {
+	opacity: 1;
+	transition: opacity 1500ms ease-in;
+	width: 75%;
+	height: 75%;
+  }
+
+  .imageFadeIn-enter-done {
+	opacity: 1;
+	width: 75%;
+	height: 75%;
+	;
+  }
+  .imageFadeIn-exit {
+	opacity: 0.01;
+	width: 75%;
+	height: 75%;
+
+  }
+  .imageFadeIn-exit-active {
+	opacity: 1;
+	transition: opacity 1500ms ease-out;
+	width: 75%;
+	height: 75%;
+  }
+
+  .imageFadeIn-exit-done {
+	opacity: 1;
+	width: 75%;
+	height: 75%;
+  } 
+
+.imagesliderWrap{
+
 	height: 40vh;
 	position: relative;
 }
-.clickedProductImages{
-	
-}
+
 
 .productWrap {
 	
@@ -54,26 +101,41 @@ html, body {
 }
 
 .descriptionWrap {
-	border-style: solid;
-	border-color: black;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
 .productDescription {
-	border-style: solid;
-	border-color: black;
 	text-align: center;
+}
+
+.seeMoreWrap {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+.seeMoreBtn {
+	width: 40vw;
+	display: flex;
+	justify-content: center;
+	background-color: transparent;
+	border-style: none;
 }
 
 .addToCartBtnWrap {
 	display: flex;
 	justify-content: center;
+	padding: 30px;
 }
 .addToCartBtn {
-	width: 150px;
+	min-width: 40vw;
+	max-width: 50vw;
+	height: 5vh;
 	align-self: center;
+	color: white;
+	font-size: .8em;
+	background-color: black;
 }
 
 
@@ -85,10 +147,7 @@ html, body {
 	background-color: grey;
 }
 .collapsibleDetailsBtn {
-	border-color: black;
-	border-style: solid;
 	color: red;
-	position: absolute;
 	width: 100%;
 	height: 2rem;
 	text-align: left;
@@ -110,3 +169,11 @@ html, body {
 	border-color: black;
 	display: flex;
 }
+/* 
+* {
+    outline: 1px solid red !important;
+} */
+/* 
+.footer {
+	align-self: flex-end;
+} */

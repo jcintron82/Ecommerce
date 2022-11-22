@@ -1,16 +1,32 @@
 import Header from "../../header.js";
+import Footer from "../../Footer.js";
 import Button from "../../buttons.js";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
+import { CSSTransition } from "react-transition-group";
 import { ProductTiles } from "../../productdisplays/producttiles.js";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
 import macbookFront from "../../../images/electronics/laptop/macbookFront.png";
 import macbookTop from "../../../images/electronics/laptop/macbookTop.png";
 import macbookSide from "../../../images/electronics/laptop/macbookSide.png";
+import macbookClosed from "../../../images/electronics/laptop/macbookClosed.jpg";
 
+const seeMoreSVG = (
+  <svg
+    width="24px"
+    className="w-6 h-6"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
 let counter = 0;
-const imageGallery = [
-    macbookFront,macbookTop,macbookSide
-]
+const imageGallery = [macbookFront, macbookTop, macbookSide, macbookClosed];
 
 const laptop = {
   name: "13.3-inch Apple MacBook Pro",
@@ -24,27 +40,29 @@ const laptop = {
 };
 
 export function Laptop() {
-
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [productImage1, setProductImage1] = useState("");
   const [open, setOpen] = useState(false);
-//   const [seeMore, setSeeMore] = useState(false);
+  const nodeRef = useRef(null);
+
+  //   const [seeMore, setSeeMore] = useState(false);
 
   const [pic2, setPic2] = useState(imageGallery[counter]);
-  
+  const [isEnter, setIsEnter] = useState(false);
 
-const nextImageClick = () => {
-    if (counter === 2) {
-        counter = 0
-        setPic2(imageGallery[counter]);
+  const nextImageClick = () => {
+    if (counter === 3) {
+      counter = 0;
+      setPic2(imageGallery[counter]);
+    } else {
+      counter = counter + 1;
+      setPic2(imageGallery[counter]);
     }
-    else {
-    counter = counter + 1
-    setPic2(imageGallery[counter]); }
     // setPicThree(macbookTop)
-}
+    setIsEnter(!isEnter);
+  };
 
   const handleOpen = () => {
     setOpen(!open);
@@ -65,28 +83,24 @@ const nextImageClick = () => {
   return (
     <div>
       <Header />
-
       <div className="productNameWrap">
         {" "}
-        <div className="productNameHeader">{laptop.name}</div>
-        {laptop.price}
+        <h2 className="productNameHeader">{laptop.name}</h2>
+        <div className="priceWrap">{laptop.price}</div>
       </div>
       <div className="imagesAndDescFlexWrap">
-        <div className="productImageWrap" id="">
-          <div className="productWrap">
-            {" "}
-            <img className="clickedProductImages" src={pic2}></img>
-          </div>
-        </div>
-      
-        <Button 
-            text="See More" 
-            onClick={nextImageClick}
-            className='seeMoreBtn'  />
-            {/* {seeMore ? (
-                <div>GoodJob</div>
-            ) : <div></div>} */}
-
+        <div className="img">
+        <CSSTransition in={isEnter} timeout={1500} classNames="imageFadeIn">
+          <img src={pic2}></img>
+        </CSSTransition></div>
+        <div className="seeMoreWrap">
+        <Button
+          text="Next"
+          svg={seeMoreSVG}
+          onClick={nextImageClick}
+          className="seeMoreBtn"
+        /></div>
+    
 
         <div className="addToCartBtnWrap">
           {" "}
@@ -124,9 +138,8 @@ const nextImageClick = () => {
           <ProductTiles />
           <ProductTiles />
           <ProductTiles />
-        </div>
-        <div>Footer</div>
-      </div>
+        </div></div>
+        <Footer />
     </div>
   );
 }
