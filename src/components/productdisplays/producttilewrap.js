@@ -45,9 +45,6 @@ export function ProductTileWrap() {
   const [tile6, setTile6] = useState();
 
   const onClick = (section) => {
-    // arr.push(product);
-    // console.log(arr);
-    // console.log(productFloat);
     let formattedArg = '/' + section;
     navigate(formattedArg);
   };

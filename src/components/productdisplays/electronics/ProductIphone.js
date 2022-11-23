@@ -2,52 +2,42 @@ import Header from "../../header.js";
 import Button from "../../buttons.js";
 import { useState } from "react";
 import { ProductTiles } from "../../productdisplays/producttiles.js";
-import { userCartArr } from '../../cartPage/ParsedCart.js';
-import iphonePic from '../../../images/electronics/iphone.avif'
+import { userCartArr } from "../../cartPage/ParsedCart.js";
+import iphonePic from "../../../images/electronics/iphone.avif";
 
 const iphone = {
-    name: "IPhone 12",
-    price: 1000,
-    description: "An IPhone 12",
-    image1: iphonePic,
-    stockQty: 10,
-    orderQty:0,
-    orderTotal:0,
-  }
-
-
+  name: "IPhone 12",
+  price: 1000,
+  description: "An IPhone 12",
+  image1: iphonePic,
+  stockQty: 10,
+  orderQty: 0,
+  orderTotal: 0,
+};
 
 export function ProductIphone() {
-    const [productName] = useState("");
-    const [productPrice] = useState("");
-    const [productDescription] = useState("");
-   
- 
-    
-    const addToCartClick = (product) => {
-        if (userCartArr.includes(product)){
-          console.log('yes 2');
-          product.orderQty++;
-          product.orderTotal = (product.price * product.orderQty);
-        }
-        else {
-          product.orderQty++;
-          product.orderTotal = (product.price * product.orderQty);
-          userCartArr.push(product)
-          console.log('yes 2');
-        }
-        console.log(userCartArr)
-      
-       
-      }
+  const [productName] = useState("");
+  const [productPrice] = useState("");
+  const [productDescription] = useState("");
 
+  const addToCartClick = (product) => {
+    if (userCartArr.includes(product)) {
+      console.log("yes 2");
+      product.orderQty++;
+      product.orderTotal = product.price * product.orderQty;
+    } else {
+      product.orderQty++;
+      product.orderTotal = product.price * product.orderQty;
+      userCartArr.push(product);
+      console.log("yes 2");
+    }
+    console.log(userCartArr);
+  };
 
-        return (
-            <div>
-            <Header />
-            <div className="locationDiv">
-        , current page
-      </div>
+  return (
+    <div>
+      <Header />
+      <div className="locationDiv">, current page</div>
 
       <div className="productNameWrap">
         {" "}
@@ -58,7 +48,7 @@ export function ProductIphone() {
         <div className="productImageWrap">
           <div className="productWrap">
             {" "}
-            <img className="clickedProductImages" src={iphonePic}></img>
+            <img className="clickedProductImages" src={iphonePic} alt='An Iphone'></img>
           </div>
           <div className="productWrap"> img</div>
           <div className="productWrap"> img</div>
@@ -66,7 +56,11 @@ export function ProductIphone() {
         </div>
         <div className="descriptionWrap">
           <div className="productDescription">{productDescription}</div>
-          <Button text="Add To Cart" className="addToCartBtn" onClick={e => addToCartClick(iphone)} />
+          <Button
+            text="Add To Cart"
+            className="addToCartBtn"
+            onClick={(e) => addToCartClick(iphone)}
+          />
         </div>
       </div>
       <div className="detailsMenuWrap"> Details drop down menu </div>
@@ -80,8 +74,7 @@ export function ProductIphone() {
         <div>Footer</div>
       </div>
     </div>
-          
-        )
+  );
 }
 
 export default ProductIphone;

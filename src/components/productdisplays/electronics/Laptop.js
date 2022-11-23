@@ -1,7 +1,7 @@
 import Header from "../../header.js";
 import Footer from "../../Footer.js";
 import Button from "../../buttons.js";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
 import macbookFront from "../../../images/electronics/laptop/macbookFront.png";
@@ -46,8 +46,6 @@ export function Laptop() {
 
   const [isLoading, setIsLoading] = useState(false);
 
-   
-
   const handleQtyChange = (e) => {
     setQty(e.target.value);
   };
@@ -69,12 +67,8 @@ export function Laptop() {
 
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
-    setIsLoading(!isLoading)
-    // setTimeout(() => {
-    //     setIsLoading(!isLoading)
-    // }, 1000)
-
-
+    setIsLoading(!isLoading);
+ 
     if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
@@ -85,84 +79,96 @@ export function Laptop() {
       userCartArr.push(product);
       console.log(product);
     }
-    setIsLoading(!isLoading)
+    setIsLoading(!isLoading);
   };
 
   return (
     <div className="mainWrap">
       <Header />
       <div className="flip">
-      <div className="productNameWrap">
-        {" "}
-        <div className="productNameHeader">{laptop.name}
-        <div className="pricesWrapParent">
-        <div className="priceWrap">${laptop.price}.00</div>
-        <div className="savedPriceWrap">
-          <strike className="strikedPrice">$1249.00</strike> Save $190.00
+        <div className="productNameWrap">
+          {" "}
+          <div className="productNameHeader">
+            {laptop.name}
+            <div className="pricesWrapParent">
+              <div className="priceWrap">${laptop.price}.00</div>
+              <div className="savedPriceWrap">
+                <strike className="strikedPrice">$1249.00</strike> Save $190.00
+              </div>
+            </div>
+          </div>
         </div>
-      </div></div>
-       </div>
-      <div className="imagesAndDescFlexWrap">
-        <div className="imageWrap">
-        <div className="img">
-          <CSSTransition in={isEnter} timeout={420} classNames="imageFadeIn">
-            <img className="imageFadeIn" src={pic2} alt='A macbook pro 13-3inch'></img>
-          </CSSTransition>
+        <div className="imagesAndDescFlexWrap">
+          <div className="imageWrap">
+            <div className="img">
+              <CSSTransition
+                in={isEnter}
+                timeout={420}
+                classNames="imageFadeIn"
+              >
+                <img
+                  className="imageFadeIn"
+                  src={pic2}
+                  alt="A macbook pro 13-3inch"
+                ></img>
+              </CSSTransition>
+            </div>
+            <div className="seeMoreWrap">
+              <Button
+                text="Image"
+                svg={seeMoreSVG}
+                onClick={nextImageClick}
+                className="seeMoreBtn"
+              />
+            </div>
+          </div>
+          <div className="desktopBtnWrap">
+            <div className="addToCartBtnWrap">
+              <select
+                onChange={handleQtyChange}
+                name="qty"
+                className="cartQtyInput"
+                type="number"
+              >
+                {" "}
+                <option value="0"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>{" "}
+              </select>{" "}
+              <Button
+                text="Add To Cart"
+                className="addToCartBtn"
+                onClick={(e) => addToCartClick(laptop)}
+              />
+            </div>
+          </div>
         </div>
-        <div className="seeMoreWrap">
-          <Button
-            text="Image"
-            svg={seeMoreSVG}
-            onClick={nextImageClick}
-            className="seeMoreBtn"
-          />
-        </div></div>
-        <div className="desktopBtnWrap">
-        <div className="addToCartBtnWrap">
-          <select
-            onChange={handleQtyChange}
-            name="qty"
-            className="cartQtyInput"
-            type="number"
-          >
-            {" "}
-            <option value="0"></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>{" "}
-          </select>{" "}
-          <Button
-            text="Add To Cart"
-            className="addToCartBtn"
-            onClick={(e) => addToCartClick(laptop)}
-          /></div>
-        </div></div>
-        </div>
-        <div className="detailsWrap">
-          <Button
-            text="Details"
-            className="collapsibleDetailsBtn"
-            onClick={handleOpen}
-          />
-          <CSSTransition in={open} timeout={120} classNames="detailsScroll">
-            {open ? (
-              <ul className="detailsBoxOne">
-                <li>
-                  Refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch
-                  LED-backlit display, 2560-by-1600 native resolution at 227
-                  pixels per inch.
-                </li>
-                <li>8GB Unified Memory</li>
-                <li>256GB SSD</li>
-                <li>Touch Bar and Touch ID</li>
-                <li>720p FaceTime HD Camera</li>
-              </ul>
-            ) : (
-              <div></div>
-            )}
-          </CSSTransition>
-        </div>
-      
+      </div>
+      <div className="detailsWrap">
+        <Button
+          text="Details"
+          className="collapsibleDetailsBtn"
+          onClick={handleOpen}
+        />
+        <CSSTransition in={open} timeout={120} classNames="detailsScroll">
+          {open ? (
+            <ul className="detailsBoxOne">
+              <li>
+                Refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch
+                LED-backlit display, 2560-by-1600 native resolution at 227
+                pixels per inch.
+              </li>
+              <li>8GB Unified Memory</li>
+              <li>256GB SSD</li>
+              <li>Touch Bar and Touch ID</li>
+              <li>720p FaceTime HD Camera</li>
+            </ul>
+          ) : (
+            <div></div>
+          )}
+        </CSSTransition>
+      </div>
 
       <div>
         {" "}

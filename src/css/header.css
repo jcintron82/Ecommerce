@@ -1,4 +1,3 @@
-
 .header {
 	height: 50px;
 	display: flex;
@@ -6,29 +5,33 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	background-color: #2397BE;
+	background-color: #135267;
 	padding-bottom: .2rem;
 	color: white;
-
 }
-
 .logoWrap {
 	display: flex;
-	font-size: 25px;
+	font-size: 1em;
 	flex-direction: row;
 	align-self: center;
 	padding-left: .5rem;
-
+	font-family: 'Roboto Flex', sans-serif;
+	font-weight: bold;
+	letter-spacing: 0.125rem;
 }
-
+.logoWrap:hover {
+	cursor: pointer;
+}
 .cartLogoWrap {
 	padding-right: .5rem;
 	color: white;
-
 }
-/* 
-* {
-    background: #000 !important;
-    color: #0f0 !important;
-    outline: solid #f00 1px !important;
-} */
+.cartLogoWrap:hover {
+	cursor: pointer;
+}
+/* * {
+	background: #000 !important;
+	color: #0f0 !important;
+	outline: solid #f00 1px !important;
+}
+*/
