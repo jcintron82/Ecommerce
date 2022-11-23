@@ -91,15 +91,19 @@ export function Laptop() {
   return (
     <div className="mainWrap">
       <Header />
+      <div className="flip">
       <div className="productNameWrap">
         {" "}
-        <div className="productNameHeader">{laptop.name}</div>
+        <div className="productNameHeader">{laptop.name}
+        <div className="pricesWrapParent">
         <div className="priceWrap">${laptop.price}.00</div>
         <div className="savedPriceWrap">
           <strike className="strikedPrice">$1249.00</strike> Save $190.00
         </div>
-      </div>
+      </div></div>
+       </div>
       <div className="imagesAndDescFlexWrap">
+        <div className="imageWrap">
         <div className="img">
           <CSSTransition in={isEnter} timeout={420} classNames="imageFadeIn">
             <img className="imageFadeIn" src={pic2} alt='A macbook pro 13-3inch'></img>
@@ -112,8 +116,8 @@ export function Laptop() {
             onClick={nextImageClick}
             className="seeMoreBtn"
           />
-        </div>
-
+        </div></div>
+        <div className="desktopBtnWrap">
         <div className="addToCartBtnWrap">
           <select
             onChange={handleQtyChange}
@@ -131,7 +135,8 @@ export function Laptop() {
             text="Add To Cart"
             className="addToCartBtn"
             onClick={(e) => addToCartClick(laptop)}
-          />
+          /></div>
+        </div></div>
         </div>
         <div className="detailsWrap">
           <Button
@@ -157,7 +162,7 @@ export function Laptop() {
             )}
           </CSSTransition>
         </div>
-      </div>
+      
 
       <div>
         {" "}
