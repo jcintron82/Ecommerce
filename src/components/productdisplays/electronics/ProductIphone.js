@@ -18,10 +18,10 @@ const iphone = {
 
 
 export function ProductIphone() {
-    const [productName, setProductName] = useState("");
-    const [productPrice, setProductPrice] = useState("");
-    const [productDescription, setProductDescription] = useState("");
-    const [productImage1, setProductImage1] = useState("");
+    const [productName] = useState("");
+    const [productPrice] = useState("");
+    const [productDescription] = useState("");
+   
  
     
     const addToCartClick = (product) => {

@@ -16,7 +16,7 @@ flex-direction: column;}
 	justify-content: center;
 	align-items: center;
 	font-size: 1.2em;
-	padding: 5rem 2rem 1rem 10px;
+	padding: 4.5rem 2rem 1rem 10px;
 	font-weight: bold;
 	max-width: 75vw;
 	align-self: center;
@@ -82,7 +82,7 @@ font-family: 'Roboto Flex', sans-serif;
   }
   .imageFadeIn-enter-active {
 	opacity: 1;
-	transition: opacity 1500ms ease-in;
+	transition: opacity 420ms ease-in;
 	width: 100%;
 	height: 100%;
   }
@@ -101,7 +101,7 @@ font-family: 'Roboto Flex', sans-serif;
   }
   .imageFadeIn-exit-active {
 	opacity: 1;
-	transition: opacity 1500ms ease-out;
+	transition: opacity 420ms ease-out;
 	width: 100%;
 	height: 100%;
   }
@@ -155,19 +155,22 @@ font-family: 'Roboto Flex', sans-serif;
 
 .addToCartBtnWrap {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	width: 100%;
 	padding: 3rem 0;
 }
 .addToCartBtn {
 	min-width: 60vw;
 	height: 5vh;
-	align-self: center;
 	color: white;
 	font-size: .8em;
 	background-color: black;
 	border-radius: 8px;
+	margin-left: 1rem;
+	font-weight: 500;
+	letter-spacing: -.022em;
 }
+
 
 .cartQtyInput {
 	min-width: 3rem;
@@ -189,12 +192,14 @@ font-family: 'Roboto Flex', sans-serif;
 .detailsBoxOne {
 	background-color: white;
 	padding: 1.75rem;
+	padding-top: 0;
 	border-radius: .25rem;
 	box-shadow: 10px 5px 10px 0 rgba(0,0,0,.1);
 	padding-bottom: 50px;
 	opacity: 0;
 	
 }
+
 
 .detailsScroll {
 	width: 150vh;
@@ -209,7 +214,7 @@ font-family: 'Roboto Flex', sans-serif;
 	opacity: 0;
 	height: auto;
 	height: 40vh; 
-	transition:  height opacity 100ms ease-in; ;
+	transition:  height opacity 800ms ease-in; 
   }
 
   .detailsScroll-enter-done {
@@ -221,12 +226,13 @@ font-family: 'Roboto Flex', sans-serif;
   }
   .detailsScroll-exit {
 	max-height: 100%;
-	-webkit-transition: max-height 100ms ease; 
+
 
   }
   .detailsScroll-exit-active {
 	overflow: hidden;
 	max-height: 100%;
+	transition:  height opacity 800ms ease-in; 
   }
 
   .detailsScroll-exit-done {
@@ -246,14 +252,18 @@ font-family: 'Roboto Flex', sans-serif;
 	border-left: none;
 	border-width: 1px;
 	background: none;
+	font-family: 'Roboto Serif', sans-serif;
+	padding-left: 2.25rem;
 }
 
 li {
 	padding: 11px;
+	font-family: 'Roboto Serif', sans-serif;
 }
 
 ul {
 	list-style-type: none;
+	
 }
 
 .mayAlsoLikeWrap {
@@ -271,3 +281,6 @@ ul {
 	padding-top: 1rem;
 	
 }
+
+
+

@@ -1,7 +1,7 @@
 import Header from "../../header.js";
 import Footer from "../../Footer.js";
 import Button from "../../buttons.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
 import macbookFront from "../../../images/electronics/laptop/macbookFront.png";
@@ -44,6 +44,10 @@ export function Laptop() {
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+
+   
+
   const handleQtyChange = (e) => {
     setQty(e.target.value);
   };
@@ -65,6 +69,10 @@ export function Laptop() {
 
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
+    setIsLoading(!isLoading)
+    // setTimeout(() => {
+    //     setIsLoading(!isLoading)
+    // }, 1000)
 
 
     if (userCartArr.includes(product)) {
@@ -77,6 +85,7 @@ export function Laptop() {
       userCartArr.push(product);
       console.log(product);
     }
+    setIsLoading(!isLoading)
   };
 
   return (
@@ -92,7 +101,7 @@ export function Laptop() {
       </div>
       <div className="imagesAndDescFlexWrap">
         <div className="img">
-          <CSSTransition in={isEnter} timeout={1500} classNames="imageFadeIn">
+          <CSSTransition in={isEnter} timeout={420} classNames="imageFadeIn">
             <img className="imageFadeIn" src={pic2} alt='A macbook pro 13-3inch'></img>
           </CSSTransition>
         </div>
@@ -130,11 +139,11 @@ export function Laptop() {
             className="collapsibleDetailsBtn"
             onClick={handleOpen}
           />
-          <CSSTransition in={open} timeout={100} classNames="detailsScroll">
+          <CSSTransition in={open} timeout={120} classNames="detailsScroll">
             {open ? (
               <ul className="detailsBoxOne">
                 <li>
-                  A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch
+                  Refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch
                   LED-backlit display, 2560-by-1600 native resolution at 227
                   pixels per inch.
                 </li>
