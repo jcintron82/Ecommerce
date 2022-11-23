@@ -1,6 +1,11 @@
 export function Footer() {
     return (
-        <footer className="footer"> This is a footer</footer>
+        <footer className="footer"> 
+            <div>
+                
+            </div>
+        
+        </footer>
     )
 }
 

@@ -1,16 +1,13 @@
 import Header from "../../header.js";
 import Footer from "../../Footer.js";
 import Button from "../../buttons.js";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import { ProductTiles } from "../../productdisplays/producttiles.js";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
 import macbookFront from "../../../images/electronics/laptop/macbookFront.png";
 import macbookTop from "../../../images/electronics/laptop/macbookTop.png";
 import macbookSide from "../../../images/electronics/laptop/macbookSide.png";
 import macbookClosed from "../../../images/electronics/laptop/macbookClosed.jpg";
-
-
 
 const seeMoreSVG = (
   <svg
@@ -33,7 +30,8 @@ const imageGallery = [macbookFront, macbookTop, macbookSide, macbookClosed];
 const laptop = {
   name: "Refurbished 13.3-inch Apple MacBook Pro Apple M1 Chip with 9-Core CPU and 8-Core GPU",
   price: 1059,
-  description: "A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch LED-backlit display,",
+  description:
+    "A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch LED-backlit display,",
   image1: macbookFront,
   stockQty: 10,
   orderQty: 0,
@@ -41,22 +39,15 @@ const laptop = {
 };
 
 export function Laptop() {
-  const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState("");
-  const [productDescription, setProductDescription] = useState("");
   const [qty, setQty] = useState(laptop.orderQty);
   const [open, setOpen] = useState(false);
   const [currentQty, setCurrentQty] = useState(1);
-
-  //   const [seeMore, setSeeMore] = useState(false);
-
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
   const handleQtyChange = (e) => {
-    setQty(e.target.value)
-  }
-
+    setQty(e.target.value);
+  };
 
   const nextImageClick = () => {
     if (counter === 3) {
@@ -66,7 +57,6 @@ export function Laptop() {
       counter = counter + 1;
       setPic2(imageGallery[counter]);
     }
-    // setPicThree(macbookTop)
     setIsEnter(!isEnter);
   };
 
@@ -75,15 +65,10 @@ export function Laptop() {
   };
 
   const addToCartClick = (product) => {
-    const parsedInt = parseInt(qty, 10)
+    const parsedInt = parseInt(qty, 10);
 
-    // if (product.orderQty === 0) {
-    //     product.orderQty++;
-    //     userCartArr.push(product);
-    // }
-
-    if (userCartArr.includes(product)) {
     
+    if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
@@ -93,7 +78,6 @@ export function Laptop() {
       userCartArr.push(product);
       setCurrentQty();
       console.log(product);
-
     }
   };
 
@@ -104,66 +88,75 @@ export function Laptop() {
         {" "}
         <div className="productNameHeader">{laptop.name}</div>
         <div className="priceWrap">${laptop.price}.00</div>
-        <div className="savedPriceWrap"><strike className='strikedPrice'>$1249.00</strike> Save $190.00</div>
+        <div className="savedPriceWrap">
+          <strike className="strikedPrice">$1249.00</strike> Save $190.00
+        </div>
       </div>
       <div className="imagesAndDescFlexWrap">
         <div className="img">
-        <CSSTransition in={isEnter} timeout={1500} classNames="imageFadeIn">
-          <img className='imageFadeIn' src={pic2}></img>
-        </CSSTransition></div>
+          <CSSTransition in={isEnter} timeout={1500} classNames="imageFadeIn">
+            <img className="imageFadeIn" src={pic2}></img>
+          </CSSTransition>
+        </div>
         <div className="seeMoreWrap">
-        <Button
-          text="Image"
-          svg={seeMoreSVG}
-          onClick={nextImageClick}
-          className="seeMoreBtn"
-        /></div>
-    
+          <Button
+            text="Image"
+            svg={seeMoreSVG}
+            onClick={nextImageClick}
+            className="seeMoreBtn"
+          />
+        </div>
 
         <div className="addToCartBtnWrap">
-        <select  onChange={ handleQtyChange } name='qty' className="cartQtyInput" type='number'
-      
->                       <option value='0'></option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option> </select>
-          {" "}
+          <select
+            onChange={handleQtyChange}
+            name="qty"
+            className="cartQtyInput"
+            type="number"
+          >
+            {" "}
+            <option value="0"></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>{" "}
+          </select>{" "}
           <Button
             text="Add To Cart"
             className="addToCartBtn"
             onClick={(e) => addToCartClick(laptop)}
           />
         </div>
-      <div className="detailsWrap">
-            <Button
-              text="Details"
-              className="collapsibleDetailsBtn"
-              onClick={handleOpen}
-            />
-               <CSSTransition in={open} timeout={100} classNames="detailsScroll">
+        <div className="detailsWrap">
+          <Button
+            text="Details"
+            className="collapsibleDetailsBtn"
+            onClick={handleOpen}
+          />
+          <CSSTransition in={open} timeout={100} classNames="detailsScroll">
             {open ? (
               <ul className="detailsBoxOne">
-                <li>A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch
-                LED-backlit display, 2560-by-1600 native resolution at 227
-                pixels per inch.</li>
+                <li>
+                  A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch
+                  LED-backlit display, 2560-by-1600 native resolution at 227
+                  pixels per inch.
+                </li>
                 <li>8GB Unified Memory</li>
                 <li>256GB SSD</li>
                 <li>Touch Bar and Touch ID</li>
                 <li>720p FaceTime HD Camera</li>
               </ul>
-         ) : (
-            <div></div>
-            
-          )}</CSSTransition>
-           
+            ) : (
+              <div></div>
+            )}
+          </CSSTransition>
         </div>
       </div>
 
-      <div> <Footer className='footer' /></div>
+      <div>
+        {" "}
+        <Footer className="footer" />
       </div>
-
-
-
+    </div>
   );
 }
 
