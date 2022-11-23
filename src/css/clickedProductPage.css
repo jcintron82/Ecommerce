@@ -283,4 +283,22 @@ ul {
 }
 
 
+@media (min-width:500px) {
+	.img {
+		max-width: 100vw
+	}
 
+	.imageFadeIn {
+		min-width: 90vw;
+	}
+
+	.productNameHeader {
+		max-width: 60vw;
+	}
+
+	.addToCartBtn {
+		width: 20rem;
+	}
+}
+
+@media 
