@@ -20,9 +20,9 @@ export function Header() {
 	return (
 		<div className='header'>
 		<div className='logoWrap'> <HomeIcon style={{width: '27px'}} onClick={homeClick} />
-		<div>Ascension</div></div>
-	
-		<div> <Cart style={{width: '27px'}} onClick={cartClick} /> </div>
+		</div>
+		<div className='logoWrap' >Ascension</div>
+		<div className='cartLogoWrap'> <Cart style={{width: '27px'}} onClick={cartClick} /> </div>
 		
 
 		</div>

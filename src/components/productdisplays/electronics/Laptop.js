@@ -10,6 +10,8 @@ import macbookTop from "../../../images/electronics/laptop/macbookTop.png";
 import macbookSide from "../../../images/electronics/laptop/macbookSide.png";
 import macbookClosed from "../../../images/electronics/laptop/macbookClosed.jpg";
 
+
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -29,10 +31,9 @@ let counter = 0;
 const imageGallery = [macbookFront, macbookTop, macbookSide, macbookClosed];
 
 const laptop = {
-  name: "13.3-inch Apple MacBook Pro",
-  price: 500,
-  description:
-    "A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch LED-backlit display,",
+  name: "Refurbished 13.3-inch Apple MacBook Pro Apple M1 Chip with 9-Core CPU and 8-Core GPU",
+  price: 1059,
+  description: "A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch LED-backlit display,",
   image1: macbookFront,
   stockQty: 10,
   orderQty: 0,
@@ -43,14 +44,19 @@ export function Laptop() {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [productDescription, setProductDescription] = useState("");
-  const [productImage1, setProductImage1] = useState("");
+  const [qty, setQty] = useState(laptop.orderQty);
   const [open, setOpen] = useState(false);
-  const nodeRef = useRef(null);
+  const [currentQty, setCurrentQty] = useState(1);
 
   //   const [seeMore, setSeeMore] = useState(false);
 
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
+
+  const handleQtyChange = (e) => {
+    setQty(e.target.value)
+  }
+
 
   const nextImageClick = () => {
     if (counter === 3) {
@@ -69,33 +75,45 @@ export function Laptop() {
   };
 
   const addToCartClick = (product) => {
+    const parsedInt = parseInt(qty, 10)
+
+    // if (product.orderQty === 0) {
+    //     product.orderQty++;
+    //     userCartArr.push(product);
+    // }
+
     if (userCartArr.includes(product)) {
-      console.log("yes 2");
-      product.orderQty++;
+    
+      product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
+      console.log(product);
     } else {
-      product.orderQty++;
+      product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       userCartArr.push(product);
+      setCurrentQty();
+      console.log(product);
+
     }
   };
 
   return (
-    <div>
+    <div className="mainWrap">
       <Header />
       <div className="productNameWrap">
         {" "}
-        <h2 className="productNameHeader">{laptop.name}</h2>
-        <div className="priceWrap">{laptop.price}</div>
+        <div className="productNameHeader">{laptop.name}</div>
+        <div className="priceWrap">${laptop.price}.00</div>
+        <div className="savedPriceWrap"><strike className='strikedPrice'>$1249.00</strike> Save $190.00</div>
       </div>
       <div className="imagesAndDescFlexWrap">
         <div className="img">
         <CSSTransition in={isEnter} timeout={1500} classNames="imageFadeIn">
-          <img src={pic2}></img>
+          <img className='imageFadeIn' src={pic2}></img>
         </CSSTransition></div>
         <div className="seeMoreWrap">
         <Button
-          text="Next"
+          text="Image"
           svg={seeMoreSVG}
           onClick={nextImageClick}
           className="seeMoreBtn"
@@ -103,6 +121,12 @@ export function Laptop() {
     
 
         <div className="addToCartBtnWrap">
+        <select  onChange={ handleQtyChange } name='qty' className="cartQtyInput" type='number'
+      
+>                       <option value='0'></option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option> </select>
           {" "}
           <Button
             text="Add To Cart"
@@ -110,37 +134,36 @@ export function Laptop() {
             onClick={(e) => addToCartClick(laptop)}
           />
         </div>
-        <div className="descriptionWrap">
-          <div className="detailsWrap">
+      <div className="detailsWrap">
             <Button
               text="Details"
               className="collapsibleDetailsBtn"
               onClick={handleOpen}
             />
+               <CSSTransition in={open} timeout={100} classNames="detailsScroll">
             {open ? (
-              <div className="detailsBoxOne">
-                A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch
+              <ul className="detailsBoxOne">
+                <li>A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch
                 LED-backlit display, 2560-by-1600 native resolution at 227
-                pixels per inch.
-                <div>8GB Unified Memory</div>
-                <div>256GB SSD</div>
-                <div>Touch Bar and Touch ID</div>
-                <div>720p FaceTime HD Camera</div>
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </div>
+                pixels per inch.</li>
+                <li>8GB Unified Memory</li>
+                <li>256GB SSD</li>
+                <li>Touch Bar and Touch ID</li>
+                <li>720p FaceTime HD Camera</li>
+              </ul>
+         ) : (
+            <div></div>
+            
+          )}</CSSTransition>
+           
         </div>
       </div>
-      <div className="mayAlsoLikeWrap">
-        <div className="mayAlsoLikeTilesWrap">
-          <ProductTiles />
-          <ProductTiles />
-          <ProductTiles />
-        </div></div>
-        <Footer />
-    </div>
+
+      <div> <Footer className='footer' /></div>
+      </div>
+
+
+
   );
 }
 

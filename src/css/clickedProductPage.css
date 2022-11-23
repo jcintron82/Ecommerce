@@ -5,18 +5,27 @@ html, body {
 body {min-height: 100vh;
 display: flex;
 flex-direction: column;}
+
+
+.mainWrap {
+	display: flex;
+	flex-direction: column;
+}
 .productNameHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: 1.2em;
-	padding: 10px;
+	padding: 5rem 2rem 1rem 10px;
 	font-weight: bold;
+	max-width: 75vw;
+	align-self: center;
 }
 
 
 .imagesAndDescFlexWrap {
 	display: flex;
 	flex-direction: column;
-	border-style: solid;
-	border-color: black;
 	max-width: 100%;
 
 }
@@ -34,56 +43,69 @@ flex-direction: column;}
 }
 
 .priceWrap {
-	padding-left: .5rem;
+	padding: 0 .5rem .5rem; 
 	font-size: .95em;
 }
+
+.savedPriceWrap {
+font-size: .8em;
+
+}
+.strikedPrice {
+    padding-left: .5rem;
+	font-size: 1em;
+}
+
 
 .img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin-top: 3rem;
-	border-style: solid;
-	border-color: red;
-	max-width: 90%;
-	height: 35vh;
+	max-width: 90%;;
+	height: 50vh;
 	align-self: center;
+}
+
+.imageFadeIn {
+	width: 100%;
+	height: 100%;
 }
 .imageFadeIn-enter {
 	opacity: 0.01;
-	width: 75%;
-	height: 75%;
+	width: 100%;
+	height: 100%;
   }
   .imageFadeIn-enter-active {
 	opacity: 1;
 	transition: opacity 1500ms ease-in;
-	width: 75%;
-	height: 75%;
+	width: 100%;
+	height: 100%;
   }
 
   .imageFadeIn-enter-done {
 	opacity: 1;
-	width: 75%;
-	height: 75%;
+	width: 100%;
+	height: 100%;
 	;
   }
   .imageFadeIn-exit {
 	opacity: 0.01;
-	width: 75%;
-	height: 75%;
+	width: 100%;
+	height: 100%;
 
   }
   .imageFadeIn-exit-active {
 	opacity: 1;
 	transition: opacity 1500ms ease-out;
-	width: 75%;
-	height: 75%;
+	width: 100%;
+	height: 100%;
   }
 
   .imageFadeIn-exit-done {
 	opacity: 1;
-	width: 75%;
-	height: 75%;
+	width: 100%;
+	height: 100%;
   } 
 
 .imagesliderWrap{
@@ -104,6 +126,8 @@ flex-direction: column;}
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	height: 100%;
+
 }
 
 .productDescription {
@@ -125,55 +149,116 @@ flex-direction: column;}
 
 .addToCartBtnWrap {
 	display: flex;
-	justify-content: center;
-	padding: 30px;
+	justify-content: space-around;
+	width: 100%;
+	padding: 3rem 0;
 }
 .addToCartBtn {
-	min-width: 40vw;
-	max-width: 50vw;
+	min-width: 60vw;
 	height: 5vh;
 	align-self: center;
 	color: white;
 	font-size: .8em;
 	background-color: black;
+	border-radius: 8px;
 }
 
+.cartQtyInput {
+	min-width: 3rem;
+	border-radius: 8px;
+}
 
 .detailsWrap {
-	color: blue;
-	display: flex;
-	justify-content: flex-start;
-	width: 100%;
-	background-color: grey;
-}
-.collapsibleDetailsBtn {
-	color: red;
-	width: 100%;
-	height: 2rem;
-	text-align: left;
-}
-.detailsBoxOne {
-	padding-top: 50px;
-}
-
-.mayAlsoLikeWrap {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	width: 90%;
+	width: 100%;
+	border-style: none;
+
+	height: 100%;
+	
+
+}
+
+.detailsBoxOne {
+	background-color: white;
+	padding: 1.75rem;
+	border-radius: .25rem;
+	box-shadow: 10px 5px 10px 0 rgba(0,0,0,.1);
+	padding-bottom: 50px;
+	opacity: 0;
+	
+}
+
+.detailsScroll {
+	width: 150vh;
+	height: 100%;
+}
+.detailsScroll-enter {
+	opacity: 0;
+	height: 40vh;
+	overflow: hidden;
+  }
+  .detailsScroll-enter-active {
+	opacity: 0;
+	height: auto;
+	height: 40vh; 
+	transition:  height opacity 100ms ease-in; ;
+  }
+
+  .detailsScroll-enter-done {
+	opacity: 1;
+	height: 40vh;
+	
+
+	;
+  }
+  .detailsScroll-exit {
+	max-height: 100%;
+	-webkit-transition: max-height 100ms ease; 
+
+  }
+  .detailsScroll-exit-active {
+	overflow: hidden;
+	max-height: 100%;
+  }
+
+  .detailsScroll-exit-done {
+	height: 100%;
+  } 
+
+
+
+
+.collapsibleDetailsBtn {
+	font-size: 1.3em;
+	font-weight: 600;
+	width: 100%;
+	height: 3.2rem;
+	text-align: left;
+	border-right: none;
+	border-left: none;
+	border-width: 1px;
+	background: none;
+}
+
+li {
+	padding: 11px;
 }
 
 
-.mayAlsoLikeTilesWrap {
+.mayAlsoLikeWrap {
+	height: 10rem;
+	margin-top: 100px;
+}
+
+.mayAlsoLikeTile {
 	border-style: solid;
 	border-color: black;
-	display: flex;
 }
-/* 
-* {
-    outline: 1px solid red !important;
-} */
-/* 
+
 .footer {
-	align-self: flex-end;
-} */
+	margin-top: auto;
+	padding-top: 1rem;
+	
+}
