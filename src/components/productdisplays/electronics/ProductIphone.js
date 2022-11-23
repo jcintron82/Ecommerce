@@ -1,9 +1,7 @@
 import Header from "../../header.js";
 import Button from "../../buttons.js";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ProductTiles } from "../../productdisplays/producttiles.js";
-import { arr, productFloat } from "../../productdisplays/producttilewrap.js";
 import { userCartArr } from '../../cartPage/ParsedCart.js';
 import iphonePic from '../../../images/electronics/iphone.avif'
 

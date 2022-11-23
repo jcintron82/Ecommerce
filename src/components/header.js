@@ -22,7 +22,7 @@ export function Header() {
 		<div className='logoWrap'> <HomeIcon style={{width: '27px'}} onClick={homeClick} />
 		</div>
 		<div className='logoWrap' >Ascension</div>
-		<div className='cartLogoWrap'> <Cart style={{width: '27px'}} onClick={cartClick} /> </div>
+		<div className='cartLogoWrap'> <Cart fill='white' style={{width: '27px'}} onClick={cartClick} /> </div>
 		
 
 		</div>

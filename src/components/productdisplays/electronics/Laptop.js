@@ -41,7 +41,6 @@ const laptop = {
 export function Laptop() {
   const [qty, setQty] = useState(laptop.orderQty);
   const [open, setOpen] = useState(false);
-  const [currentQty, setCurrentQty] = useState(1);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
@@ -67,7 +66,7 @@ export function Laptop() {
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
 
-    
+
     if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
@@ -76,7 +75,6 @@ export function Laptop() {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       userCartArr.push(product);
-      setCurrentQty();
       console.log(product);
     }
   };
@@ -95,7 +93,7 @@ export function Laptop() {
       <div className="imagesAndDescFlexWrap">
         <div className="img">
           <CSSTransition in={isEnter} timeout={1500} classNames="imageFadeIn">
-            <img className="imageFadeIn" src={pic2}></img>
+            <img className="imageFadeIn" src={pic2} alt='A macbook pro 13-3inch'></img>
           </CSSTransition>
         </div>
         <div className="seeMoreWrap">

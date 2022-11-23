@@ -20,6 +20,7 @@ flex-direction: column;}
 	font-weight: bold;
 	max-width: 75vw;
 	align-self: center;
+	font-family: 'Roboto Serif', serif;
 }
 
 
@@ -45,10 +46,13 @@ flex-direction: column;}
 .priceWrap {
 	padding: 0 .5rem .5rem; 
 	font-size: .95em;
+	font-weight: light;
+	font-family: 'Roboto Flex', sans-serif;
 }
 
 .savedPriceWrap {
 font-size: .8em;
+font-family: 'Roboto Flex', sans-serif;
 
 }
 .strikedPrice {
@@ -145,6 +149,8 @@ font-size: .8em;
 	justify-content: center;
 	background-color: transparent;
 	border-style: none;
+	font-family: 'Roboto Serif', serif;
+	font-size: .8em;
 }
 
 .addToCartBtnWrap {
@@ -246,6 +252,9 @@ li {
 	padding: 11px;
 }
 
+ul {
+	list-style-type: none;
+}
 
 .mayAlsoLikeWrap {
 	height: 10rem;
