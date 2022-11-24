@@ -2,6 +2,10 @@ import { Header } from "../../header.js";
 import { ProductTiles } from "../producttiles.js";
 import { useNavigate } from "react-router-dom";
 import iphonePic from "../../../images/electronics/iphone.avif";
+import laptopMain from "../../../images/electronics/laptop/laptopMain.avif";
+import airpodsMain from "../../../images/electronics/airpods/airpodsMain.avif";
+import headphonesMain from "../../../images/electronics/sonyHeadphones/headphonesMain.avif";
+
 
 const arr = [];
 
@@ -19,7 +23,7 @@ const productLaptop = {
   name: "Dell Laptop",
   price: 250,
   description: "A Dell Laptop",
-  image1: iphone,
+  image1: laptopMain,
   stockQty: 10,
   orderQty: 0,
   orderTotal: 0,
@@ -40,12 +44,40 @@ export function ElectronicsWrapper() {
       <div className="productsWrap">
         <ProductTiles
           onClick={(e) => onClick("iphone")}
-          className="productTiles"
-          img={iphone.image1}
+          className="topTwoTiles"
+          img={iphonePic}
           name={iphone.name}
           description={iphone.description}
         />
         <ProductTiles
+          onClick={(e) => onClick("laptop")}
+          className="topTwoTiles"
+          img={productLaptop.image1}
+          name={productLaptop.name}
+          description={productLaptop.description}
+        />
+         <ProductTiles
+          onClick={(e) => onClick("laptop")}
+          className="productTiles"
+          img={productLaptop.image1}
+          name={productLaptop.name}
+          description={productLaptop.description}
+        />
+         <ProductTiles
+          onClick={(e) => onClick("headphones")}
+          className="productTiles"
+          img={headphonesMain}
+          name={productLaptop.name}
+          description={productLaptop.description}
+        />
+         <ProductTiles
+          onClick={(e) => onClick("laptop")}
+          className="productTiles"
+          img={airpodsMain}
+          name={productLaptop.name}
+          description={productLaptop.description}
+        />
+         <ProductTiles
           onClick={(e) => onClick("laptop")}
           className="productTiles"
           img={productLaptop.image1}

@@ -1,29 +1,70 @@
+
+
 .productsWrap {
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: row wrap;
 	border-style: solid;
 	border-color: black;
+	width: 100%;
+	min-height: 1;
+	justify-content: center;
+	justify-content: space-evenly;
 }
 .productTiles {
 	border-style: solid;
 	border-color: black;
 	display: flex;
-	width: 90%;
-	min-height: 30vh;
-	margin: 5vw;
+	width: 20%;
+	height: 8rem;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 1.5rem;
+	margin-bottom: 2rem;
+	border-radius: 10px;
+}
+.topTwoTiles {
+	border-style: solid;
+	border-color: black;
+	display: flex;
+	width: 20%;
+	height: 8rem;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem;
+	margin: 4.5rem 0 2rem;
+	border-radius: 10px;
 }
 .imgWrap {
 	display: flex;
 	justify-content: center;
+	padding-top: 2rem;
+	width: 5rem;
+	height: 5rem;
 }
+
+.nameWrap {
+	font-size: .8em;
+	display: flex;
+	padding: .25rem;
+	justify-content: center;
+}
+.descriptionWrap {
+	font-size: .8em;
+	display: flex;
+	width: 10rem;
+	justify-content: center;
+	padding: .25rem;
+}
+
+
 .productTilesImage {
-	height: 100%;
-	width: 80%;
+	height: 5rem;
+	width: 5rem;
 	border-style: solid;
 	border-color: black;
+	margin-bottom: .55rem;
 }
 /** {
 	background: #000 !important;
@@ -31,3 +72,11 @@
 	outline: solid #f00 1px !important;
 }
 */
+
+
+@media (min-width:500px) {
+	.imgWrap {
+		width: 10rem;
+	height: 10rem;
+	}
+}

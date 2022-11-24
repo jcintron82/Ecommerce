@@ -1,5 +1,3 @@
-import { Button } from "../buttons";
-
 export function ProductTiles({ onClick, className, img, name, description }) {
   return (
     <div className={className} onClick={onClick}>
@@ -11,8 +9,8 @@ export function ProductTiles({ onClick, className, img, name, description }) {
           alt="Your selected product"
         ></img>
       </div>
-      <div>{name}</div>
-      <div>{description}</div>
+      <div className="nameWrap">{name}</div>
+      <div className="descriptionWrap">{description}</div>
     </div>
   );
 }

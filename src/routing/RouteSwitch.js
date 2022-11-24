@@ -6,7 +6,7 @@ import { UserCart }from "../components/cartPage/UserCart.js";
 import { ElectronicsWrapper }from "../components/productdisplays/electronics/ElectronicsWrapper.js";
 import { ProductIphone } from '../components/productdisplays/electronics/ProductIphone.js';
 import { Laptop } from '../components/productdisplays/electronics/Laptop.js';
-
+import { Headphones } from '../components/productdisplays/electronics/Headphones.js';
 
 //Home goods wrapper and item(s) imports
 import { HomeGoodsWrapper } from '../components/productdisplays/homeGoods/homeGoodsWrapper.js';
@@ -27,6 +27,7 @@ const RouteSwitch = () => {
         <Route path='/electronics' element={<ElectronicsWrapper />} />
         <Route path='/iphone' element={<ProductIphone  />} />
         <Route path='/laptop' element={<Laptop  />} />
+        <Route path='/headphones' element={<Headphones  />} />
 
         <Route path='/homegoods' element={<HomeGoodsWrapper  />} />
       </Routes>
