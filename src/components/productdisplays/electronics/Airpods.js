@@ -1,13 +1,13 @@
 import Header from "../../header.js";
 import Footer from "../../Footer.js";
 import Button from "../../buttons.js";
-import {  useState } from "react";
+import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import headphones from "../../../images/electronics/sonyHeadphones/headphones.png";
-import headphonesFront from "../../../images/electronics/sonyHeadphones/headphonesFront.png";
-import headphonesSide from "../../../images/electronics/sonyHeadphones/headphonesSide.png";
-import guySmilingWithHeadphones from "../../../images/electronics/sonyHeadphones/guySmilingWithHeadphones.png";
+import airpods from "../../../images/electronics/airpods/airpods.jpg";
+import airpodsIn from "../../../images/electronics/airpods/airpodsIn.jpg";
+import airpodsOut from "../../../images/electronics/airpods/airpodsOut.jpg";
+import airpodsSide from "../../../images/electronics/airpods/airpodsSide.jpg";
 
 const seeMoreSVG = (
   <svg
@@ -25,18 +25,24 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [headphones, headphonesFront, headphonesSide, guySmilingWithHeadphones];
+const imageGallery = [
+  airpods,
+  airpodsIn,
+  airpodsOut,
+  airpodsSide,
+];
 
 const product = {
-  name: "Sony WH-1000XM5 Wireless Industry Leading Noise Cancelling Headphones (Black)",
-  price: 369,
-  image1: headphones,
+  name: "Apple AirPods Pro (2nd Generation) ",
+  price: 240,
+  image1: airpods,
   stockQty: 10,
   orderQty: 0,
   orderTotal: 0,
+ 
 };
 
-export function Headphones() {
+export function Airpods() {
   const [qty, setQty] = useState(product.orderQty);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
@@ -66,7 +72,7 @@ export function Headphones() {
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
     setIsLoading(!isLoading);
- 
+
     if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
@@ -91,7 +97,7 @@ export function Headphones() {
             <div className="pricesWrapParent">
               <div className="priceWrap">${product.price}.00</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice">$399.00</strike> Save $30.00
+                <strike className="strikedPrice"></strike>
               </div>
             </div>
           </div>
@@ -107,7 +113,7 @@ export function Headphones() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A pair of Sony headphones, model WH-1000XM5"
+                  alt="A pair of apple airpods second generation"
                 ></img>
               </CSSTransition>
             </div>
@@ -132,7 +138,7 @@ export function Headphones() {
                 <option value="0"></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
-                <option value="4">3</option>
+                <option value="3">3</option>
                 {" "}
               </select>{" "}
               <Button
@@ -154,13 +160,19 @@ export function Headphones() {
           {open ? (
             <ul className="detailsBoxOne">
               <li>
-              Up to 30-hour battery life with quick charging (3 min charge for 3 hours of playback)
+              AirPods Pro (2nd generation) deliver an even more effortless experience
+               than the original model. Touch control lets you manage playback 
+               functions from the stem and adjust volume with a light swipe up or 
+               down.
               </li>
-              <li>Industry-leading noise cancellation optimized to you</li>
-              <li>Crystal clear hands-free calling</li>
-              <li>Magnificent Sound, engineered to perfection</li>
-              <li>For everyday convenience, just Speak-to-Chat and 
-                Quick Attention mode stop your music and let in ambient sound</li>
+              <li>Up to 6 hours of listening time on a single charge
+                 (up to 5.5 hours with Personalized Spatial Audio and Head Tracking enabled).</li>
+              <li>Up to 4.5 hours of talk time with a single charge.</li>
+              <li>Active Noise Cancellation now cancels twice as much unwanted noise.</li>
+              <li>
+              The upgraded H2 chip powers smarter noise cancellation and three-dimensional sound. Adaptive EQ tunes music to your ears in real
+               time to deliver crisp, clean high notes and deep, rich bass in stunning clarity.
+              </li>
             </ul>
           ) : (
             <div></div>
@@ -176,4 +188,4 @@ export function Headphones() {
   );
 }
 
-export default Headphones;
+export default Airpods;

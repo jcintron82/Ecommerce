@@ -5,29 +5,12 @@ import iphonePic from "../../../images/electronics/iphone.avif";
 import laptopMain from "../../../images/electronics/laptop/laptopMain.avif";
 import airpodsMain from "../../../images/electronics/airpods/airpodsMain.avif";
 import headphonesMain from "../../../images/electronics/sonyHeadphones/headphonesMain.avif";
+import xboxMain from "../../../images/electronics/xboxMain.avif";
+import androidMain from "../../../images/electronics/android/androidMain.avif";
 
 
 const arr = [];
 
-const iphone = {
-  name: "IPhone 12",
-  price: 1000,
-  description: "An IPhone 12",
-  image1: iphonePic,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
-
-const productLaptop = {
-  name: "Dell Laptop",
-  price: 250,
-  description: "A Dell Laptop",
-  image1: laptopMain,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
 
 export function ElectronicsWrapper() {
   const navigate = useNavigate();
@@ -46,43 +29,39 @@ export function ElectronicsWrapper() {
           onClick={(e) => onClick("iphone")}
           className="topTwoTiles"
           img={iphonePic}
-          name={iphone.name}
-          description={iphone.description}
+          name='Apple Iphone'
+         
         />
         <ProductTiles
           onClick={(e) => onClick("laptop")}
           className="topTwoTiles"
-          img={productLaptop.image1}
-          name={productLaptop.name}
-          description={productLaptop.description}
+          img={laptopMain}
+          name='MacBook Pro'
+          
         />
          <ProductTiles
-          onClick={(e) => onClick("laptop")}
+          onClick={(e) => onClick("android")}
           className="productTiles"
-          img={productLaptop.image1}
-          name={productLaptop.name}
-          description={productLaptop.description}
+          img={androidMain}
+          name='Macnook Pro'
         />
          <ProductTiles
           onClick={(e) => onClick("headphones")}
           className="productTiles"
           img={headphonesMain}
-          name={productLaptop.name}
-          description={productLaptop.description}
+          name='Sony Headphones'
         />
          <ProductTiles
-          onClick={(e) => onClick("laptop")}
+          onClick={(e) => onClick("airpods")}
           className="productTiles"
           img={airpodsMain}
-          name={productLaptop.name}
-          description={productLaptop.description}
+          name='Apple Airpods (2nd Gen)'
         />
          <ProductTiles
-          onClick={(e) => onClick("laptop")}
+          onClick={(e) => onClick("xbox")}
           className="productTiles"
-          img={productLaptop.image1}
-          name={productLaptop.name}
-          description={productLaptop.description}
+          img={xboxMain}
+          name='Xbox One'
         />
       </div>
     </div>

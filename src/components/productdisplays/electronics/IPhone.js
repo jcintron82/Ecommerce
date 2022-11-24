@@ -1,13 +1,13 @@
 import Header from "../../header.js";
 import Footer from "../../Footer.js";
 import Button from "../../buttons.js";
-import {  useState } from "react";
+import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import headphones from "../../../images/electronics/sonyHeadphones/headphones.png";
-import headphonesFront from "../../../images/electronics/sonyHeadphones/headphonesFront.png";
-import headphonesSide from "../../../images/electronics/sonyHeadphones/headphonesSide.png";
-import guySmilingWithHeadphones from "../../../images/electronics/sonyHeadphones/guySmilingWithHeadphones.png";
+import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
+import iphoneTwo from "../../../images/electronics/iphone/iphoneTwo.jpg";
+import iphone3 from "../../../images/electronics/iphone/iphone3.jpg";
+import iphoneFour from "../../../images/electronics/iphone/iphoneFour.jpg";
 
 const seeMoreSVG = (
   <svg
@@ -25,18 +25,18 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [headphones, headphonesFront, headphonesSide, guySmilingWithHeadphones];
+const imageGallery = [iphoneOne, iphoneTwo, iphone3, iphoneFour];
 
 const product = {
-  name: "Sony WH-1000XM5 Wireless Industry Leading Noise Cancelling Headphones (Black)",
-  price: 369,
-  image1: headphones,
+  name: "Apple Iphone 13 Pro 5G 128GB - Graphite (Sprint)",
+  price: 710,
+  image1: iphoneOne,
   stockQty: 10,
   orderQty: 0,
   orderTotal: 0,
 };
 
-export function Headphones() {
+export function IPhone() {
   const [qty, setQty] = useState(product.orderQty);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
@@ -66,7 +66,7 @@ export function Headphones() {
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
     setIsLoading(!isLoading);
- 
+
     if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
@@ -91,7 +91,7 @@ export function Headphones() {
             <div className="pricesWrapParent">
               <div className="priceWrap">${product.price}.00</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice">$399.00</strike> Save $30.00
+                <strike className="strikedPrice"></strike>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ export function Headphones() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A pair of Sony headphones, model WH-1000XM5"
+                  alt="An apple iphone 13 pro"
                 ></img>
               </CSSTransition>
             </div>
@@ -132,8 +132,7 @@ export function Headphones() {
                 <option value="0"></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
-                <option value="4">3</option>
-                {" "}
+                <option value="3">3</option>{" "}
               </select>{" "}
               <Button
                 text="Add To Cart"
@@ -154,13 +153,22 @@ export function Headphones() {
           {open ? (
             <ul className="detailsBoxOne">
               <li>
-              Up to 30-hour battery life with quick charging (3 min charge for 3 hours of playback)
+                {" "}
+                IPhone 13 Pro. The biggest Pro camera system upgrade ever. Super
+                Retina XDR display with ProMotion for a faster, more responsive
+                feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable
+                design and a huge leap in battery life.
               </li>
-              <li>Industry-leading noise cancellation optimized to you</li>
-              <li>Crystal clear hands-free calling</li>
-              <li>Magnificent Sound, engineered to perfection</li>
-              <li>For everyday convenience, just Speak-to-Chat and 
-                Quick Attention mode stop your music and let in ambient sound</li>
+              <li>
+                6.1-inch Super Retina XDR display with ProMotion for a faster,
+                more responsive feel.
+              </li>
+              <li>
+                12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR
+                recording.
+              </li>
+              <li>Up to 22 hours of video playback.</li>
+              <li>A15 Bionic chip for lightning-fast performance.</li>
             </ul>
           ) : (
             <div></div>
@@ -176,4 +184,4 @@ export function Headphones() {
   );
 }
 
-export default Headphones;
+export default IPhone;

@@ -1,13 +1,13 @@
 import Header from "../../header.js";
 import Footer from "../../Footer.js";
 import Button from "../../buttons.js";
-import {  useState } from "react";
+import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import headphones from "../../../images/electronics/sonyHeadphones/headphones.png";
-import headphonesFront from "../../../images/electronics/sonyHeadphones/headphonesFront.png";
-import headphonesSide from "../../../images/electronics/sonyHeadphones/headphonesSide.png";
-import guySmilingWithHeadphones from "../../../images/electronics/sonyHeadphones/guySmilingWithHeadphones.png";
+import xboxSide from "../../../images/electronics/xbox/xboxSide.jpg";
+import xboxBox from "../../../images/electronics/xbox/xboxBox.jpg";
+import xboxFront from "../../../images/electronics/xbox/xboxFront.jpg";
+import xboxController from "../../../images/electronics/xbox/xboxController.jpg";
 
 const seeMoreSVG = (
   <svg
@@ -25,18 +25,18 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [headphones, headphonesFront, headphonesSide, guySmilingWithHeadphones];
+const imageGallery = [xboxSide, xboxFront, xboxBox, xboxController];
 
 const product = {
-  name: "Sony WH-1000XM5 Wireless Industry Leading Noise Cancelling Headphones (Black)",
-  price: 369,
-  image1: headphones,
+  name: "Microsoft Xbox Series X 1TB Console - Black",
+  price: 499,
+  image1: xboxSide,
   stockQty: 10,
   orderQty: 0,
   orderTotal: 0,
 };
 
-export function Headphones() {
+export function Xbox() {
   const [qty, setQty] = useState(product.orderQty);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
@@ -66,7 +66,7 @@ export function Headphones() {
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
     setIsLoading(!isLoading);
- 
+
     if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
@@ -91,7 +91,7 @@ export function Headphones() {
             <div className="pricesWrapParent">
               <div className="priceWrap">${product.price}.00</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice">$399.00</strike> Save $30.00
+                <strike className="strikedPrice"></strike>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ export function Headphones() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A pair of Sony headphones, model WH-1000XM5"
+                  alt="An xbox series x console"
                 ></img>
               </CSSTransition>
             </div>
@@ -132,8 +132,7 @@ export function Headphones() {
                 <option value="0"></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
-                <option value="4">3</option>
-                {" "}
+                <option value="3">3</option>{" "}
               </select>{" "}
               <Button
                 text="Add To Cart"
@@ -154,13 +153,34 @@ export function Headphones() {
           {open ? (
             <ul className="detailsBoxOne">
               <li>
-              Up to 30-hour battery life with quick charging (3 min charge for 3 hours of playback)
+                {" "}
+                Xbox Series X, the fastest, most powerful Xbox ever. Explore
+                rich new worlds with 12 teraflops of raw graphic processing
+                power, DirectX ray tracing, a custom SSD, and 4K gaming.
               </li>
-              <li>Industry-leading noise cancellation optimized to you</li>
-              <li>Crystal clear hands-free calling</li>
-              <li>Magnificent Sound, engineered to perfection</li>
-              <li>For everyday convenience, just Speak-to-Chat and 
-                Quick Attention mode stop your music and let in ambient sound</li>
+              <li>
+                Enjoy digital games from four generations of Xbox, with hundreds
+                of optimized titles that look and play better than ever.
+              </li>
+              <li>
+                Minimize load times and increase frame rates with a custom-built
+                NVMe SSD, which enables larger, more robust games to operate at
+                their full capacity. Bring your games and movies to life with
+                the rich, dynamic sound environments at a high quality.
+              </li>
+              <li>
+                {" "}
+                Explore rich new worlds with 12 teraflops of raw graphic
+                processing power, DirectX ray tracing, a custom SSD, and 4K
+                gaming.
+              </li>
+              <li>
+                When you add Xbox Game Pass Ultimate (membership sold separately
+                or included when you choose Xbox All Access), you get an instant
+                library of 100+ high-quality games, including day one releases
+                from Xbox Game Studios like Halo Infinite, Forza Horizon 5, and
+                Microsoft Flight Simulator.
+              </li>
             </ul>
           ) : (
             <div></div>
@@ -176,4 +196,4 @@ export function Headphones() {
   );
 }
 
-export default Headphones;
+export default Xbox;
