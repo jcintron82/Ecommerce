@@ -8,9 +8,7 @@ import headphonesOne from "../../../images/electronics/sonyHeadphones/headphones
 import xboxMain from "../../../images/electronics/xbox/xboxMain.jpg";
 import androidBoth from "../../../images/electronics/android/androidBoth.jpg";
 
-
 const arr = [];
-
 
 export function ElectronicsWrapper() {
   const navigate = useNavigate();
@@ -29,39 +27,37 @@ export function ElectronicsWrapper() {
           onClick={(e) => onClick("iphone")}
           className="topTile"
           img={iphoneOne}
-          name='Apple Iphone'
-         
+          name="Apple Iphone"
         />
         <ProductTiles
           onClick={(e) => onClick("laptop")}
           className="tileTwo"
           img={laptopMain}
-          name='MacBook Pro'
-          
+          name="MacBook Pro"
         />
-         <ProductTiles
+        <ProductTiles
           onClick={(e) => onClick("android")}
           className="tileThree"
           img={androidBoth}
-          name='Macnook Pro'
+          name="Macnook Pro"
         />
-         <ProductTiles
+        <ProductTiles
           onClick={(e) => onClick("headphones")}
           className="tileFour"
           img={headphonesOne}
-          name='Sony Headphones'
+          name="Sony Headphones"
         />
-         <ProductTiles
+        <ProductTiles
           onClick={(e) => onClick("airpods")}
           className="tileFive"
           img={airpodsOut}
-          name='Apple Airpods'
+          name="Apple Airpods"
         />
-         <ProductTiles
+        <ProductTiles
           onClick={(e) => onClick("xbox")}
           className="tileSix"
           img={xboxMain}
-          name='Xbox One'
+          name="Xbox One"
         />
       </div>
     </div>
