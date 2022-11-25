@@ -10,7 +10,6 @@ export function ProductTiles({ onClick, className, img, name, description }) {
         ></img>
       </div>
       <div className="nameWrap">{name}</div>
-      <div className="descriptionWrap">{description}</div>
     </div>
   );
 }

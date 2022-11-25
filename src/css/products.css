@@ -5,78 +5,125 @@
 	flex-flow: row wrap;
 	border-style: solid;
 	border-color: black;
-	width: 100%;
-	min-height: 1;
 	justify-content: center;
-	justify-content: space-evenly;
+	height: 100%;
+	
 }
 .productTiles {
 	border-style: solid;
 	border-color: black;
 	display: flex;
-	width: 20%;
-	height: 8rem;
+	width: 50vw;
+	height: 40vw;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 1.5rem;
-	margin-bottom: 2rem;
+	padding: .25rem;
+	margin: 1.5rem 1rem 2rem;
 	border-radius: 10px;
 }
 .topTwoTiles {
 	border-style: solid;
 	border-color: black;
 	display: flex;
-	width: 20%;
-	height: 8rem;
+	width: 50vw;
+	height: 40vw;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 1.5rem;
-	margin: 4.5rem 0 2rem;
+	padding: .25rem;
+	margin: 1.5rem 1rem 2rem;
+	border-radius: 10px;
+}
+
+.topTile {
+	border-style: solid;
+	border-color: black;
+	display: flex;
+	width: 50vw;
+	height: 40vw;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: .25rem;
+	margin: 4.5rem 1rem 2rem;
 	border-radius: 10px;
 }
 .imgWrap {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	padding-top: 2rem;
-	width: 5rem;
-	height: 5rem;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	align-self: center;
 }
 
 .nameWrap {
 	font-size: .8em;
 	display: flex;
 	padding: .25rem;
+	width: 100%;
 	justify-content: center;
-}
-.descriptionWrap {
-	font-size: .8em;
-	display: flex;
-	width: 10rem;
-	justify-content: center;
-	padding: .25rem;
 }
 
 
 .productTilesImage {
-	height: 5rem;
-	width: 5rem;
+	height: 100%;
+	width: 100%;
 	border-style: solid;
 	border-color: black;
-	margin-bottom: .55rem;
+	border-radius: 10%;
+	
 }
-/** {
-	background: #000 !important;
-	color: #0f0 !important;
-	outline: solid #f00 1px !important;
-}
-*/
 
 
-@media (min-width:500px) {
-	.imgWrap {
-		width: 10rem;
-	height: 10rem;
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+} */
+
+@media( min-width:737px ) {
+
+
+	.productTilesImage {
+		height: 100%;
+		width: 100%;
+		border-style: solid;
+		border-color: black;
+
+	}
+	
+}
+
+@media ( min-width: 1020px) {
+
+	.productTiles {
+		width: 0;
+		height: 0;
+		min-width: 30vw;
+		min-height: 40vh;
+	}
+
+	.topTwoTiles {
+		width: 0;
+		height: 0;
+		min-width: 30vw;
+		min-height: 40vh;
 	}
 }
+
+/* @media ( min-width: 1229px ) {
+	.productTiles {
+		width: 20vw;
+		height: 20vw;
+	}
+
+	.topTwoTiles {
+		width: 20vw;
+		height: 20vw;
+		
+	}
+
+} */

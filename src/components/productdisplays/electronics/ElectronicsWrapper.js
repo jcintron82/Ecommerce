@@ -27,7 +27,7 @@ export function ElectronicsWrapper() {
       <div className="productsWrap">
         <ProductTiles
           onClick={(e) => onClick("iphone")}
-          className="topTwoTiles"
+          className="topTile"
           img={iphonePic}
           name='Apple Iphone'
          
@@ -55,7 +55,7 @@ export function ElectronicsWrapper() {
           onClick={(e) => onClick("airpods")}
           className="productTiles"
           img={airpodsMain}
-          name='Apple Airpods (2nd Gen)'
+          name='Apple Airpods'
         />
          <ProductTiles
           onClick={(e) => onClick("xbox")}
