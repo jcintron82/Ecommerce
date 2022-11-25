@@ -1,5 +1,6 @@
 export function ProductTiles({ onClick, className, img, name, description }) {
   return (
+	
     <div className={className} onClick={onClick}>
       <div className="imgWrap">
         {" "}
@@ -9,8 +10,9 @@ export function ProductTiles({ onClick, className, img, name, description }) {
           alt="Your selected product"
         ></img>
       </div>
-      <div className="nameWrap">{name}</div>
+	  <div className="nameWrap">{name}</div>
     </div>
+
   );
 }
 

@@ -1,12 +1,12 @@
 import { Header } from "../../header.js";
 import { ProductTiles } from "../producttiles.js";
 import { useNavigate } from "react-router-dom";
-import iphonePic from "../../../images/electronics/iphone.avif";
-import laptopMain from "../../../images/electronics/laptop/laptopMain.avif";
-import airpodsMain from "../../../images/electronics/airpods/airpodsMain.avif";
-import headphonesMain from "../../../images/electronics/sonyHeadphones/headphonesMain.avif";
-import xboxMain from "../../../images/electronics/xboxMain.avif";
-import androidMain from "../../../images/electronics/android/androidMain.avif";
+import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
+import laptopMain from "../../../images/electronics/laptop/macbookTop.png";
+import airpodsOut from "../../../images/electronics/airpods/airpodsOut.jpg";
+import headphonesOne from "../../../images/electronics/sonyHeadphones/headphonesFront.png";
+import xboxMain from "../../../images/electronics/xbox/xboxMain.jpg";
+import androidBoth from "../../../images/electronics/android/androidBoth.jpg";
 
 
 const arr = [];
@@ -28,38 +28,38 @@ export function ElectronicsWrapper() {
         <ProductTiles
           onClick={(e) => onClick("iphone")}
           className="topTile"
-          img={iphonePic}
+          img={iphoneOne}
           name='Apple Iphone'
          
         />
         <ProductTiles
           onClick={(e) => onClick("laptop")}
-          className="topTwoTiles"
+          className="tileTwo"
           img={laptopMain}
           name='MacBook Pro'
           
         />
          <ProductTiles
           onClick={(e) => onClick("android")}
-          className="productTiles"
-          img={androidMain}
+          className="tileThree"
+          img={androidBoth}
           name='Macnook Pro'
         />
          <ProductTiles
           onClick={(e) => onClick("headphones")}
-          className="productTiles"
-          img={headphonesMain}
+          className="tileFour"
+          img={headphonesOne}
           name='Sony Headphones'
         />
          <ProductTiles
           onClick={(e) => onClick("airpods")}
-          className="productTiles"
-          img={airpodsMain}
+          className="tileFive"
+          img={airpodsOut}
           name='Apple Airpods'
         />
          <ProductTiles
           onClick={(e) => onClick("xbox")}
-          className="productTiles"
+          className="tileSix"
           img={xboxMain}
           name='Xbox One'
         />

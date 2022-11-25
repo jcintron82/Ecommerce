@@ -3,52 +3,110 @@
 .productsWrap {
 	display: flex;
 	flex-flow: row wrap;
-	border-style: solid;
-	border-color: black;
+	align-items: center;
 	justify-content: center;
-	height: 100%;
+
 	
 }
 .productTiles {
-	border-style: solid;
-	border-color: black;
 	display: flex;
-	width: 50vw;
-	height: 40vw;
+	width: 33vw;
+	height: 40vh;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: .25rem;
-	margin: 1.5rem 1rem 2rem;
-	border-radius: 10px;
-}
-.topTwoTiles {
-	border-style: solid;
-	border-color: black;
-	display: flex;
-	width: 50vw;
-	height: 40vw;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: .25rem;
-	margin: 1.5rem 1rem 2rem;
-	border-radius: 10px;
+	padding: 1.25rem;
+	/* margin: 1.5rem 1rem 2rem; */
+	border-radius: 5px;
 }
 
 .topTile {
-	border-style: solid;
-	border-color: black;
+	border-style: none solid solid none;
+	border-width: 1px;
+	border-color: #A3A3A3;
 	display: flex;
-	width: 50vw;
-	height: 40vw;
+	width: 35vw;
+	height: 40vh;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: .25rem;
-	margin: 4.5rem 1rem 2rem;
-	border-radius: 10px;
+	padding: 1.25rem;
+	margin-top: 4.5rem;
+
 }
+
+.tileTwo {
+	border-style: none none solid none;
+	border-width: 1px;
+	border-color: #A3A3A3;
+	display: flex;
+	width: 35vw;
+	height: 40vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.25rem;
+	margin-top: 1.5rem;
+
+}
+
+.tileThree {
+	border-style: none solid solid none;
+	border-width: 1px;
+	border-color: #A3A3A3;
+	display: flex;
+	width: 35vw;
+	height: 40vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.25rem;
+
+}
+
+.tileFour {
+	border-style: none none solid none;
+	border-width: 1px;
+	border-color: #A3A3A3;
+	display: flex;
+	width: 35vw;
+	height: 40vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.25rem;
+
+}
+
+.tileFive {
+	border-style: none solid solid none;
+	border-width: 1px;
+	border-color: #A3A3A3;
+	display: flex;
+	width: 35vw;
+	height: 40vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.25rem;
+
+}
+
+.tileSix {
+	border-style: none none solid none;
+	border-width: 1px;
+	border-color: #A3A3A3;
+	display: flex;
+	width: 35vw;
+	height: 40vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.25rem;
+
+}
+
+
 .imgWrap {
 	display: flex;
 	flex-direction: column;
@@ -69,11 +127,10 @@
 
 
 .productTilesImage {
-	height: 100%;
-	width: 100%;
-	border-style: solid;
-	border-color: black;
+	height: 12rem;
+	width: 8rem;
 	border-radius: 10%;
+
 	
 }
 
@@ -82,9 +139,15 @@
     background: #000 !important;
     color: #0f0 !important;
     outline: solid #f00 1px !important;
+}  */
+
+/* @media ( min-width: 540px) {
+	.tileThree {
+		margin-top: 4.5rem;
+	}
 } */
 
-@media( min-width:737px ) {
+/* @media( min-width:737px ) {
 
 
 	.productTilesImage {
@@ -95,35 +158,32 @@
 
 	}
 	
+} */
+
+@media ( min-width: 335px) {
+	.tileTwo {
+		margin-top: 4.5rem;
+	}
 }
 
 @media ( min-width: 1020px) {
 
-	.productTiles {
-		width: 0;
-		height: 0;
-		min-width: 30vw;
-		min-height: 40vh;
-	}
-
-	.topTwoTiles {
-		width: 0;
-		height: 0;
-		min-width: 30vw;
-		min-height: 40vh;
+	.productTilesImage {
+		height: 12rem;
+		width: 15rem;
+		border-radius: 10%;
+	
+		
 	}
 }
 
-/* @media ( min-width: 1229px ) {
-	.productTiles {
-		width: 20vw;
-		height: 20vw;
-	}
-
-	.topTwoTiles {
-		width: 20vw;
-		height: 20vw;
+@media ( min-width: 1300px ) {
+	.productTilesImage {
+		height: 35vh;
+		width: 18vw;
+		border-radius: 10%;
+	
 		
 	}
 
-} */
+}

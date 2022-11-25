@@ -5,7 +5,7 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	background-color: #135267;
+	background-color: #0D3745;
 	padding-bottom: .2rem;
 	color: white;
 }
@@ -36,6 +36,3 @@
 */
 
 
-@media( min-width:737px ) {
-
-}
