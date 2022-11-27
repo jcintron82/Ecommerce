@@ -1,10 +1,11 @@
+import {Button } from './buttons.js'
 import { useState, useEffect } from 'react';
-import { CSSTransition } from "react-transition-group";
 import stock from'../images/stock.avif'
 import jarredStock from'../images/jarredStock.avif'
 
 
-const imageArr = [stock, jarredStock,stock];
+
+const imageArr = [stock, jarredStock];
 let counter = 0;
 export function IntroBlurbWrap() {
 
@@ -13,25 +14,39 @@ export function IntroBlurbWrap() {
 
 	useEffect(() => {
 		setTimeout(() => {
+			if (counter === imageArr.length - 1){
+				counter = 0;
+				setPicture(imageArr[counter])}
+			else {
 			counter++;
 			setPicture(imageArr[counter])
-			if (counter > 1){
-				counter = 0;
+
 			}
-		},30000);
+		},3000);
 	  }, );
 
+	const nextAdvertisementClick = () => {
+		counter++;
+		setPicture(imageArr[counter]);
+		console.log(counter)
+		console.log(picture)
+	}
 
 	return (
 		<div className='introBlurbWrap'>
 		
 		{newPic ? (
-
+				<div className='introBlurbWrap'>
+				<Button text='Next' className='blurbWrapBtns'/>
+			
                 <img
                   className="homePageImageRotation"
                   src={picture}
-                  alt="A pair of apple airpods second generation"
+                  alt="Advertisement"
                 ></img>
+				<Button text='Next' className='blurbWrapBtns' onClick={nextAdvertisementClick}/>
+				</div>
+			
             )
 			  : <div></div>}
 

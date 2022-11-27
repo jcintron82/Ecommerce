@@ -29,7 +29,12 @@
 
 .homePageImageRotation {
 width: 80vw;
-padding: 4rem 0;
+max-width: 70rem;
+padding: 4rem 0 2rem;
+}
+
+.blurbWrapBtns {
+	display: none;
 }
 /* 
 .homePageImageRotation-enter {
@@ -104,7 +109,7 @@ padding: 4rem 0;
 	
 }
 
-.nameClass {
+.homePageNames {
 	position: relative;
 	position: relative;
 	bottom: 11rem;
@@ -115,4 +120,39 @@ padding: 4rem 0;
   	padding-right: 20px;
 	width: 5rem;
 	opacity: .8;
+}
+
+
+
+@media ( min-width:768px) {
+	
+	.homePageProductsWrap {
+		margin-bottom: 2.5rem;
+		width: 100%;
+	}
+
+	.homePageProductTiles {
+		width: 18rem;
+		
+	}
+}
+
+@media ( min-width:1024px ) {
+	.homePageProductsWrap {
+
+		margin-bottom: 2.5rem;
+	
+		
+	}
+
+	.homePageProductTiles {
+		width: 35vw
+		
+	}
+
+	.blurbWrapBtns {
+		display: block;
+		height: 50%;
+		align-self: center;
+	}
 }
