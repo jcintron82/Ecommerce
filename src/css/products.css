@@ -4,17 +4,6 @@
 	align-items: center;
 	justify-content: center;
 }
-.productTiles {
-	display: flex;
-	width: 33vw;
-	height: 40vh;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1.25rem;
-	font-family: 'Roboto Serif', serif;
-	border-radius: 5px;
-}
 .topTile {
 	border-style: none solid solid none;
 	border-width: 1px;
@@ -134,8 +123,6 @@
 		padding-top: 1rem;
 		width: 100%;
 		justify-content: center;
-   }
-	.tileThree, .tileFour {
    }
 	.tileFive, .tileSix {
 		padding-bottom: 5rem;

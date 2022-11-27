@@ -28,36 +28,55 @@ export function ElectronicsWrapper() {
           className="topTile"
           img={iphoneOne}
           name="Apple Iphone"
+          imgWrap='imgWrap'
+          imgClass='productTilesImage'
+          nameClass='nameWrap'
         />
         <ProductTiles
           onClick={(e) => onClick("laptop")}
           className="tileTwo"
           img={laptopMain}
           name="MacBook Pro"
+          imgWrap='imgWrap'
+          imgClass='productTilesImage'
+          nameClass='nameWrap'
         />
         <ProductTiles
           onClick={(e) => onClick("android")}
           className="tileThree"
           img={androidBoth}
           name="Macnook Pro"
+          imgWrap='imgWrap'
+          imgClass='productTilesImage'
+          nameClass='nameWrap'
+
         />
         <ProductTiles
           onClick={(e) => onClick("headphones")}
           className="tileFour"
           img={headphonesOne}
           name="Sony Headphones"
+          imgWrap='imgWrap'
+          imgClass='productTilesImage'
+          nameClass='nameWrap'
         />
         <ProductTiles
           onClick={(e) => onClick("airpods")}
           className="tileFive"
           img={airpodsOut}
           name="Apple Airpods"
+          imgWrap='imgWrap'
+          imgClass='productTilesImage'
+          nameClass='nameWrap'
         />
         <ProductTiles
           onClick={(e) => onClick("xbox")}
           className="tileSix"
           img={xboxMain}
           name="Xbox One"
+          imgWrap='imgWrap'
+          imgClass='productTilesImage'
+          nameClass='nameWrap'
         />
       </div>
     </div>

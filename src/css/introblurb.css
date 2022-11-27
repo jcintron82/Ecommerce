@@ -1,24 +1,118 @@
+
+
 .introBlurbWrap {
 	border-style: solid;
 	border-color: black;
 	height: 75vh;
+	width: 100vw;
 	display: flex;
+	justify-content: center;
+	
 
 }
 
 
 .introImageWrap {
-	min-width: 50vw;
+	width: 50vw;
 	border-style: solid;
 	border-color: black;
 }
 
 .introImage{
-	width: 100%;
-	height: 100%;
+	width: 10vw;
 }
 
 .introBlurb {
 	border-style: solid;
 	border-color: black;
+}
+
+.homePageImageRotation {
+width: 80vw;
+padding: 4rem 0;
+}
+/* 
+.homePageImageRotation-enter {
+	opacity: 0.01;
+	width: 100%;
+	height: 100%;
+  }
+  .homePageImageRotation-enter-active {
+	opacity: 1;
+	transition: opacity 420ms ease-in;
+	width: 100%;
+	height: 100%;
+  }
+
+  .homePageImageRotation-enter-done {
+	opacity: 1;
+	width: 100%;
+	height: 100%;
+	
+  }
+  .homePageImageRotation-exit {
+	opacity: 0.01;
+	width: 100%;
+	height: 100%;
+
+  }
+  .homePageImageRotation-exit-active {
+	opacity: 1;
+	transition: opacity 420ms ease-out;
+	width: 100%;
+	height: 100%;
+  }
+
+  .homePageImageRotation-exit-done {
+	opacity: 1;
+	width: 100%;
+	height: 100%;
+  }  */
+
+/* * {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+} */
+
+.homePageProductTiles {
+	margin: .2rem;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.homePageProductsWrap {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 101vw;
+	
+}
+
+
+.homePageProducttileImages {
+	width: 100%;
+	height: 11.5rem;
+	display: block;
+}
+
+.homePageImageWrap {
+	width: 100%;
+	height: 11.5rem;
+
+
+	
+}
+
+.nameClass {
+	position: relative;
+	position: relative;
+	bottom: 11rem;
+ 	left: .5rem;
+ 	background-color: darkgray;
+	color: black;
+	padding-left: 20px;
+  	padding-right: 20px;
+	width: 5rem;
+	opacity: .8;
 }

@@ -11,29 +11,6 @@ export { arr, productFloat}
  const productFloat = {};
 
 
-
-const electronics = {
-  name: "Stock",
-  price: 106,
-  description: "A good chicken stock",
-  image1: mainElectronics,
-  stockQty: 10,
-  orderQty:0,
-  orderTotal:0,
-  
-};
-
-const homeGoods = {
-  name: "Jarred Stock",
-  price: 1000,
-  description: "A jar of Fine Stock",
-  image1: homeGoodsMain,
-  stockQty:10,
-  orderQty:0,
-  orderTotal:0,
-
-};
-
 export function ProductTileWrap() {
   const navigate = useNavigate();
 
@@ -50,28 +27,47 @@ export function ProductTileWrap() {
   };
 
   return (
-    <div className="productsWrap">
+    <div className="homePageProductsWrap">
+  
       <ProductTiles
         onClick={(e) => onClick('electronics')}
-        className="productTiles"
-        img={electronics.image1}
-        name={electronics.name}
-        description={electronics.description}
+        className="homePageProductTiles"
+        img={mainElectronics}
+        name='Electronics'
+        imgWrap='homePageImageWrap'
+        imgClass='homePageProducttileImages'
+        nameClass='homePageNames'
       />
+
 
       <ProductTiles
         onClick={(e) => onClick('homeGoods')}
-        className="productTiles"
-        img={homeGoods.image1}
-        name={homeGoods.name}
-        description={homeGoods.description}
+        className="homePageProductTiles"
+        img={homeGoodsMain}
+        name='Home Goods'
+        imgWrap='homePageImageWrap'
+        imgClass='homePageProducttileImages'
+        nameClass='homePageNames'
+      />
+      <ProductTiles
+        onClick={(e) => onClick('homeGoods')}
+        className="homePageProductTiles"
+        img={homeGoodsMain}
+        name='Footwear'
+        imgWrap='homePageImageWrap'
+        imgClass='homePageProducttileImages'
+        nameClass='homePageNames'
+      />
+      <ProductTiles
+        onClick={(e) => onClick('homeGoods')}
+        className="homePageProductTiles"
+        img={homeGoodsMain}
+        name='Clothing'
+        imgWrap='homePageImageWrap'
+        imgClass='homePageProducttileImages'
+        nameClass='homePageNames'
       />
 
-      <ProductTiles onClick={onClick} className="productTiles" />
-      <ProductTiles onClick={onClick} className="productTiles" />
-      <ProductTiles onClick={onClick} className="productTiles" />
-      <ProductTiles onClick={onClick} className="productTiles" />
-      <ProductTiles onClick={onClick} className="productTiles" />
     </div>
   );
 }
