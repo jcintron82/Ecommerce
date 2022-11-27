@@ -11,8 +11,10 @@ function App() {
   return (
     <div>
     <Header />
+    <div className='blurbAndTileWrap'>
     <IntroBlurbWrap />
     <ProductTileWrap />
+    </div>
     </div>
    );
 }

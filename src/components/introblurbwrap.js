@@ -1,18 +1,12 @@
 import {Button } from './buttons.js'
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom'
-import stock from'../images/stock.avif'
-import jarredStock from'../images/jarredStock.avif'
-import iphone from'../images/electronics/iphone.avif'
+import macbookAd from'../images/ads/macbookAd.avif'
+import headphonesAd from'../images/ads/headphonesAd.avif'
+import sneakersAd from'../images/ads/x.avif'
 	
-const imageArr = [stock, jarredStock, iphone];
-const linkAdArray = ['/homeGoods', '/electronics', '/homeGoods']
-
-const x = [
-	{
-		img: stock,
-		
-	}]
+const imageArr = [sneakersAd, headphonesAd, sneakersAd];
+const linkAdArray = ['/laptop', '/electronics', '/homeGoods'];
 let counter = 0;
 
 export function IntroBlurbWrap() {
@@ -21,8 +15,6 @@ export function IntroBlurbWrap() {
 	const [newPic, setNewPic] = useState(true);
 	const [adCycle, setAdCycle] = useState(linkAdArray[counter])
 		
-
-	const advertisementClick = '/' + adCycle;
 
 	useEffect(() => {
 		setTimeout(() => {
