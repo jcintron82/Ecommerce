@@ -1,28 +1,42 @@
 import {Button } from './buttons.js'
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 import stock from'../images/stock.avif'
 import jarredStock from'../images/jarredStock.avif'
+import iphone from'../images/electronics/iphone.avif'
+	
+const imageArr = [stock, jarredStock, iphone];
+const linkAdArray = ['/homeGoods', '/electronics', '/homeGoods']
 
-
-
-const imageArr = [stock, jarredStock];
+const x = [
+	{
+		img: stock,
+		
+	}]
 let counter = 0;
+
 export function IntroBlurbWrap() {
 
 	const [picture, setPicture] = useState(imageArr[counter]);
-	const [newPic, setNewPic] = useState(true)
+	const [newPic, setNewPic] = useState(true);
+	const [adCycle, setAdCycle] = useState(linkAdArray[counter])
+		
+
+	const advertisementClick = '/' + adCycle;
 
 	useEffect(() => {
 		setTimeout(() => {
 			if (counter === imageArr.length - 1){
 				counter = 0;
-				setPicture(imageArr[counter])}
+				setPicture(imageArr[counter])
+				setAdCycle(linkAdArray[counter])}
 			else {
 			counter++;
 			setPicture(imageArr[counter])
+			setAdCycle(linkAdArray[counter])
 
 			}
-		},3000);
+		},5000);
 	  }, );
 
 	const nextAdvertisementClick = () => {
@@ -38,12 +52,12 @@ export function IntroBlurbWrap() {
 		{newPic ? (
 				<div className='introBlurbWrap'>
 				<Button text='Next' className='blurbWrapBtns'/>
-			
+				<Link className='introBlurbWrap' to={adCycle}>
                 <img
                   className="homePageImageRotation"
                   src={picture}
                   alt="Advertisement"
-                ></img>
+                ></img></Link>
 				<Button text='Next' className='blurbWrapBtns' onClick={nextAdvertisementClick}/>
 				</div>
 			
