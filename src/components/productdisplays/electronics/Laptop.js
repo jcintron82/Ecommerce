@@ -32,7 +32,7 @@ const laptop = {
   price: 1059,
   description:
     "A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch LED-backlit display,",
-  image1: macbookFront,
+  image1: <img src={macbookFront} className='x'></img>,
   stockQty: 10,
   orderQty: 0,
   orderTotal: 0,

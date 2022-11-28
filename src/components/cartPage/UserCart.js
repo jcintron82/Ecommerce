@@ -22,8 +22,8 @@ export function UserCart() {
 	return(
 		<div>
 		<Header />
-		<h2> Your Cart </h2>
 		<div className='itemAmtAndTotal'>
+		<h1>Your Cart</h1>
 		<div> Item #s and Total</div> <Button text='Checkout' /></div>
 		
 		<div className='cartBodyWrapper'>

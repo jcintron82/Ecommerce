@@ -1,7 +1,16 @@
 import { cartDataFloat } from "./UserCart";
+import androidFront from "../../images/electronics/android/androidFront.jpg";
 export { userCartArr };
-
-let userCartArr = [];
+const x = <img src={androidFront}></img>
+let userCartArr = [ {
+  name: "Google Pixel 7 Pro 512GB (Unlocked) - Obsidian",
+  price: 979,
+  image1: <img src={androidFront} className='productImg'></img>,
+  stockQty: 10,
+  orderQty: 0,
+  orderTotal: 0,
+}
+];
 
 export function ParsedCart() {
   let totalQty = 0.0;
@@ -19,16 +28,16 @@ export function ParsedCart() {
   };
 
   return (
-    <div>
+    <div className="parsedCartMasterWrap">
+      
       {userCartArr.map((product, name) => (
         <div className="cartWrap" key={product.name}>
           <div className="userCartProductImages">
-            <div>{product.image1}</div>
+           { product.image1 }
           </div>
           <div>
             <div className="cartProductsDescriptionWrap">
               <h2 className="cartProductsName">{product.name}</h2>
-              <div>{product.description}</div>
             </div>
             <div className="cartProductsPriceQtyWrap">
               <div>{product.orderTotal}</div>

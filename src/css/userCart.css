@@ -1,4 +1,8 @@
+h1 {
+	font-size: 1.2em;
+}
 .itemAmtAndTotal {
+	padding-top: 3em;
 	border-style: solid;
 	border-color: black;
 }
@@ -13,20 +17,33 @@
 	height: 100%;
 }
 
+.parsedCartMasterWrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 .cartWrap {
-	width: 100%;
+	width: 80%;
 	margin: 1rem;
-	display: flex;;
+	display: flex;
+	flex-direction: column;
 }
 
 .userCartProductImages {
-	border-style: solid;
-	border-color: red;
+	width: 100%;
+	height: 10rem;
+	display: flex;
+	justify-content: center;
 }
-
 .cartQtyInput {
 	width: 50px;
 	text-align: center;
+}
+
+.productImg {
+	max-width: 20rem;
+	height: 100%;
+
 }
 .cartProductInfoWrap {
 	display: flex;
@@ -81,3 +98,9 @@
 	height: 100%;
 	margin-bottom: 5vh;
 }
+/* 
+* {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+} */
