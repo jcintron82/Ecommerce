@@ -11,7 +11,7 @@ import { IPhone } from '../components/productdisplays/electronics/IPhone.js';
 import { Xbox } from '../components/productdisplays/electronics/Xbox.js';
 import { Android } from '../components/productdisplays/electronics/Android.js';
 //Home goods wrapper and item(s) imports
-import { HomeGoodsWrapper } from '../components/productdisplays/homeGoods/homeGoodsWrapper.js';
+import { HomeGoodsWrapper } from '../components/productdisplays/tvAndGaming/tvAndGamingWrapper.js';
 
 
 
@@ -33,9 +33,9 @@ const RouteSwitch = () => {
         <Route path='/airpods' element={<Airpods  />} />
         <Route path='/xbox' element={<Xbox  />} />
         <Route path='/android' element={<Android  />} />
-        
-
         <Route path='/homegoods' element={<HomeGoodsWrapper  />} />
+
+  
       </Routes>
     </BrowserRouter>
   );

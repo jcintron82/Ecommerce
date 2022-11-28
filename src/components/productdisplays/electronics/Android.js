@@ -28,7 +28,7 @@ let counter = 0;
 const imageGallery = [androidFront, androidBack, androidBoth, ladyHoldingPhone];
 
 const product = {
-  name: "Google Picel 7 Pro 512GB (Unlocked) - Obsidian",
+  name: "Google Pixel 7 Pro 512GB (Unlocked) - Obsidian",
   price: 979,
   image1: androidFront,
   stockQty: 10,
@@ -37,16 +37,14 @@ const product = {
 };
 
 export function Android() {
-  const [qty, setQty] = useState(product.orderQty);
+  const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(false);
-
   const handleQtyChange = (e) => {
-    setQty(e.target.value);
-  };
+      setQty(e.target.value);
+    }
 
   const nextImageClick = () => {
     if (counter === 3) {
@@ -64,20 +62,23 @@ export function Android() {
   };
 
   const addToCartClick = (product) => {
-    const parsedInt = parseInt(qty, 10);
-    setIsLoading(!isLoading);
-
-    if (userCartArr.includes(product)) {
+    const parsedInt = parseInt(qty, 10)
+    
+    falseQtyBreak: if (qty <= 0)
+    {
+      break falseQtyBreak;
+    }
+   else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
+    
     } else {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       userCartArr.push(product);
       console.log(product);
     }
-    setIsLoading(!isLoading);
   };
 
   return (
@@ -122,18 +123,13 @@ export function Android() {
           </div>
           <div className="desktopBtnWrap">
             <div className="addToCartBtnWrap">
-              <select
+              <input
                 onChange={handleQtyChange}
-                name="qty"
                 className="cartQtyInput"
+                value={qty}
                 type="number"
-              >
-                {" "}
-                <option value="0"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>{" "}
-              </select>{" "}
+                min="1"
+              ></input>
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"
@@ -172,7 +168,7 @@ export function Android() {
               <li>Google Pixel 7 Pro runs on the Android operating system.</li>
               <li>
                 Pixel's Adaptive Battery can last over 24 hours. Turn on Extreme
-                Battery Saver, and the battery can last up to 72 hours. 
+                Battery Saver, and the battery can last up to 72 hours.
               </li>
             </ul>
           ) : (

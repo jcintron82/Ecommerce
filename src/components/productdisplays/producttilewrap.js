@@ -41,7 +41,7 @@ export function ProductTileWrap() {
 
 
       <ProductTiles
-        onClick={(e) => onClick('homeGoods')}
+        onClick={(e) => onClick('homegoods')}
         className="homePageProductTiles"
         img={homeGoodsMain}
         name='Home Goods'
