@@ -29,7 +29,7 @@ const imageGallery = [androidFront, androidBack, androidBoth, ladyHoldingPhone];
 
 const product = {
   name: "Google Pixel 7 Pro 512GB (Unlocked) - Obsidian",
-  price: 979,
+  price: 979.00,
   image1: <img src={androidFront} className='productImg'></img>,
   stockQty: 10,
   orderQty: 0,

@@ -1,31 +1,34 @@
 import { cartDataFloat } from "./UserCart";
+import { useState } from 'react';
+import { Button } from '../buttons.js';
 import androidFront from "../../images/electronics/android/androidFront.jpg";
 export { userCartArr };
-const x = <img src={androidFront}></img>
-let userCartArr = [ {
-  name: "Google Pixel 7 Pro 512GB (Unlocked) - Obsidian",
-  price: 979,
-  image1: <img src={androidFront} className='productImg'></img>,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-}
+
+let userCartArr = [ 
 ];
 
 export function ParsedCart() {
+  //Do not change these to useState - load bearing code - React will kick error
+  // component (`UserCart`) while rendering a different component (`ParsedCart`)
   let totalQty = 0.0;
-  let orderSubTotal = 0.0;
+  let orderSubTotal = 0.00;
   let orderTaxAmt = 0.0;
   let total$ = 0.0;
 
   const changeData = (product) => {
     totalQty = totalQty + product.orderQty;
-    orderSubTotal = orderSubTotal + product.orderTotal;
+    orderSubTotal = (orderSubTotal + product.orderTotal);
+    let formattedSub = orderSubTotal.toFixed(2)
     let x = orderSubTotal / 100;
-    orderTaxAmt = x * 7;
-    total$ = orderSubTotal + orderTaxAmt;
-    cartDataFloat.setData(totalQty, orderSubTotal, orderTaxAmt, total$);
+    orderTaxAmt =( x * 7).toFixed(2);
+    total$ = (parseFloat(orderSubTotal) + parseFloat(orderTaxAmt)).toFixed(2);
+    cartDataFloat.setData(totalQty, formattedSub, orderTaxAmt, total$);
   };
+
+  const handleQtyChange = (e) => {
+      console.log(e.target.value)
+
+  }
 
   return (
     <div className="parsedCartMasterWrap">
@@ -45,16 +48,14 @@ export function ParsedCart() {
                 {product.orderQty} {changeData(product)}
               </div>
               <div>
-                <select
-                  name="qty"
-                  className="cartQtyInput"
-                  type="number"
-                  placeholder={product.orderQty}
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>{" "}
-                </select>
+                <Button text='Change Qty' onClick={changeData}/>
+              <input
+                onChange={handleQtyChange}
+                className="cartQtyInput"
+                placeholder={product.orderQty}
+                type="number"
+                min="1"
+              ></input>
               </div>
             </div>
           </div>
