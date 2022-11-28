@@ -30,28 +30,24 @@ const imageGallery = [macbookFront, macbookTop, macbookSide, macbookClosed];
 const laptop = {
   name: "Refurbished 13.3-inch Apple MacBook Pro Apple M1 Chip with 9-Core CPU and 8-Core GPU",
   price: 1059,
-  description:
-    "A refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch LED-backlit display,",
-  image1: <img src={macbookFront} className='x'></img>,
+  image1: <img src={macbookFront} className='productImg'></img>,
   stockQty: 10,
   orderQty: 0,
   orderTotal: 0,
 };
 
 export function Laptop() {
-  const [qty, setQty] = useState(laptop.orderQty);
+  const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleQtyChange = (e) => {
     setQty(e.target.value);
   };
 
   const nextImageClick = () => {
-    if (counter === 3) {
+    if (counter === imageGallery.length - 1) {
       counter = 0;
       setPic2(imageGallery[counter]);
     } else {
@@ -66,20 +62,23 @@ export function Laptop() {
   };
 
   const addToCartClick = (product) => {
-    const parsedInt = parseInt(qty, 10);
-    setIsLoading(!isLoading);
- 
-    if (userCartArr.includes(product)) {
+    const parsedInt = parseInt(qty, 10)
+    
+    falseQtyBreak: if (qty <= 0)
+    {
+      break falseQtyBreak;
+    }
+   else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
+    
     } else {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       userCartArr.push(product);
       console.log(product);
     }
-    setIsLoading(!isLoading);
   };
 
   return (
@@ -124,18 +123,13 @@ export function Laptop() {
           </div>
           <div className="desktopBtnWrap">
             <div className="addToCartBtnWrap">
-              <select
+            <input
                 onChange={handleQtyChange}
-                name="qty"
                 className="cartQtyInput"
+                value={qty}
                 type="number"
-              >
-                {" "}
-                <option value="0"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>{" "}
-              </select>{" "}
+                min="1"
+              ></input>
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"

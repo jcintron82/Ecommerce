@@ -47,7 +47,7 @@ export function Android() {
     }
 
   const nextImageClick = () => {
-    if (counter === 3) {
+    if (counter === imageGallery.length - 1) {
       counter = 0;
       setPic2(imageGallery[counter]);
     } else {
@@ -108,7 +108,7 @@ export function Android() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A google picel 7 pro phone 512GB Obsidian color"
+                  alt="A google pixel 7 pro phone 512GB Obsidian color"
                 ></img>
               </CSSTransition>
             </div>

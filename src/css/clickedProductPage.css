@@ -249,19 +249,19 @@ width: 100%;
 }
 .detailsScroll-enter {
 	opacity: 0;
-	height: 40vh;
+	height: 100%;
 	overflow: hidden;
   }
   .detailsScroll-enter-active {
 	opacity: 0;
 	height: auto;
-	height: 40vh; 
+	height: 100%;
 	transition:  height opacity 800ms ease-in; 
   }
 
   .detailsScroll-enter-done {
 	opacity: 1;
-	height: 75vh;
+	height: 100%;
   }
   .detailsScroll-exit {
 	max-height: 100%;
