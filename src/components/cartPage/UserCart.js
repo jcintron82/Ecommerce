@@ -7,10 +7,10 @@ export const cartDataFloat = {};
 
 export function UserCart() {
 
-	const [totalQty, setTotalQty] = useState();
-	const [orderSubTotal, setOrderSubTotal] = useState();
-	const [orderTaxAmt, setorderTaxAmt] = useState();
-	const [orderTotal, setOrderTotal] = useState('place');
+	const [totalQty, setTotalQty] = useState(0);
+	const [orderSubTotal, setOrderSubTotal] = useState(0.00);
+	const [orderTaxAmt, setorderTaxAmt] = useState(0.00);
+	const [orderTotal, setOrderTotal] = useState(0.00);
 
 	cartDataFloat.setData = function setData(qty, subTotal, tax, total) {
 		setTotalQty(qty);
@@ -24,17 +24,20 @@ export function UserCart() {
 		<Header />
 		<div className='itemAmtAndTotal'>
 		<h1>Your Cart</h1>
-		<div> Item #s and Total</div> <Button text='Checkout' /></div>
+		<div className='topOrderSummaryWrap'>
+		<div className='topOderSummaryValues'>Items: { totalQty }</div>
+		<div className='topOderSummaryValues'>Total: ${ orderTotal }</div> </div>
+		<div className='topCheckoutBtnWrap'><Button text='Checkout' className='checkoutBtn' /></div> </div>
 		
 		<div className='cartBodyWrapper'>
 		<ParsedCart />
 		</div>
 		<div className='orderSummaryWrapper'>
-			<div>Order Summary</div>
-			<div className='itemQtyWrap'>Order Qty: { totalQty }<div>Subtotal: { orderSubTotal }</div></div>
-			<div className='salesTaxWrap'>Sales Tax 7%<div>Tax Amount: { orderTaxAmt }</div></div>
-			<div className='totalPriceWrap'>Total: { orderTotal } <div>Total $$$</div></div>
-			<Button text='Checkout' />
+			<div className='orderSummaryheader'>Order Summary</div>
+			<div className='itemQtyWrap'>Order Qty: { totalQty }<div className='summaryValues'> Subtotal: ${ orderSubTotal }</div></div>
+			<div className='salesTaxWrap'>Sales Tax 7%<div className='summaryValues'>Tax Amount: ${ orderTaxAmt }</div></div>
+			<div className='totalPriceWrap'>Total: ${ orderTotal } </div>
+			<Button text='Checkout' className='checkoutBtn' />
 		</div>
 
 		<div>

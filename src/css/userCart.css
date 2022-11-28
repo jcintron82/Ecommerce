@@ -1,15 +1,30 @@
 h1 {
 	font-size: 1.2em;
+	padding-left: .25rem;
 }
 .itemAmtAndTotal {
 	padding-top: 3em;
-	border-style: solid;
-	border-color: black;
+
 }
 
+.topOrderSummaryWrap {
+	display: flex;
+	flex-direction: column;
+	padding: .25rem;
+}
+
+.topOderSummaryValues {
+	font-size: 1em;
+	font-family: 'Lato', sans-serif;
+
+}
+
+.topCheckoutBtnWrap {
+	display: flex;
+	justify-content: flex-end;
+	width: 93.5%;
+}
 .cartBodyWrapper {
-	border-style: solid;
-	border-color: black;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -50,53 +65,99 @@ h1 {
 	flex-direction: column;
 }
 .cartProductsDescriptionWrap {
-	border-style: solid;
-	border-color: black;
+	border-style: solid none none;
+	border-color: #A3A3A3;
+	border-width: 1px;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
 	
+	
 }
 
 .cartProductsPriceQtyWrap {
-	border-style: solid;
-	border-color: black;
 	display: flex;
 	justify-content: space-between;
+    font-family: 'Lato', sans-serif;
 }
 
 
 .orderSummaryWrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	border-style: solid;
-	border-color: black;
+	border-color: #A3A3A3;
+	border-width: 1px;
+	padding: .25rem;
+	font-family: 'Lato', sans-serif;
+	min-height: 50vh;
+	margin: .75rem;
+}
+
+.summaryValues {
+	text-align: center;
+}
+.orderSummaryheader {
+	border-style: none none solid;
+	border-color: #A3A3A3;
+	border-width: 1px;
+	width: 50%;
+	margin-left: .25rem;
+	text-align: center;
 }
 
 .itemQtyWrap {
-	border-style: solid;
-	border-color: black;
+	border-style: none none solid;
+	border-color: #A3A3A3;
+	border-width: 1px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
+	padding: .8rem;
+	width: 80%;
+	align-self: center;
 }
 
 .salesTaxWrap {
-	border-style: solid;
-	border-color: black;
+	border-style: none none solid;
+	border-color: #A3A3A3;
+	border-width: 1px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
+	padding: .8rem;
+	width: 80%;
+	align-self: center;
 }
 
 .totalPriceWrap {
-	border-style: solid;
-	border-color: black;
+	border-style: none none solid;
+	border-color: #A3A3A3;
+	border-width: 1px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
+	padding: .8rem;
+	width: 80%;
+	align-self: center;
 }
 
 .cartWrap {
 	border-style: solid;
-	border-color: black;
+	border-color: #A3A3A3;
+	border-width: 1px;
 	height: 100%;
 	margin-bottom: 5vh;
+	padding: .5rem;
+}
+
+.checkoutBtn {
+	min-width: 6rem;
+	height: 5vh;
+	color: white;
+	font-size: .8em;
+	background-color: black;
+	border-radius: 5px;
+	letter-spacing: -.01em;
+	margin: 1rem;
 }
 /* 
 * {

@@ -43,7 +43,7 @@ export function ParsedCart() {
               <h2 className="cartProductsName">{product.name}</h2>
             </div>
             <div className="cartProductsPriceQtyWrap">
-              <div>{product.orderTotal}</div>
+              <div>${product.orderTotal}</div>
               <div>
                 {product.orderQty} {changeData(product)}
               </div>
