@@ -17,11 +17,11 @@ export function Header() {
 
   return (
     <div className="header">
-      <div className="logoWrap">
+      <div className="homeWrap">
         {" "}
         <HomeIcon style={{ width: "27px" }} onClick={homeClick} />
       </div>
-      <div className="logoWrap">Ascension Marketplace</div>
+      <div className="logoWrap">Magnolia Marketplace</div>
       <div className="cartLogoWrap">
         {" "}
         <Cart fill="white" style={{ width: "27px" }} onClick={cartClick} />{" "}
