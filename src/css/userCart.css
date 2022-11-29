@@ -42,6 +42,8 @@ h1 {
 	margin: 1rem;
 	display: flex;
 	flex-direction: column;
+	min-height: 65vh;
+	border-radius: 8px;
 }
 
 .userCartProductImages {
@@ -49,10 +51,29 @@ h1 {
 	height: 10rem;
 	display: flex;
 	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+.cartProductsName {
+	text-align: center;
+}
+.cartProductsPriceQtyWrap {
+	display: flex;
+	flex-direction: column;
+	height: 12vh;
 }
 .cartQtyInput {
 	width: 50px;
 	text-align: center;
+	border-radius: 0;
+}
+
+.qtyBtns {
+width: 50px;
+	height:100%;
+	text-align: center;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;;
 }
 
 .productImg {
@@ -78,7 +99,12 @@ h1 {
 .cartProductsPriceQtyWrap {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
     font-family: 'Lato', sans-serif;
+}
+
+.qtyChangeWrapper {
+
 }
 
 
@@ -93,6 +119,7 @@ h1 {
 	font-family: 'Lato', sans-serif;
 	min-height: 50vh;
 	margin: .75rem;
+	border-radius: 8px;
 }
 
 .summaryValues {
@@ -153,7 +180,7 @@ h1 {
 	min-width: 6rem;
 	height: 5vh;
 	color: white;
-	font-size: .8em;
+	font-size: .9em;
 	background-color: black;
 	border-radius: 5px;
 	letter-spacing: -.01em;

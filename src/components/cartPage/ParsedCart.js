@@ -8,6 +8,8 @@ let userCartArr = [
 ];
 
 export function ParsedCart() {
+
+  const [qty, setQty] = useState( 0)
   //Do not change these to useState - load bearing code - React will kick error
   // component (`UserCart`) while rendering a different component (`ParsedCart`)
   let totalQty = 0.0;
@@ -25,10 +27,25 @@ export function ParsedCart() {
     cartDataFloat.setData(totalQty, formattedSub, orderTaxAmt, total$);
   };
 
-  const handleQtyChange = (e) => {
-      console.log(e.target.value)
+  const changeQtyUp = (product) => {
+    product.orderQty = (product.orderQty + 1);
+    product.orderTotal = (product.price * product.orderQty);
+    changeData(product);
+  }
+
+  const changeQtyDown = (product) => {
+    falseQtyChangeBreak: if (product.orderQty === 0) {
+      break falseQtyChangeBreak;
+    }
+    else {
+    product.orderQty = (product.orderQty - 1);
+    product.orderTotal = (product.price * product.orderQty);
+    changeData(product);
+    }
+
 
   }
+
 
   return (
     <div className="parsedCartMasterWrap">
@@ -45,17 +62,17 @@ export function ParsedCart() {
             <div className="cartProductsPriceQtyWrap">
               <div>${product.orderTotal}</div>
               <div>
-                {product.orderQty} {changeData(product)}
+                 {changeData(product)}
               </div>
-              <div>
-                <Button text='Change Qty' onClick={changeData}/>
+              <div className="qtyChangeWrapper">
+                <Button text='-' onClick={() => changeQtyDown(product)} className='qtyBtns'/>
               <input
-                onChange={handleQtyChange}
                 className="cartQtyInput"
                 placeholder={product.orderQty}
                 type="number"
                 min="1"
               ></input>
+              <Button text='+' onClick={() => changeQtyUp(product)}  className='qtyBtns'/>
               </div>
             </div>
           </div>
