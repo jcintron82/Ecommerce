@@ -22,6 +22,8 @@ export function UserCart() {
 	return(
 		<div>
 		<Header />
+		<div className='masterWrap'>
+			<div className='wrapForDesktopCotherProductsWrapange'>
 		<div className='itemAmtAndTotal'>
 		<h1>Your Cart</h1>
 		<div className='topOrderSummaryWrap'>
@@ -31,17 +33,15 @@ export function UserCart() {
 		
 		<div className='cartBodyWrapper'>
 		<ParsedCart />
-		</div>
 		<div className='orderSummaryWrapper'>
 			<div className='orderSummaryheader'>Order Summary</div>
 			<div className='itemQtyWrap'>Order Qty: { totalQty }<div className='summaryValues'> Subtotal: ${ orderSubTotal }</div></div>
 			<div className='salesTaxWrap'>Sales Tax 7%<div className='summaryValues'>Tax Amount: ${ orderTaxAmt }</div></div>
 			<div className='totalPriceWrap'>Total: ${ orderTotal } </div>
-			<Button text='Checkout' className='checkoutBtn' />
-		</div>
-
-		<div>
-			Other Products For You
+			<div className='mainCheckoutBtnWrap' ><Button text='Checkout' 
+			className='checkoutBtn' /></div>
+		</div></div></div>
+		
 		</div>
 
 
