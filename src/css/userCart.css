@@ -45,9 +45,15 @@ h1 {
 	margin: 1rem;
 	display: flex;
 	flex-direction: column;
-	min-height: 60vh;
 	border-radius: 8px;
 	width: 80vw;
+	height: 80vh;
+	max-height: 30rem;
+	border-style: solid;
+	border-color: #A3A3A3;
+	border-width: 1px;
+	margin-bottom: 5vh;
+	padding: .5rem;
 }
 .userCartProductImages {
 	width: 100%;
@@ -69,6 +75,7 @@ h1 {
 	width: 50px;
 	text-align: center;
 	border-radius: 0;
+
 }
 .qtyBtnUp {
 	width: 50px;
@@ -129,6 +136,17 @@ input {
 	font-family: 'Lato', sans-serif;
 }
 .qtyChangeWrapper {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding-top: 1.25rem;
+}
+
+.trashWrap {
+	width: 100%;
+	font-weight: lighter;
 }
 .orderSummaryWrapper {
 	display: flex;
@@ -186,14 +204,6 @@ input {
 	width: 80%;
 	align-self: center;
 }
-.cartWrap {
-	border-style: solid;
-	border-color: #A3A3A3;
-	border-width: 1px;
-	height: 100%;
-	margin-bottom: 5vh;
-	padding: .5rem;
-}
 .mainCheckoutBtnWrap {
 	display: flex;
 	justify-content: center;
@@ -222,6 +232,7 @@ input {
 	.totalPriceWrap {
 		justify-content: center;
    }
+
 }
 @media ( min-width:768px ) {
 	.topCheckoutBtnWrap {
@@ -245,9 +256,8 @@ input {
 		cursor: none;
    }
 	.cartWrap {
-		max-width: 45rem;
-		height: 100%;
-		min-height: 50vh;
+		
+		
    }
 	.orderSummaryWrapper {
 		max-width: 45rem;
@@ -273,5 +283,8 @@ input {
    }
 	.qtyBtnDown:hover {
 		cursor:pointer;
+   }
+   .trashWrap:hover {
+	cursor: pointer;
    }
 }

@@ -1,12 +1,14 @@
 import { cartDataFloat } from "./UserCart";
 import { useState } from "react";
 import { Button } from "../buttons.js";
-import androidFront from "../../images/electronics/android/androidFront.jpg";
+import { ReactComponent as TrashIcon } from "../trashicon.svg";
 export { userCartArr };
 
 let userCartArr = [];
 
 export function ParsedCart() {
+  const [stateRefresh, setStateRefresh] = useState(userCartArr);
+
   //Do not change these to useState - load bearing code - React will kick error
   // component (`UserCart`) while rendering a different component (`ParsedCart`)
   let totalQty = 0.0;
@@ -15,13 +17,21 @@ export function ParsedCart() {
   let total$ = 0.0;
 
   const changeData = (product) => {
-    totalQty = totalQty + product.orderQty;
-    orderSubTotal = orderSubTotal + product.orderTotal;
-    let formattedSub = orderSubTotal.toFixed(2);
-    let x = orderSubTotal / 100;
-    orderTaxAmt = (x * 7).toFixed(2);
-    total$ = (parseFloat(orderSubTotal) + parseFloat(orderTaxAmt)).toFixed(2);
-    cartDataFloat.setData(totalQty, formattedSub, orderTaxAmt, total$);
+    if (userCartArr.length === 0) {
+      totalQty = 0;
+      orderSubTotal = 0;
+      orderTaxAmt = 0;
+      total$ = 0;
+      cartDataFloat.setData(totalQty, orderSubTotal, orderTaxAmt, total$);
+    } else {
+      totalQty = totalQty + product.orderQty;
+      orderSubTotal = orderSubTotal + product.orderTotal;
+      let formattedSub = orderSubTotal.toFixed(2);
+      let x = orderSubTotal / 100;
+      orderTaxAmt = (x * 7).toFixed(2);
+      total$ = (parseFloat(orderSubTotal) + parseFloat(orderTaxAmt)).toFixed(2);
+      cartDataFloat.setData(totalQty, formattedSub, orderTaxAmt, total$);
+    }
   };
 
   const changeQtyUp = (product) => {
@@ -51,9 +61,18 @@ export function ParsedCart() {
     }
   };
 
+  const deleteCartProduct = (product, index) => {
+    const newCart = userCartArr.splice(index, 1);
+    console.log(userCartArr);
+    if (userCartArr.length === 0) {
+      changeData(product);
+    }
+    setStateRefresh(newCart);
+  };
+
   return (
     <div className="parsedCartMasterWrap">
-      {userCartArr.map((product, name) => (
+      {userCartArr.map((product, i) => (
         <div className="cartWrap" key={product.name}>
           <div className="userCartProductImages">{product.image1}</div>
           <div>
@@ -81,6 +100,13 @@ export function ParsedCart() {
                   text="+"
                   onClick={() => changeQtyUp(product)}
                   className="qtyBtnUp"
+                />
+              </div>
+              <div className="trashWrap">
+                <TrashIcon
+                  fill="black"
+                  style={{ width: "24px" }}
+                  onClick={() => deleteCartProduct(product, i)}
                 />
               </div>
             </div>

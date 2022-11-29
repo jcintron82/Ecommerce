@@ -359,10 +359,6 @@ ul {
 		min-width: 4rem;
 		height: 1.75rem;
 	}
-
-	.addToCartBtn:click {
-		background-color: red;
-	}
 	.detailsScroll-enter-done {
 		opacity: 1;
 		height: 100%;
@@ -420,8 +416,7 @@ ul {
 	}
 
 	.addToCartBtn:active {
-	
-		box-shadow: 3px 2px 6px 1px blue;
+		background-color: #166088;
 		
 	}
 	.cartQtyInput {
