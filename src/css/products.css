@@ -112,8 +112,8 @@
 }
 @media ( min-width: 1020px) {
 	.productTilesImage {
-		height: 12rem;
-		width: 15rem;
+		max-height: 12rem;
+		max-width: 12rem;
 		border-radius: 10%;
    }
 	.nameWrap {

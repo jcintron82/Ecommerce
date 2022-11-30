@@ -4,11 +4,40 @@ import Button from "../../buttons.js";
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
-import iphoneTwo from "../../../images/electronics/iphone/iphoneTwo.jpg";
-import iphone3 from "../../../images/electronics/iphone/iphone3.jpg";
-import iphoneFour from "../../../images/electronics/iphone/iphoneFour.jpg";
-const x=1
+import front from "../../../images/televisions/tcl65inch6series/front.jpg";
+import side from "../../../images/televisions/tcl65inch6series/side.jpg";
+import tvinuse from "../../../images/televisions/tcl65inch6series/tvinuse.jpg";
+import tvports from "../../../images/televisions/tcl65inch6series/tvports.jpg";
+
+const boldText = (value) => {
+  return <b>{value}</b>;
+};
+const liOne = [
+  boldText("Overview"),
+  <br />,
+  "TCL's 6-Series TCL Roku TV combines brilliant 8K HDR and Mini-LED technology in a bold, brushed metal design for a superior TV experience. Quantum Dot technology and the HDR Pro Pack with Dolby Vision combine for greater brightness and contrast, as well as a full palette of rich colors. TCL’s Contrast Control Zone technology optimizes the image across individual zones to yield striking contrast between light and dark areas. The 6-Series models’ AiPQ Engine uses machine-learning algorithms to intelligently enhance color, contrast, and clarity, as you watch for an unrivaled 8K HDR experience, while dynamically upscaling content to near 8K resolution for astonishing clarity.",
+];
+const liTwo = [
+  boldText("Brilliant 8K Clarity"),
+  <br />,
+  "Certified by the 8K Association for exceptional display performance with over 33 million pixels and four times the clarity of 4K UHD displays. No matter the source, every frame is intelligently enhanced by TCL's AiPQ Engine technology. ",
+];
+const liThree = [
+  boldText("Mini-LED Technology"),
+  <br />,
+ "Uncompromised contrast, brightness, and uniformity for incredible viewing in any environment. Mini-LED backlight technology bring exceptionally powerful and precise control of brilliantly bright and deeply dark areas of the image, delivering unparalleled depth and dimension.",
+];
+const liFour = [
+  boldText("QLED"),
+  <br />,
+  "Quantum dot technology delivers more than a billion colors with greater accuracy, better brightness, and wider color volume, matching the format used by most cinema screens and Hollywood content creators. This provides exceptionally vivid and lifelike picture performance.",
+];
+const liFive = [
+  boldText("Contrast Control Zones"),
+  <br />,
+  "Contrast is optimized across up to 240 localized zones for striking distinction between bright and dark areas of the image for maximum detail, depth, and dimension.",
+];
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -25,31 +54,30 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [iphoneOne, iphoneTwo, iphone3, iphoneFour];
 
-const product = {
-  name: "Apple Iphone 13 Pro 5G 128GB - Graphite (Sprint)",
-  price: 710,
-  image1: iphoneOne,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
+export function TCL65Inch6Series() {
+  const imageGallery = [front, side, tvports, tvinuse];
 
-export function IPhone() {
-  const [qty, setQty] = useState(product.orderQty);
+  const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const product = {
+    name: 'TCL - 65" Class 6-Series Mini-LED QLED 8K UHD Smart Roku TV',
+    price: 999.00.toFixed(2),
+    image1: <img src={front} className="productImg"></img>,
+    stockQty: 10,
+    orderQty: 0,
+    orderTotal: 0,
+  };
 
   const handleQtyChange = (e) => {
     setQty(e.target.value);
   };
 
   const nextImageClick = () => {
-    if (counter === 3) {
+    if (counter === imageGallery.length - 1) {
       counter = 0;
       setPic2(imageGallery[counter]);
     } else {
@@ -65,9 +93,10 @@ export function IPhone() {
 
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
-    setIsLoading(!isLoading);
 
-    if (userCartArr.includes(product)) {
+    falseQtyBreak: if (qty <= 0) {
+      break falseQtyBreak;
+    } else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
@@ -77,7 +106,6 @@ export function IPhone() {
       userCartArr.push(product);
       console.log(product);
     }
-    setIsLoading(!isLoading);
   };
 
   return (
@@ -89,9 +117,9 @@ export function IPhone() {
           <div className="productNameHeader">
             {product.name}
             <div className="pricesWrapParent">
-              <div className="priceWrap">${product.price}.00</div>
+              <div className="priceWrap">${product.price}</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice"></strike>
+                <strike className="strikedPrice">$1,999.00</strike> Save $1000.00!
               </div>
             </div>
           </div>
@@ -107,7 +135,7 @@ export function IPhone() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="An apple iphone 13 pro"
+                  alt="A 65 inch TCL Smart Roku TV"
                 ></img>
               </CSSTransition>
             </div>
@@ -124,12 +152,11 @@ export function IPhone() {
             <div className="addToCartBtnWrap">
               <input
                 onChange={handleQtyChange}
-                name="qty"
                 className="cartQtyInput"
+                placeholder={qty}
                 type="number"
-                placeholder={x}
-              >
-              </input>{" "}
+                min="1"
+              ></input>
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"
@@ -148,23 +175,11 @@ export function IPhone() {
         <CSSTransition in={open} timeout={120} classNames="detailsScroll">
           {open ? (
             <ul className="detailsBoxOne">
-              <li>
-                {" "}
-                IPhone 13 Pro. The biggest Pro camera system upgrade ever. Super
-                Retina XDR display with ProMotion for a faster, more responsive
-                feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable
-                design and a huge leap in battery life.
-              </li>
-              <li>
-                6.1-inch Super Retina XDR display with ProMotion for a faster,
-                more responsive feel.
-              </li>
-              <li>
-                12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR
-                recording.
-              </li>
-              <li>Up to 22 hours of video playback.</li>
-              <li>A15 Bionic chip for lightning-fast performance.</li>
+              <li>{liOne}</li>
+              <li>{liTwo}</li>
+              <li> {liThree}</li>
+              <li>{liFour}</li>
+              <li>{liFive}</li>
             </ul>
           ) : (
             <div></div>
@@ -180,4 +195,4 @@ export function IPhone() {
   );
 }
 
-export default IPhone;
+export default TCL65Inch6Series;

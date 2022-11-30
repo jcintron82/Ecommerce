@@ -1,14 +1,14 @@
 import Header from "../../header.js";
 import Footer from "../../Footer.js";
 import Button from "../../buttons.js";
-import { useState } from "react";
+import {  useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
-import iphoneTwo from "../../../images/electronics/iphone/iphoneTwo.jpg";
-import iphone3 from "../../../images/electronics/iphone/iphone3.jpg";
-import iphoneFour from "../../../images/electronics/iphone/iphoneFour.jpg";
-const x=1
+import front from "../../../images/televisions/65inchsamsung/front.jpg";
+import side from  "../../../images/televisions/65inchsamsung/side.jpg";
+import dimensions from  "../../../images/televisions/65inchsamsung/dimensions.jpg";
+import tvInRoom from  "../../../images/televisions/65inchsamsung/tvinroom.jpg";
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -25,31 +25,32 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [iphoneOne, iphoneTwo, iphone3, iphoneFour];
 
-const product = {
-  name: "Apple Iphone 13 Pro 5G 128GB - Graphite (Sprint)",
-  price: 710,
-  image1: iphoneOne,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
 
-export function IPhone() {
-  const [qty, setQty] = useState(product.orderQty);
+export function Samsung65Inch() {
+  const imageGallery = [front, side, dimensions, tvInRoom];
+
+  const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(false);
+
+const product = {
+  name: "Samsung - 65in Class Q70A Series QLED 4K UHD Smart TV",
+  price: 999.99,
+  image1: <img src={front} className='productImg'></img>,
+  stockQty: 10,
+  orderQty: 0,
+  orderTotal: 0,
+};
 
   const handleQtyChange = (e) => {
     setQty(e.target.value);
   };
 
   const nextImageClick = () => {
-    if (counter === 3) {
+    if (counter === imageGallery.length - 1) {
       counter = 0;
       setPic2(imageGallery[counter]);
     } else {
@@ -64,20 +65,23 @@ export function IPhone() {
   };
 
   const addToCartClick = (product) => {
-    const parsedInt = parseInt(qty, 10);
-    setIsLoading(!isLoading);
-
-    if (userCartArr.includes(product)) {
+    const parsedInt = parseInt(qty, 10)
+    
+    falseQtyBreak: if (qty <= 0)
+    {
+      break falseQtyBreak;
+    }
+   else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
+    
     } else {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       userCartArr.push(product);
       console.log(product);
     }
-    setIsLoading(!isLoading);
   };
 
   return (
@@ -89,9 +93,9 @@ export function IPhone() {
           <div className="productNameHeader">
             {product.name}
             <div className="pricesWrapParent">
-              <div className="priceWrap">${product.price}.00</div>
+              <div className="priceWrap">${product.price}</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice"></strike>
+                <strike className="strikedPrice">$1099.99</strike> Save $100.00
               </div>
             </div>
           </div>
@@ -107,7 +111,7 @@ export function IPhone() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="An apple iphone 13 pro"
+                  alt="A 65 inch samsung tv"
                 ></img>
               </CSSTransition>
             </div>
@@ -122,14 +126,13 @@ export function IPhone() {
           </div>
           <div className="desktopBtnWrap">
             <div className="addToCartBtnWrap">
-              <input
+            <input
                 onChange={handleQtyChange}
-                name="qty"
                 className="cartQtyInput"
+                placeholder={qty}
                 type="number"
-                placeholder={x}
-              >
-              </input>{" "}
+                min="1"
+              ></input>
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"
@@ -149,22 +152,16 @@ export function IPhone() {
           {open ? (
             <ul className="detailsBoxOne">
               <li>
-                {" "}
-                IPhone 13 Pro. The biggest Pro camera system upgrade ever. Super
-                Retina XDR display with ProMotion for a faster, more responsive
-                feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable
-                design and a huge leap in battery life.
+              Powered by machine learning, our most powerful 4K processor enhances picture from any source into crisp 4K action in each and every scene.
+
+
               </li>
-              <li>
-                6.1-inch Super Retina XDR display with ProMotion for a faster,
-                more responsive feel.
-              </li>
-              <li>
-                12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR
-                recording.
-              </li>
-              <li>Up to 22 hours of video playback.</li>
-              <li>A15 Bionic chip for lightning-fast performance.</li>
+              <li>Never miss a beat with minimized blur and enhanced motion clarity, and catch all the fast-moving action whether you're watching sports or taking advantage of newer Next-Gen gaming capabilities.
+
+</li>
+              <li>Embrace every bold detail brought to life with dedicated warm and cool LED backlights that optimize colors and dramatically enhance contrast.</li>
+              <li>Sleek and slim, with minimalist details to enhance your space.</li>
+              <li>Enjoy optimized sound tailored to your environment, no matter where your TV is placed.</li>
             </ul>
           ) : (
             <div></div>
@@ -180,4 +177,4 @@ export function IPhone() {
   );
 }
 
-export default IPhone;
+export default Samsung65Inch;

@@ -4,11 +4,40 @@ import Button from "../../buttons.js";
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
-import iphoneTwo from "../../../images/electronics/iphone/iphoneTwo.jpg";
-import iphone3 from "../../../images/electronics/iphone/iphone3.jpg";
-import iphoneFour from "../../../images/electronics/iphone/iphoneFour.jpg";
-const x=1
+import front from "../../../images/televisions/vizio65inch/front.jpg";
+import side from "../../../images/televisions/vizio65inch/side.jpg";
+import tvinuse from "../../../images/televisions/vizio65inch/tvinuse.jpg";
+import tvports from "../../../images/televisions/vizio65inch/tvports.jpg";
+
+const boldText = (value) => {
+  return <b>{value}</b>;
+};
+const liOne = [
+  boldText("Overview"),
+  <br />,
+  "Escape into awesome entertainment with the VIZIO V-Series 4K UHD Smart TV. With epic 4K UHD picture quality, Dolby Vision Bright Mode, HDR10, a full array backlight, and active pixel tuning, V-Series provides crystal-clear and sharp picture quality. The next-gen speed and power of the VIZIO IQ Active processor brings astonishing detail and vibrancy to your viewing experience. ",
+];
+const liTwo = [
+  boldText("Dolby Vision Bright Mode"),
+  <br />,
+  "You’ll see even more lifelike accuracy, color saturation, black detail, and brightness in Dolby Vision Bright picture mode, thanks to color pixel tuning that ramps up depth and detail to new heights. V-Series also supports HDR10/+ and HLG formats.",
+];
+const liThree = [
+  boldText("Full Array Backlight"),
+  <br />,
+  "LEDs are evenly distributed across the screen's backlight for superior light uniformity and picture performance.",
+];
+const liFour = [
+  boldText("IQ Active Processor "),
+  <br />,
+  "Delivers superior picture processing, including a powerful and intelligent 4K upscaling engine that enhances your favorite HD entertainment in spectacular 4K quality.",
+];
+const liFive = [
+  boldText("V-Gaming Engine"),
+  <br />,
+  "Automatically makes the latest console gameplay more responsive with sub 10ms input lag, 4K 48-60 fps Variable Refresh Rate and Auto Game Mode together with a finely tuned picture mode optimized for gaming as well as Gaming HDR with Dolby Vision, HGiG, and newly-added gaming menu. ",
+];
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -25,31 +54,30 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [iphoneOne, iphoneTwo, iphone3, iphoneFour];
 
-const product = {
-  name: "Apple Iphone 13 Pro 5G 128GB - Graphite (Sprint)",
-  price: 710,
-  image1: iphoneOne,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
+export function Vizio65Inch() {
+  const imageGallery = [front, side, tvports, tvinuse];
 
-export function IPhone() {
-  const [qty, setQty] = useState(product.orderQty);
+  const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const product = {
+    name: "VIZIO - 65in Class V-Series LED 4K UHD Smart TV",
+    price: 419.99,
+    image1: <img src={side} className="productImg"></img>,
+    stockQty: 10,
+    orderQty: 0,
+    orderTotal: 0,
+  };
 
   const handleQtyChange = (e) => {
     setQty(e.target.value);
   };
 
   const nextImageClick = () => {
-    if (counter === 3) {
+    if (counter === imageGallery.length - 1) {
       counter = 0;
       setPic2(imageGallery[counter]);
     } else {
@@ -65,9 +93,10 @@ export function IPhone() {
 
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
-    setIsLoading(!isLoading);
 
-    if (userCartArr.includes(product)) {
+    falseQtyBreak: if (qty <= 0) {
+      break falseQtyBreak;
+    } else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
@@ -77,7 +106,6 @@ export function IPhone() {
       userCartArr.push(product);
       console.log(product);
     }
-    setIsLoading(!isLoading);
   };
 
   return (
@@ -89,9 +117,9 @@ export function IPhone() {
           <div className="productNameHeader">
             {product.name}
             <div className="pricesWrapParent">
-              <div className="priceWrap">${product.price}.00</div>
+              <div className="priceWrap">${product.price}</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice"></strike>
+                <strike className="strikedPrice">$544.99</strike> Save $125.00
               </div>
             </div>
           </div>
@@ -107,7 +135,7 @@ export function IPhone() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="An apple iphone 13 pro"
+                  alt="A 65 inch  Vizion Smart Tv"
                 ></img>
               </CSSTransition>
             </div>
@@ -124,12 +152,11 @@ export function IPhone() {
             <div className="addToCartBtnWrap">
               <input
                 onChange={handleQtyChange}
-                name="qty"
                 className="cartQtyInput"
+                placeholder={qty}
                 type="number"
-                placeholder={x}
-              >
-              </input>{" "}
+                min="1"
+              ></input>
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"
@@ -148,23 +175,11 @@ export function IPhone() {
         <CSSTransition in={open} timeout={120} classNames="detailsScroll">
           {open ? (
             <ul className="detailsBoxOne">
-              <li>
-                {" "}
-                IPhone 13 Pro. The biggest Pro camera system upgrade ever. Super
-                Retina XDR display with ProMotion for a faster, more responsive
-                feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable
-                design and a huge leap in battery life.
-              </li>
-              <li>
-                6.1-inch Super Retina XDR display with ProMotion for a faster,
-                more responsive feel.
-              </li>
-              <li>
-                12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR
-                recording.
-              </li>
-              <li>Up to 22 hours of video playback.</li>
-              <li>A15 Bionic chip for lightning-fast performance.</li>
+              <li>{liOne}</li>
+              <li>{liTwo}</li>
+              <li> {liThree}</li>
+              <li>{liFour}</li>
+              <li>{liFive}</li>
             </ul>
           ) : (
             <div></div>
@@ -180,4 +195,4 @@ export function IPhone() {
   );
 }
 
-export default IPhone;
+export default Vizio65Inch;

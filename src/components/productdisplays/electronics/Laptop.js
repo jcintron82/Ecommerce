@@ -29,7 +29,7 @@ const imageGallery = [macbookFront, macbookTop, macbookSide, macbookClosed];
 
 const laptop = {
   name: "Refurbished 13.3-inch Apple MacBook Pro Apple M1 Chip with 9-Core CPU and 8-Core GPU",
-  price: 1059,
+  price: 1059.00,
   image1: <img src={macbookFront} className='productImg'></img>,
   stockQty: 10,
   orderQty: 0,
@@ -126,7 +126,7 @@ export function Laptop() {
             <input
                 onChange={handleQtyChange}
                 className="cartQtyInput"
-                value={qty}
+                placeholder={qty}
                 type="number"
                 min="1"
               ></input>

@@ -1,11 +1,11 @@
 import {Button } from './buttons.js'
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom'
-import macbookAd from'../images/ads/macbookAd.avif'
+import macbookAd1 from'../images/ads/macbookAd1.jpg'
 import headphonesAd from'../images/ads/headphonesAd.avif'
 import sneakersAd from'../images/ads/x.avif'
 	
-const imageArr = [sneakersAd, headphonesAd, sneakersAd];
+const imageArr = [macbookAd1, headphonesAd, sneakersAd];
 const linkAdArray = ['/laptop', '/electronics', '/homeGoods'];
 let counter = 0;
 
@@ -28,7 +28,7 @@ export function IntroBlurbWrap() {
 			setAdCycle(linkAdArray[counter])
 
 			}
-		},5000);
+		},2200);
 	  }, );
 
 	const nextAdvertisementClick = () => {

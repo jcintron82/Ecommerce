@@ -33,7 +33,7 @@ export function ProductTileWrap() {
         onClick={(e) => onClick('electronics')}
         className="homePageProductTiles"
         img={mainElectronics}
-        name='Electronics'
+        name='Laptops'
         imgWrap='homePageImageWrap'
         imgClass='homePageProducttileImages'
         nameClass='homePageNames'
@@ -41,10 +41,10 @@ export function ProductTileWrap() {
 
 
       <ProductTiles
-        onClick={(e) => onClick('homegoods')}
+        onClick={(e) => onClick('televisions')}
         className="homePageProductTiles"
         img={homeGoodsMain}
-        name='Home Goods'
+        name='Television'
         imgWrap='homePageImageWrap'
         imgClass='homePageProducttileImages'
         nameClass='homePageNames'
@@ -53,7 +53,7 @@ export function ProductTileWrap() {
         onClick={(e) => onClick('homeGoods')}
         className="homePageProductTiles"
         img={homeGoodsMain}
-        name='Footwear'
+        name='Games and Consoles'
         imgWrap='homePageImageWrap'
         imgClass='homePageProducttileImages'
         nameClass='homePageNames'
@@ -62,7 +62,7 @@ export function ProductTileWrap() {
         onClick={(e) => onClick('homeGoods')}
         className="homePageProductTiles"
         img={homeGoodsMain}
-        name='Clothing'
+        name='Phones'
         imgWrap='homePageImageWrap'
         imgClass='homePageProducttileImages'
         nameClass='homePageNames'

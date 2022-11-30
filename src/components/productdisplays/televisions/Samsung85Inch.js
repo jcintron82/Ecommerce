@@ -4,11 +4,40 @@ import Button from "../../buttons.js";
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
-import iphoneTwo from "../../../images/electronics/iphone/iphoneTwo.jpg";
-import iphone3 from "../../../images/electronics/iphone/iphone3.jpg";
-import iphoneFour from "../../../images/electronics/iphone/iphoneFour.jpg";
-const x=1
+import front from "../../../images/televisions/samsung85inch/front.jpg";
+import side from "../../../images/televisions/samsung85inch/side.jpg";
+import tvinuse from "../../../images/televisions/samsung85inch/tvinuse.jpg";
+import tvports from "../../../images/televisions/samsung85inch/tvports.jpg";
+
+const boldText = (value) => {
+  return <b>{value}</b>;
+};
+const liOne = [
+  boldText("Overview"),
+  <br />,
+  "Samsung TV’s feature the ultimate in home entertainment experience with exceptional motion enhancements featuring virtually no motion blur on screen and incredibly low lag rates. Pictures refresh quicker and action-packed movies and sports stay smooth and crisp.",
+];
+const liTwo = [
+  boldText("Neo Quantum Processor 4K"),
+  <br />,
+  "Upgrade every picture to 4K quality with a powerfully intelligent AI based processor.",
+];
+const liThree = [
+  boldText("Quantum Matrix Technology with Quantum Mini LED"),
+  <br />,
+ "Enjoy greater detail within dark and bright scenes powered by tiny light cells using exclusive Mini LED designed technology.",
+];
+const liFour = [
+  boldText("4K AI Upscaling"),
+  <br />,
+  "Instantly transforms everything you watch to 4K.",
+];
+const liFive = [
+  boldText("FreeSyncTM Premium Pro"),
+  <br />,
+  "Dominate the game with less lag, tearing, and stuttering provided by seamless cooperation between your TV and console.",
+];
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -25,31 +54,30 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [iphoneOne, iphoneTwo, iphone3, iphoneFour];
 
-const product = {
-  name: "Apple Iphone 13 Pro 5G 128GB - Graphite (Sprint)",
-  price: 710,
-  image1: iphoneOne,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
+export function Samsung85Inch() {
+  const imageGallery = [front, side, tvports, tvinuse];
 
-export function IPhone() {
-  const [qty, setQty] = useState(product.orderQty);
+  const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const product = {
+    name: 'Samsung - 85" Class QN90A Neo QLED 4K UHD Smart Tizen TV',
+    price: 2599.00.toFixed(2),
+    image1: <img src={front} className="productImg"></img>,
+    stockQty: 10,
+    orderQty: 0,
+    orderTotal: 0,
+  };
 
   const handleQtyChange = (e) => {
     setQty(e.target.value);
   };
 
   const nextImageClick = () => {
-    if (counter === 3) {
+    if (counter === imageGallery.length - 1) {
       counter = 0;
       setPic2(imageGallery[counter]);
     } else {
@@ -65,9 +93,10 @@ export function IPhone() {
 
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
-    setIsLoading(!isLoading);
 
-    if (userCartArr.includes(product)) {
+    falseQtyBreak: if (qty <= 0) {
+      break falseQtyBreak;
+    } else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
@@ -77,7 +106,6 @@ export function IPhone() {
       userCartArr.push(product);
       console.log(product);
     }
-    setIsLoading(!isLoading);
   };
 
   return (
@@ -89,10 +117,10 @@ export function IPhone() {
           <div className="productNameHeader">
             {product.name}
             <div className="pricesWrapParent">
-              <div className="priceWrap">${product.price}.00</div>
-              <div className="savedPriceWrap">
-                <strike className="strikedPrice"></strike>
-              </div>
+              <div className="priceWrap">${product.price}</div>
+              {/* <div className="savedPriceWrap">
+                <strike className="strikedPrice">$5499.99</strike> Save $500.00
+              </div> */}
             </div>
           </div>
         </div>
@@ -107,7 +135,7 @@ export function IPhone() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="An apple iphone 13 pro"
+                  alt="A 85 inch Samsung smart TV"
                 ></img>
               </CSSTransition>
             </div>
@@ -124,12 +152,11 @@ export function IPhone() {
             <div className="addToCartBtnWrap">
               <input
                 onChange={handleQtyChange}
-                name="qty"
                 className="cartQtyInput"
+                placeholder={qty}
                 type="number"
-                placeholder={x}
-              >
-              </input>{" "}
+                min="1"
+              ></input>
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"
@@ -148,23 +175,11 @@ export function IPhone() {
         <CSSTransition in={open} timeout={120} classNames="detailsScroll">
           {open ? (
             <ul className="detailsBoxOne">
-              <li>
-                {" "}
-                IPhone 13 Pro. The biggest Pro camera system upgrade ever. Super
-                Retina XDR display with ProMotion for a faster, more responsive
-                feel. Lightning-fast A15 Bionic chip. Superfast 5G. Durable
-                design and a huge leap in battery life.
-              </li>
-              <li>
-                6.1-inch Super Retina XDR display with ProMotion for a faster,
-                more responsive feel.
-              </li>
-              <li>
-                12MP TrueDepth front camera with Night mode, 4K Dolby Vision HDR
-                recording.
-              </li>
-              <li>Up to 22 hours of video playback.</li>
-              <li>A15 Bionic chip for lightning-fast performance.</li>
+              <li>{liOne}</li>
+              <li>{liTwo}</li>
+              <li> {liThree}</li>
+              <li>{liFour}</li>
+              <li>{liFive}</li>
             </ul>
           ) : (
             <div></div>
@@ -180,4 +195,4 @@ export function IPhone() {
   );
 }
 
-export default IPhone;
+export default Samsung85Inch;

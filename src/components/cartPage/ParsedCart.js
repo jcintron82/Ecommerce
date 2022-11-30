@@ -63,6 +63,7 @@ export function ParsedCart() {
 
   const deleteCartProduct = (product, index) => {
     const newCart = userCartArr.splice(index, 1);
+    product.orderQty = 0;
     console.log(userCartArr);
     if (userCartArr.length === 0) {
       changeData(product);
@@ -70,6 +71,10 @@ export function ParsedCart() {
     setStateRefresh(newCart);
   };
 
+  const formatOrderTotal = (total) => {
+         total.toFixed(2)
+  }
+  
   return (
     <div className="parsedCartMasterWrap">
       {userCartArr.map((product, i) => (
@@ -80,6 +85,7 @@ export function ParsedCart() {
               <h2 className="cartProductsName">{product.name}</h2>
             </div>
             <div className="cartProductsPriceQtyWrap">
+              {() => formatOrderTotal(product.orderTotal)}
               <div>${product.orderTotal}</div>
               <div>{changeData(product)}</div>
               <div className="qtyChangeWrapper">
