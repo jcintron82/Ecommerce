@@ -50,7 +50,7 @@ export function ProductTileWrap() {
         nameClass='homePageNames'
       />
       <ProductTiles
-        onClick={(e) => onClick('homeGoods')}
+        onClick={(e) => onClick('gaming')}
         className="homePageProductTiles"
         img={homeGoodsMain}
         name='Games and Consoles'
@@ -59,7 +59,7 @@ export function ProductTileWrap() {
         nameClass='homePageNames'
       />
       <ProductTiles
-        onClick={(e) => onClick('homeGoods')}
+        onClick={(e) => onClick('phonesandaudio')}
         className="homePageProductTiles"
         img={homeGoodsMain}
         name='Phones'

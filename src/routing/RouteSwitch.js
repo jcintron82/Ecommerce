@@ -20,6 +20,14 @@ import { Sony83Inch } from '../components/productdisplays/televisions/Sony83Inch
 import { Samsung85Inch } from '../components/productdisplays/televisions/Samsung85Inch';
 import { TCL65Inch6Series } from '../components/productdisplays/televisions/Tcl65Inch6Series';
 
+import { PhonesAndAudioWrapper } from '../components/productdisplays/phonesandaudio/PhonesAndAudioWrapper';
+import { GalaxyS22 } from '../components/productdisplays/phonesandaudio/GalaxyS22';
+import { PowerBeats } from '../components/productdisplays/phonesandaudio/PowerBeats';
+
+
+import { GamingWrapper } from '../components/productdisplays/gaming/GamingWrapper';
+
+
 const RouteSwitch = () => {
   return (
     <BrowserRouter>
@@ -38,11 +46,16 @@ const RouteSwitch = () => {
 
         <Route path='/televisions' element={<TVsWrapper  />} />
         <Route path='/samsung65inch' element={<Samsung65Inch />} />
-        <Route path='65inchTvOLED' element={<TCL65InchOLED />} />
-        <Route path='vizio65inch' element={<Vizio65Inch />} />
-        <Route path='sony83inch' element={<Sony83Inch />} />
-        <Route path='samsung85inch' element={<Samsung85Inch />} />
-        <Route path='65inchtclseries6' element={<TCL65Inch6Series />} />
+        <Route path='/65inchTvOLED' element={<TCL65InchOLED />} />
+        <Route path='/vizio65inch' element={<Vizio65Inch />} />
+        <Route path='/sony83inch' element={<Sony83Inch />} />
+        <Route path='/samsung85inch' element={<Samsung85Inch />} />
+        <Route path='/65inchtclseries6' element={<TCL65Inch6Series />} />
+
+        <Route path='/phonesandaudio' element={<PhonesAndAudioWrapper />} />
+        <Route path='/galaxys22' element={<GalaxyS22 />} />
+        <Route path='powerbeats' element={<PowerBeats />} />
+        <Route path='/gaming' element={<GamingWrapper />} />
       </Routes>
     </BrowserRouter>
   );
