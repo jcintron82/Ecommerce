@@ -3,6 +3,7 @@
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
+	padding-bottom: 2.5rem;
 }
 .topTile {
 	border-style: none solid solid none;
@@ -99,15 +100,17 @@
 	width: 8rem;
 	border-radius: 10%;
 }
-@media(max-width:337px) {
-	.topTile,.tileTwo,.tileThree, .tileFour, .tileFive, .tileSix {
-		border-style: none none solid;
-   }
-}
 
 @media ( min-width: 335px) {
 	.tileTwo {
 		margin-top: 4.5rem;
+   }
+   .tileFive {
+	border-style: none solid none none;
+
+   }
+   .tileSix{
+	border-style: none;
    }
 }
 @media ( min-width: 1020px) {
