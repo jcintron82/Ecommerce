@@ -4,10 +4,10 @@ import Button from "../../buttons.js";
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import top from "../../../images/laptops/hpenvy/top.jpg";
-import side from "../../../images/laptops/hpenvy/side.jpg";
-import flipped from "../../../images/laptops/hpenvy/flipped.jpg";
-import front from "../../../images/laptops/hpenvy/front.jpg";
+import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
+import iphoneTwo from "../../../images/electronics/iphone/iphoneTwo.jpg";
+import iphone3 from "../../../images/electronics/iphone/iphone3.jpg";
+import iphoneFour from "../../../images/electronics/iphone/iphoneFour.jpg";
 
 const boldText = (value) => {
   return <b>{value}</b>;
@@ -15,27 +15,27 @@ const boldText = (value) => {
 const liOne = [
   boldText("Overview"),
   <br />,
-  "Your ideas deserve the best: Even though it's small it packs in the tools you need to realize your most creative ideas. With the 13.3 inch display you get beautiful, brilliant colors. It has the latest Intel processor and graphics so it can handle what you throw at it. Create seamlessly: Quickly transfer any file almost any device to your PC without cables, clouds, thumb drives, or hassle with HP QuickDrop. While Duet for HP opens up your workspace and workflow by connecting your tablet, phone, or another PC as a second display. Show your best self: When you go live, you want to look your best. So turn it on for the 5MP GlamCam with Appearance Filter, Backlight Adjustment, Auto Frame, and AI noise reduction. It also features a physical camera shutter for privacy, because when you’re on, you’re on, and when you’re not, you’re not. Because little things make a big difference: Containing ocean-bound plastic, recycled aluminum and EPEAT Gold and ENERGY STAR ratings, make a difference, along with a great choice.",
+  "AirPods Pro feature Active Noise Cancellation for immersive sound. Transparency mode for hearing the world around you. They’re sweat and water resistant1 and have a customizable fit for all-day comfort.",
 ];
 const liTwo = [
-  boldText("Operating system: Windows 11 Home"),
+  boldText('Noise Cancellation'),
   <br />,
-  "From a rejuvenated Start menu, to new ways to connect to your favorite people, news, games, and content—Windows 11 is the place to think, express, and create in a natural way.",
+  "Active Noise Cancellation blocks outside noise, so you can immerse yourself in music.",
 ];
 const liThree = [
-  boldText("Display: 13.3-inch diagonal, WUXGA (1920 x 1200), multitouch-enabled, IPS, edge-to-edge glass, micro-edge, Corning Gorilla Glass NBT"),
+  boldText("Transparency"),
   <br />,
- "Intuitive touchscreen technology with 1920 x 1200 resolution and 178-degree wide-viewing angles.",
+ "Transparency mode for hearing and interacting with the world around you.",
 ];
 const liFour = [
-  boldText("Processor: Intel Evo platform powered by 12th Generation Intel Core i7-1250U"),
+  boldText("Sweat And Water Resistant"),
   <br />,
-  "12th Gen Intel Core processor distributes performance where you need it the most — saving you time and increasing your ability to do the things you actually want.",
+  "AirPods Pro are sweat and water resistant for non-water sports and exercise, and they are IPX4 rated. Sweat and water resistance are not permanent conditions. The charging case is not sweat or water resistant.",
 ];
 const liFive = [
-  boldText("Memory: 8 GB LPDDR4x-4266 MHz RAM (onboard)"),
+  boldText("Spatial Audio"),
   <br />,
-  "Substantial high-bandwidth RAM to smoothly run your games and photo- and video-editing applications, as well as multiple programs and browser tabs all at once.",
+  "Spatial audio works with movies, TV, and video in supported apps. Requires iPhone or iPad.",
 ];
 
 const seeMoreSVG = (
@@ -55,8 +55,8 @@ const seeMoreSVG = (
 );
 let counter = 0;
 
-export function HPEnvy() {
-  const imageGallery = [top, side, front, flipped];
+export function IPhone() {
+  const imageGallery = [iphoneOne, iphoneTwo, iphone3, iphoneFour];
 
   const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
@@ -64,9 +64,9 @@ export function HPEnvy() {
   const [isEnter, setIsEnter] = useState(false);
 
   const product = {
-    name: 'HP - ENVY 2-in-1 13.3" Touch-Screen Laptop - Intel Core i7 - 8GB Memory - 512GB SSD - Natural Silver',
-    price: 649.00.toFixed(2),
-    image1: <img src={front} className="productImg"></img>,
+    name: 'Apple - AirPods Pro (1st generation) with Magsafe Charging Case - White',
+    price: 185.00.toFixed(2),
+    image1: <img src={iphoneOne} className="productImg"></img>,
     stockQty: 10,
     orderQty: 0,
     orderTotal: 0,
@@ -118,9 +118,9 @@ export function HPEnvy() {
             {product.name}
             <div className="pricesWrapParent">
               <div className="priceWrap">${product.price}</div>
-              <div className="savedPriceWrap">
-                <strike className="strikedPrice">$1,049.00</strike> Save $400.00!
-              </div>
+              {/* <div className="savedPriceWrap">
+                <strike className="strikedPrice">$215.00</strike> Save $30.00!
+              </div> */}
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@ export function HPEnvy() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt='An HP Envy Laptop 13inches'
+                  alt="An Apple Iphone 13"
                 ></img>
               </CSSTransition>
             </div>
@@ -195,4 +195,4 @@ export function HPEnvy() {
   );
 }
 
-export default HPEnvy;
+export default IPhone;
