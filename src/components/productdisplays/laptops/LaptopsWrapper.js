@@ -10,7 +10,7 @@ import hpspectre from "../../../images/laptops/hpspectre/front.jpg";
 
 const arr = [];
 
-export function ElectronicsWrapper() {
+export function LaptopsWrapper() {
   const navigate = useNavigate();
 
   const onClick = (section) => {
@@ -83,4 +83,4 @@ export function ElectronicsWrapper() {
   );
 }
 
-export default ElectronicsWrapper;
+export default LaptopsWrapper;

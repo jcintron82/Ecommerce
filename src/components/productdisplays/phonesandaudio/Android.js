@@ -9,6 +9,35 @@ import androidBack from "../../../images/electronics/android/androidBack.jpg";
 import androidBoth from "../../../images/electronics/android/androidBoth.jpg";
 import ladyHoldingPhone from "../../../images/electronics/android/ladyHoldingPhone.jpg";
 
+const boldText = (value) => {
+  return <b>{value}</b>;
+};
+const liOne = [
+  boldText("Overview"),
+  <br />,
+  "Compatible with all major U.S. carriers, including Verizon, AT&T, Sprint and T-Mobile. Also compatible with prepaid carriers including Cricket Wireless, MetroPCS, Google Fi, Simple Mobile, Total Wireless, Tracfone, Net10, Mint, and H2O.",
+];
+const liTwo = [
+  boldText("Google Tensor G2 "),
+  <br />,
+  "makes Pixel 7 Pro faster, more efficient, and more secure.₂ And it delivers even more helpful features and the best photo and video quality yet on Pixel.",
+];
+const liThree = [
+  boldText("So smooth, you won’t believe you shot it"),
+  <br />,
+  "The Pixel 7 Pro 6.7-inch Smooth Display makes everything stunning and immersive.₂ It intelligently adjusts up to 120Hz for smoother, more responsive performance.",
+];
+const liFour = [
+  boldText("OS"),
+  <br />,
+  "Google Pixel 7 Pro runs on the Android operating system.",
+];
+const liFive = [
+  boldText("Battery"),
+  <br />,
+  "Pixel's Adaptive Battery can last over 24 hours. Turn on Extreme Battery Saver, and the battery can last up to 72 hours.",
+];
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -25,26 +54,27 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [androidFront, androidBack, androidBoth, ladyHoldingPhone];
-
-const product = {
-  name: "Google Pixel 7 Pro 512GB (Unlocked) - Obsidian",
-  price: 979.00,
-  image1: <img src={androidFront} className='productImg'></img>,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
 
 export function Android() {
+  const imageGallery = [androidFront, androidBoth, androidBack, ladyHoldingPhone];
+
   const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
+  const product = {
+    name: 'Google Pixel 7 Pro 512GB (Unlocked) - Obsidian',
+    price: 979.00.toFixed(2),
+    image1: <img src={androidFront} className="productImg"></img>,
+    stockQty: 10,
+    orderQty: 0,
+    orderTotal: 0,
+  };
+
   const handleQtyChange = (e) => {
-      setQty(e.target.value);
-    }
+    setQty(e.target.value);
+  };
 
   const nextImageClick = () => {
     if (counter === imageGallery.length - 1) {
@@ -62,17 +92,14 @@ export function Android() {
   };
 
   const addToCartClick = (product) => {
-    const parsedInt = parseInt(qty, 10)
-    
-    falseQtyBreak: if (qty <= 0)
-    {
+    const parsedInt = parseInt(qty, 10);
+
+    falseQtyBreak: if (qty <= 0) {
       break falseQtyBreak;
-    }
-   else if (userCartArr.includes(product)) {
+    } else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
-    
     } else {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
@@ -90,10 +117,10 @@ export function Android() {
           <div className="productNameHeader">
             {product.name}
             <div className="pricesWrapParent">
-              <div className="priceWrap">${product.price}.00</div>
-              <div className="savedPriceWrap">
-                <strike className="strikedPrice"></strike>
-              </div>
+              <div className="priceWrap">${product.price}</div>
+              {/* <div className="savedPriceWrap">
+                <strike className="strikedPrice">$1190.00</strike> Save $300.
+              </div> */}
             </div>
           </div>
         </div>
@@ -108,7 +135,7 @@ export function Android() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A google pixel 7 pro phone 512GB Obsidian color"
+                  alt="A google Pixel 7 Pro"
                 ></img>
               </CSSTransition>
             </div>
@@ -126,7 +153,7 @@ export function Android() {
               <input
                 onChange={handleQtyChange}
                 className="cartQtyInput"
-                value={qty}
+                placeholder={qty}
                 type="number"
                 min="1"
               ></input>
@@ -148,28 +175,11 @@ export function Android() {
         <CSSTransition in={open} timeout={120} classNames="detailsScroll">
           {open ? (
             <ul className="detailsBoxOne">
-              <li>
-                {" "}
-                Compatible with all major U.S. carriers, including Verizon,
-                AT&T, Sprint and T-Mobile. Also compatible with prepaid carriers
-                including Cricket Wireless, MetroPCS, Google Fi, Simple Mobile,
-                Total Wireless, Tracfone, Net10, Mint, and H2O.
-              </li>
-              <li>
-                Google Tensor G2 makes Pixel 7 Pro faster, more efficient, and
-                more secure.₂ And it delivers even more helpful features and the
-                best photo and video quality yet on Pixel.
-              </li>
-              <li>
-                The Pixel 7 Pro 6.7-inch Smooth Display makes everything
-                stunning and immersive.₂ It intelligently adjusts up to 120Hz
-                for smoother, more responsive performance.
-              </li>
-              <li>Google Pixel 7 Pro runs on the Android operating system.</li>
-              <li>
-                Pixel's Adaptive Battery can last over 24 hours. Turn on Extreme
-                Battery Saver, and the battery can last up to 72 hours.
-              </li>
+              <li>{liOne}</li>
+              <li>{liTwo}</li>
+              <li> {liThree}</li>
+              <li>{liFour}</li>
+              <li>{liFive}</li>
             </ul>
           ) : (
             <div></div>

@@ -9,6 +9,26 @@ import side from  "../../../images/televisions/65inchsamsung/side.jpg";
 import dimensions from  "../../../images/televisions/65inchsamsung/dimensions.jpg";
 import tvInRoom from  "../../../images/televisions/65inchsamsung/tvinroom.jpg";
 
+
+const boldText = (value) => {
+  return <b>{value}</b>;
+};
+const liOne = [
+  boldText("Overview"),
+  <br />,
+  "Powered by machine learning, our most powerful 4K processor enhances picture from any source into crisp 4K action in each and every scene.Sleek and slim, with minimalist details to enhance your space.",
+];
+const liTwo = [
+  boldText("Crystal Clear Picture"),
+  <br />,
+  "Upgrade every picture to 4K quality with a powerfully intelligent AI based processor.",
+];
+const liThree = [
+  boldText("Comfort Your Way"),
+  <br />,
+ "Enjoy optimized sound tailored to your environment, no matter where your TV is placed.",
+];
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -26,7 +46,6 @@ const seeMoreSVG = (
 );
 let counter = 0;
 
-
 export function Samsung65Inch() {
   const imageGallery = [front, side, dimensions, tvInRoom];
 
@@ -35,15 +54,14 @@ export function Samsung65Inch() {
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
-
-const product = {
-  name: "Samsung - 65in Class Q70A Series QLED 4K UHD Smart TV",
-  price: 999.99,
-  image1: <img src={front} className='productImg'></img>,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
+  const product = {
+    name: 'Samsung - 65in Class Q70A Series QLED 4K UHD Smart TV',
+    price: 999.00.toFixed(2),
+    image1: <img src={front} className="productImg"></img>,
+    stockQty: 10,
+    orderQty: 0,
+    orderTotal: 0,
+  };
 
   const handleQtyChange = (e) => {
     setQty(e.target.value);
@@ -65,17 +83,14 @@ const product = {
   };
 
   const addToCartClick = (product) => {
-    const parsedInt = parseInt(qty, 10)
-    
-    falseQtyBreak: if (qty <= 0)
-    {
+    const parsedInt = parseInt(qty, 10);
+
+    falseQtyBreak: if (qty <= 0) {
       break falseQtyBreak;
-    }
-   else if (userCartArr.includes(product)) {
+    } else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
-    
     } else {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
@@ -95,7 +110,7 @@ const product = {
             <div className="pricesWrapParent">
               <div className="priceWrap">${product.price}</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice">$1099.99</strike> Save $100.00
+                <strike className="strikedPrice">$1099.00</strike> Save $100.00
               </div>
             </div>
           </div>
@@ -111,7 +126,7 @@ const product = {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A 65 inch samsung tv"
+                  alt="A 85 inch Samsung smart TV"
                 ></img>
               </CSSTransition>
             </div>
@@ -126,7 +141,7 @@ const product = {
           </div>
           <div className="desktopBtnWrap">
             <div className="addToCartBtnWrap">
-            <input
+              <input
                 onChange={handleQtyChange}
                 className="cartQtyInput"
                 placeholder={qty}
@@ -151,17 +166,9 @@ const product = {
         <CSSTransition in={open} timeout={120} classNames="detailsScroll">
           {open ? (
             <ul className="detailsBoxOne">
-              <li>
-              Powered by machine learning, our most powerful 4K processor enhances picture from any source into crisp 4K action in each and every scene.
-
-
-              </li>
-              <li>Never miss a beat with minimized blur and enhanced motion clarity, and catch all the fast-moving action whether you're watching sports or taking advantage of newer Next-Gen gaming capabilities.
-
-</li>
-              <li>Embrace every bold detail brought to life with dedicated warm and cool LED backlights that optimize colors and dramatically enhance contrast.</li>
-              <li>Sleek and slim, with minimalist details to enhance your space.</li>
-              <li>Enjoy optimized sound tailored to your environment, no matter where your TV is placed.</li>
+              <li>{liOne}</li>
+              <li>{liTwo}</li>
+              <li> {liThree}</li>
             </ul>
           ) : (
             <div></div>

@@ -8,7 +8,6 @@ import luigisMansion from "../../../images/gaming/gamecube/luigisMansion.jpg";
 import top from "../../../images/gaming/gamecube/top.jpg";
 import cables from "../../../images/gaming/gamecube/cables.jpg";
 
-
 const boldText = (value) => {
   return <b>{value}</b>;
 };
@@ -44,8 +43,8 @@ export function Gamecube() {
   const [isEnter, setIsEnter] = useState(false);
 
   const product = {
-    name: 'Nintendo Gamecube - Indigo (Games Sold Seperately)',
-    price: 120.00.toFixed(2),
+    name: "Nintendo Gamecube - Indigo (Games Sold Seperately)",
+    price: (120.0).toFixed(2),
     image1: <img src={top} className="productImg"></img>,
     stockQty: 10,
     orderQty: 0,
