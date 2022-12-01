@@ -2,11 +2,11 @@ import { Header } from "../../header.js";
 import { ProductTiles } from "../producttiles.js";
 import { useNavigate } from "react-router-dom";
 import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
-import laptopMain from "../../../images/electronics/laptop/macbookTop.png";
-import airpodsOut from "../../../images/electronics/airpods/airpodsOut.jpg";
-import headphonesOne from "../../../images/electronics/sonyHeadphones/headphonesFront.png";
-import xboxMain from "../../../images/electronics/xbox/xboxMain.jpg";
-import androidBoth from "../../../images/electronics/android/androidBoth.jpg";
+import gamecube from "../../../images/gaming/gamecube/top.jpg";
+import ps5bundle from "../../../images/gaming/ps5bundle/systemBox.jpg";
+import switchOLEDmodel from "../../../images/gaming/switchOLED/allitems.jpg";
+import nintendoswitch from "../../../images/gaming/switchoriginal/box.jpg";
+import xboxMain from "../../../images/gaming/xbox/xboxMain.jpg";
 
 const arr = [];
 
@@ -24,27 +24,27 @@ export function GamingWrapper() {
       <Header />
       <div className="productsWrap">
         <ProductTiles
-          onClick={(e) => onClick("iphone")}
+          onClick={(e) => onClick("xbox")}
           className="topTile"
-          img={iphoneOne}
-          name="Apple Iphone"
+          img={xboxMain}
+          name="Xbox Series X 1TB"
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'
         />
         <ProductTiles
-          onClick={(e) => onClick("laptop")}
+          onClick={(e) => onClick("gamecube")}
           className="tileTwo"
-          img={laptopMain}
-          name="MacBook Pro"
+          img={gamecube}
+          name="Nintendo Gamecube"
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'
         />
         <ProductTiles
-          onClick={(e) => onClick("android")}
+          onClick={(e) => onClick("switchoriginal")}
           className="tileThree"
-          img={androidBoth}
+          img={nintendoswitch}
           name="Nintendo Switch"
           imgWrap='imgWrap'
           imgClass='productTilesImage'
@@ -52,28 +52,28 @@ export function GamingWrapper() {
 
         />
         <ProductTiles
-          onClick={(e) => onClick("headphones")}
+          onClick={(e) => onClick("switcholedmodel")}
           className="tileFour"
-          img={headphonesOne}
-          name="Sony Headphones"
+          img={switchOLEDmodel}
+          name="Nintendo Switch OLED Model"
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'
         />
         <ProductTiles
-          onClick={(e) => onClick("airpods")}
+          onClick={(e) => onClick("ps5bundle")}
           className="tileFive"
-          img={airpodsOut}
-          name="Apple Airpods"
+          img={ps5bundle}
+          name="PlayStation 5 - God of War Bundle"
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'
         />
         <ProductTiles
-          onClick={(e) => onClick("xbox")}
+          onClick={(e) => onClick("xboxmodelS")}
           className="tileSix"
           img={xboxMain}
-          name="Xbox One"
+          name="Xbox Series S"
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'

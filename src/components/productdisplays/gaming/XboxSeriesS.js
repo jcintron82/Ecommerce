@@ -4,10 +4,10 @@ import Button from "../../buttons.js";
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import xboxSide from "../../../images/gaming/xbox/xboxSide.jpg";
-import xboxBox from "../../../images/gaming/xbox/xboxBox.jpg";
-import xboxFront from "../../../images/gaming/xbox/xboxFront.jpg";
-import xboxController from "../../../images/gaming/xbox/xboxController.jpg";
+import top from "../../../images/gaming/xboxseriesS/top.jpg";
+import side from "../../../images/gaming/xboxseriesS/side.jpg";
+import box from "../../../images/gaming/xboxseriesS/box.jpg";
+import controller from "../../../images/gaming/xboxseriesS/controller.jpg";
 
 const boldText = (value) => {
   return <b>{value}</b>;
@@ -15,27 +15,27 @@ const boldText = (value) => {
 const liOne = [
   boldText("Overview"),
   <br />,
-  "Xbox Series X, the fastest, most powerful Xbox ever. Explore rich new worlds with 12 teraflops of raw graphic processing power, DirectX ray tracing, a custom SSD, and 4K gaming. Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture. Enjoy thousands of games from four generations of Xbox, with hundreds of optimized titles that look and play better than ever.",
+  "Experience the modernized design of the Xbox Wireless Controller in Robot White, featuring sculpted surfaces and refined geometry for enhanced comfort during gameplay with battery usage up to 40 hours. Stay on target with a hybrid D-pad and textured grip on the triggers, bumpers, and back-case. Seamlessly capture and share content such as screenshots, recordings, and more with the Share button. Connect using the USB-C port for direct plug and play to console and PC. Support for AA batteries is included on the rear. Plug in any compatible headset with the 3.5mm audio jack. Use the Xbox Accessories app to remap buttons and create custom controller profiles for your favorite games. Quickly pair with, play on, and switch between devices including Xbox Series X|S, Xbox One, Windows 10 PCs, Android, and iOS*.",
 ];
 const liTwo = [
-  boldText("Power your dreams"),
+  boldText("Elevate your game"),
   <br />,
-  "Xbox Series X, the fastest, most powerful Xbox ever. Explore rich new worlds with 12 teraflops of raw graphic processing power, DirectX ray tracing, a custom SSD, and 4K gaming.*",
+  "Experience the modernized design of the Xbox Wireless Controller in Robot White, featuring sculpted surfaces and refined geometry for enhanced comfort and effortless control during gameplay with battery usage up to 40 hours.",
 ];
 const liThree = [
-  boldText("Play more, wait less"),
+  boldText("Custom mapping"),
   <br />,
- "Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture.*",
+ "Make the controller your own by customizing button mapping with the Xbox Accessories App.* Plus, plug in any compatible headset with the 3.5mm audio headset jack.",
 ];
 const liFour = [
-  boldText("Thousands of games ready to play"),
+  boldText("Xbox Wireless and Bluetooth® technology"),
   <br />,
-  "Enjoy digital games from four generations of Xbox, with hundreds of optimized titles that look and play better than ever.",
+  "Includes Xbox Wireless and Bluetooth® technology for wireless gaming on console, PC, mobile phones and tablets.*",
 ];
 const liFive = [
-  boldText("Looks better, plays better"),
+  boldText("Stay on target"),
   <br />,
-  "Minimize load times and increase frame rates with a custom-built NVMe SSD, which enables larger, more robust games to operate at their full capacity. Bring your games and movies to life with the rich, dynamic sound environments at a high quality.",
+  "Stay on target with a hybrid D-pad, textured grip on the triggers, bumpers, and back-case. Connect using the USB-C port for direct plug and play to console and PC. Support for AA batteries is included on the rear.",
 ];
 
 const seeMoreSVG = (
@@ -55,8 +55,8 @@ const seeMoreSVG = (
 );
 let counter = 0;
 
-export function Xbox() {
-  const imageGallery = [xboxFront, xboxSide, xboxBox, xboxController];
+export function XboxSeriesS() {
+  const imageGallery = [top, side, box, controller];
 
   const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
@@ -64,9 +64,9 @@ export function Xbox() {
   const [isEnter, setIsEnter] = useState(false);
 
   const product = {
-    name: 'Microsoft - Xbox Series X 1TB Console - Black',
-    price: 499.00.toFixed(2),
-    image1: <img src={xboxFront} className="productImg"></img>,
+    name: 'Microsoft - Xbox Series S 512 GB All-Digital Console (Disc-Free Gaming) - White and Xbox Wireless Controller',
+    price: 350.00.toFixed(2),
+    image1: <img src={side} className="productImg"></img>,
     stockQty: 10,
     orderQty: 0,
     orderTotal: 0,
@@ -135,7 +135,7 @@ export function Xbox() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="An Xbox Series X 1 terabyte"
+                  alt="An Xbox Series S"
                 ></img>
               </CSSTransition>
             </div>
@@ -195,4 +195,4 @@ export function Xbox() {
   );
 }
 
-export default Xbox;
+export default XboxSeriesS;

@@ -26,7 +26,11 @@ import { PowerBeats } from '../components/productdisplays/phonesandaudio/PowerBe
 
 
 import { GamingWrapper } from '../components/productdisplays/gaming/GamingWrapper';
-
+import { NintendoSwitchOriginal } from '../components/productdisplays/gaming/NintendoSwitchOriginal';
+import { NintendoSwitchOLED } from '../components/productdisplays/gaming/NintendoSwitchOLED';
+import { Gamecube } from '../components/productdisplays/gaming/Gamecube';
+import { PS5Bundle }from "../components/productdisplays/gaming/PS5Bundle";
+import { XboxSeriesS }from "../components/productdisplays/gaming/XboxSeriesS";
 
 const RouteSwitch = () => {
   return (
@@ -55,7 +59,16 @@ const RouteSwitch = () => {
         <Route path='/phonesandaudio' element={<PhonesAndAudioWrapper />} />
         <Route path='/galaxys22' element={<GalaxyS22 />} />
         <Route path='powerbeats' element={<PowerBeats />} />
+
+
         <Route path='/gaming' element={<GamingWrapper />} />
+        <Route path='/switchoriginal' element={<NintendoSwitchOriginal />} />
+        <Route path='/switcholedmodel' element={<NintendoSwitchOLED />} />
+        <Route path='/gamecube' element={<Gamecube />} />
+        <Route path='/ps5bundle' element={<PS5Bundle />} />
+        <Route path='/xboxmodelS' element={<XboxSeriesS />} />
+
+
       </Routes>
     </BrowserRouter>
   );

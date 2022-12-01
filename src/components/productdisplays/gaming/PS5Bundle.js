@@ -4,10 +4,10 @@ import Button from "../../buttons.js";
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import xboxSide from "../../../images/gaming/xbox/xboxSide.jpg";
-import xboxBox from "../../../images/gaming/xbox/xboxBox.jpg";
-import xboxFront from "../../../images/gaming/xbox/xboxFront.jpg";
-import xboxController from "../../../images/gaming/xbox/xboxController.jpg";
+import systemBox from "../../../images/gaming/ps5bundle/systemBox.jpg";
+import systemFront from "../../../images/gaming/ps5bundle/systemFront.jpg";
+import systemSide from "../../../images/gaming/ps5bundle/systemSide.jpg";
+import systemTop from "../../../images/gaming/ps5bundle/systemTop.jpg";
 
 const boldText = (value) => {
   return <b>{value}</b>;
@@ -15,27 +15,27 @@ const boldText = (value) => {
 const liOne = [
   boldText("Overview"),
   <br />,
-  "Xbox Series X, the fastest, most powerful Xbox ever. Explore rich new worlds with 12 teraflops of raw graphic processing power, DirectX ray tracing, a custom SSD, and 4K gaming. Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture. Enjoy thousands of games from four generations of Xbox, with hundreds of optimized titles that look and play better than ever.",
+  "PlayStation 5 Console – God of War Ragnarök Bundle includes: PlayStation 5 console, DualSense wireless controller, Base, HDMI cable, AC power cord, USB cable, Printed materials, ASTRO’s PLAYROOM (Pre-installed game. PS5™ console may need to be updated to the latest system software version. Internet connection required.), God of War Ragnarök full game voucher. Embark on an epic and heartfelt journey alongside Kratos and Atreus with the – God of War Ragnarök Bundle. Enjoy God of War Ragnarök with PS5 innovations including 4K and HDR visuals*, DualSense wireless controller adaptive triggers and haptic feedback and Tempest 3D AudioTech**. * 4K and HDR require a 4K and HDR compatible TV or display. ** 3D Audio with stereo headphones (analog or USB).",
 ];
 const liTwo = [
-  boldText("Power your dreams"),
+  boldText("Integrated I/O"),
   <br />,
-  "Xbox Series X, the fastest, most powerful Xbox ever. Explore rich new worlds with 12 teraflops of raw graphic processing power, DirectX ray tracing, a custom SSD, and 4K gaming.*",
+  "The custom integration of the PS5 console's systems lets creators pull data from the SSD so quickly that they can design games in ways never before possible.",
 ];
 const liThree = [
-  boldText("Play more, wait less"),
+  boldText("Stunning games"),
   <br />,
- "Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture.*",
+ "Marvel at incredible graphics and experience new PS5 features.",
 ];
 const liFour = [
-  boldText("Thousands of games ready to play"),
+  boldText("Ultra-high speed SSD"),
   <br />,
-  "Enjoy digital games from four generations of Xbox, with hundreds of optimized titles that look and play better than ever.",
+  "Maximize your play sessions with near-instant load times for installed PS5 games.",
 ];
 const liFive = [
-  boldText("Looks better, plays better"),
+  boldText("HDR technology"),
   <br />,
-  "Minimize load times and increase frame rates with a custom-built NVMe SSD, which enables larger, more robust games to operate at their full capacity. Bring your games and movies to life with the rich, dynamic sound environments at a high quality.",
+  "With an HDR TV, supported PS5 games display an unbelievably vibrant and lifelike range of colors.",
 ];
 
 const seeMoreSVG = (
@@ -55,8 +55,8 @@ const seeMoreSVG = (
 );
 let counter = 0;
 
-export function Xbox() {
-  const imageGallery = [xboxFront, xboxSide, xboxBox, xboxController];
+export function PS5Bundle() {
+  const imageGallery = [systemFront, systemSide, systemBox, systemTop];
 
   const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
@@ -64,9 +64,9 @@ export function Xbox() {
   const [isEnter, setIsEnter] = useState(false);
 
   const product = {
-    name: 'Microsoft - Xbox Series X 1TB Console - Black',
-    price: 499.00.toFixed(2),
-    image1: <img src={xboxFront} className="productImg"></img>,
+    name: 'PlayStation 5 Console – God of War Ragnarök Bundle',
+    price: 545.00.toFixed(2),
+    image1: <img src={systemFront} className="productImg"></img>,
     stockQty: 10,
     orderQty: 0,
     orderTotal: 0,
@@ -195,4 +195,4 @@ export function Xbox() {
   );
 }
 
-export default Xbox;
+export default PS5Bundle;

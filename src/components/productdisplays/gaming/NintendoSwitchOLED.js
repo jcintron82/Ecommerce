@@ -4,10 +4,10 @@ import Button from "../../buttons.js";
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import xboxSide from "../../../images/gaming/xbox/xboxSide.jpg";
-import xboxBox from "../../../images/gaming/xbox/xboxBox.jpg";
-import xboxFront from "../../../images/gaming/xbox/xboxFront.jpg";
-import xboxController from "../../../images/gaming/xbox/xboxController.jpg";
+import front from "../../../images/gaming/switchOLED/front.jpg";
+import box from "../../../images/gaming/switchOLED/box.jpg";
+import allitems from "../../../images/gaming/switchOLED/allitems.jpg";
+import joycons from "../../../images/gaming/switchOLED/joycons.jpg";
 
 const boldText = (value) => {
   return <b>{value}</b>;
@@ -15,28 +15,9 @@ const boldText = (value) => {
 const liOne = [
   boldText("Overview"),
   <br />,
-  "Xbox Series X, the fastest, most powerful Xbox ever. Explore rich new worlds with 12 teraflops of raw graphic processing power, DirectX ray tracing, a custom SSD, and 4K gaming. Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture. Enjoy thousands of games from four generations of Xbox, with hundreds of optimized titles that look and play better than ever.",
+  "Introducing the newest member of the Nintendo Switch family Play at home on the TV or on-the-go with a vibrant 7-inch OLED screen with the Nintendo Switch – OLED Model system. In addition to a new screen with vivid colors and sharp contrast, the Nintendo Switch – OLED Model includes a wide adjustable stand for more comfortable viewing angles, a dock with a wired LAN port for TV mode (LAN cable sold separately), 64GB of internal storage, and enhanced audio in Handheld and Tabletop modes using the system’s speakers.",
 ];
-const liTwo = [
-  boldText("Power your dreams"),
-  <br />,
-  "Xbox Series X, the fastest, most powerful Xbox ever. Explore rich new worlds with 12 teraflops of raw graphic processing power, DirectX ray tracing, a custom SSD, and 4K gaming.*",
-];
-const liThree = [
-  boldText("Play more, wait less"),
-  <br />,
- "Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture.*",
-];
-const liFour = [
-  boldText("Thousands of games ready to play"),
-  <br />,
-  "Enjoy digital games from four generations of Xbox, with hundreds of optimized titles that look and play better than ever.",
-];
-const liFive = [
-  boldText("Looks better, plays better"),
-  <br />,
-  "Minimize load times and increase frame rates with a custom-built NVMe SSD, which enables larger, more robust games to operate at their full capacity. Bring your games and movies to life with the rich, dynamic sound environments at a high quality.",
-];
+
 
 const seeMoreSVG = (
   <svg
@@ -55,8 +36,8 @@ const seeMoreSVG = (
 );
 let counter = 0;
 
-export function Xbox() {
-  const imageGallery = [xboxFront, xboxSide, xboxBox, xboxController];
+export function NintendoSwitchOLED() {
+  const imageGallery = [box, front, joycons, allitems];
 
   const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
@@ -64,9 +45,9 @@ export function Xbox() {
   const [isEnter, setIsEnter] = useState(false);
 
   const product = {
-    name: 'Microsoft - Xbox Series X 1TB Console - Black',
-    price: 499.00.toFixed(2),
-    image1: <img src={xboxFront} className="productImg"></img>,
+    name: 'Nintendo Switch – OLED Model w/ Neon Red & Neon Blue Joy-Con - Neon Red/Neon Blue',
+    price: 349.00.toFixed(2),
+    image1: <img src={box} className="productImg"></img>,
     stockQty: 10,
     orderQty: 0,
     orderTotal: 0,
@@ -119,7 +100,7 @@ export function Xbox() {
             <div className="pricesWrapParent">
               <div className="priceWrap">${product.price}</div>
               {/* <div className="savedPriceWrap">
-                <strike className="strikedPrice">$499.00</strike> Save $1000.00!
+                <strike className="strikedPrice">$1,999.00</strike> Save $1000.00!
               </div> */}
             </div>
           </div>
@@ -135,7 +116,7 @@ export function Xbox() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="An Xbox Series X 1 terabyte"
+                  alt="A Nintendo Switch OLED Model"
                 ></img>
               </CSSTransition>
             </div>
@@ -176,10 +157,6 @@ export function Xbox() {
           {open ? (
             <ul className="detailsBoxOne">
               <li>{liOne}</li>
-              <li>{liTwo}</li>
-              <li> {liThree}</li>
-              <li>{liFour}</li>
-              <li>{liFive}</li>
             </ul>
           ) : (
             <div></div>
@@ -195,4 +172,4 @@ export function Xbox() {
   );
 }
 
-export default Xbox;
+export default NintendoSwitchOLED;

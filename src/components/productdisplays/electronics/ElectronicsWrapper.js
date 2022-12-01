@@ -5,7 +5,6 @@ import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
 import laptopMain from "../../../images/electronics/laptop/macbookTop.png";
 import airpodsOut from "../../../images/electronics/airpods/airpodsOut.jpg";
 import headphonesOne from "../../../images/electronics/sonyHeadphones/headphonesFront.png";
-import xboxMain from "../../../images/electronics/xbox/xboxMain.jpg";
 import androidBoth from "../../../images/electronics/android/androidBoth.jpg";
 
 const arr = [];
@@ -72,7 +71,7 @@ export function ElectronicsWrapper() {
         <ProductTiles
           onClick={(e) => onClick("xbox")}
           className="tileSix"
-          img={xboxMain}
+          img={laptopMain}
           name="Xbox One"
           imgWrap='imgWrap'
           imgClass='productTilesImage'
