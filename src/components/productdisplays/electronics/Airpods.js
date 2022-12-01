@@ -9,6 +9,35 @@ import airpodsIn from "../../../images/electronics/airpods/airpodsIn.jpg";
 import airpodsOut from "../../../images/electronics/airpods/airpodsOut.jpg";
 import airpodsSide from "../../../images/electronics/airpods/airpodsSide.jpg";
 
+const boldText = (value) => {
+  return <b>{value}</b>;
+};
+const liOne = [
+  boldText("Overview"),
+  <br />,
+  "AirPods Pro feature Active Noise Cancellation for immersive sound. Transparency mode for hearing the world around you. They’re sweat and water resistant1 and have a customizable fit for all-day comfort.",
+];
+const liTwo = [
+  boldText('Noise Cancellation'),
+  <br />,
+  "Active Noise Cancellation blocks outside noise, so you can immerse yourself in music.",
+];
+const liThree = [
+  boldText("Transparency"),
+  <br />,
+ "Transparency mode for hearing and interacting with the world around you.",
+];
+const liFour = [
+  boldText("Sweat And Water Resistant"),
+  <br />,
+  "AirPods Pro are sweat and water resistant for non-water sports and exercise, and they are IPX4 rated. Sweat and water resistance are not permanent conditions. The charging case is not sweat or water resistant.",
+];
+const liFive = [
+  boldText("Spatial Audio"),
+  <br />,
+  "Spatial audio works with movies, TV, and video in supported apps. Requires iPhone or iPad.",
+];
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -25,37 +54,30 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [
-  airpods,
-  airpodsIn,
-  airpodsOut,
-  airpodsSide,
-];
-
-const product = {
-  name: "Apple AirPods Pro (2nd Generation) ",
-  price: 240,
-  image1: airpods,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
- 
-};
 
 export function Airpods() {
-  const [qty, setQty] = useState(product.orderQty);
+  const imageGallery = [airpods, airpodsIn, airpodsOut, airpodsSide];
+
+  const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const product = {
+    name: 'Apple - AirPods Pro (1st generation) with Magsafe Charging Case - White',
+    price: 185.00.toFixed(2),
+    image1: <img src={airpods} className="productImg"></img>,
+    stockQty: 10,
+    orderQty: 0,
+    orderTotal: 0,
+  };
 
   const handleQtyChange = (e) => {
     setQty(e.target.value);
   };
 
   const nextImageClick = () => {
-    if (counter === 3) {
+    if (counter === imageGallery.length - 1) {
       counter = 0;
       setPic2(imageGallery[counter]);
     } else {
@@ -71,9 +93,10 @@ export function Airpods() {
 
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
-    setIsLoading(!isLoading);
 
-    if (userCartArr.includes(product)) {
+    falseQtyBreak: if (qty <= 0) {
+      break falseQtyBreak;
+    } else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
@@ -83,7 +106,6 @@ export function Airpods() {
       userCartArr.push(product);
       console.log(product);
     }
-    setIsLoading(!isLoading);
   };
 
   return (
@@ -95,9 +117,9 @@ export function Airpods() {
           <div className="productNameHeader">
             {product.name}
             <div className="pricesWrapParent">
-              <div className="priceWrap">${product.price}.00</div>
+              <div className="priceWrap">${product.price}</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice"></strike>
+                <strike className="strikedPrice">$215.00</strike> Save $30.00!
               </div>
             </div>
           </div>
@@ -113,7 +135,7 @@ export function Airpods() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A pair of apple airpods second generation"
+                  alt="A pair of apple airpods pro - white"
                 ></img>
               </CSSTransition>
             </div>
@@ -128,19 +150,13 @@ export function Airpods() {
           </div>
           <div className="desktopBtnWrap">
             <div className="addToCartBtnWrap">
-              <select
+              <input
                 onChange={handleQtyChange}
-                name="qty"
                 className="cartQtyInput"
+                placeholder={qty}
                 type="number"
-              >
-                {" "}
-                <option value="0"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                {" "}
-              </select>{" "}
+                min="1"
+              ></input>
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"
@@ -159,20 +175,11 @@ export function Airpods() {
         <CSSTransition in={open} timeout={120} classNames="detailsScroll">
           {open ? (
             <ul className="detailsBoxOne">
-              <li>
-              AirPods Pro (2nd generation) deliver an even more effortless experience
-               than the original model. Touch control lets you manage playback 
-               functions from the stem and adjust volume with a light swipe up or 
-               down.
-              </li>
-              <li>Up to 6 hours of listening time on a single charge
-                 (up to 5.5 hours with Personalized Spatial Audio and Head Tracking enabled).</li>
-              <li>Up to 4.5 hours of talk time with a single charge.</li>
-              <li>Active Noise Cancellation now cancels twice as much unwanted noise.</li>
-              <li>
-              The upgraded H2 chip powers smarter noise cancellation and three-dimensional sound. Adaptive EQ tunes music to your ears in real
-               time to deliver crisp, clean high notes and deep, rich bass in stunning clarity.
-              </li>
+              <li>{liOne}</li>
+              <li>{liTwo}</li>
+              <li> {liThree}</li>
+              <li>{liFour}</li>
+              <li>{liFive}</li>
             </ul>
           ) : (
             <div></div>
