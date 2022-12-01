@@ -9,6 +9,27 @@ import macbookTop from "../../../images/electronics/laptop/macbookTop.png";
 import macbookSide from "../../../images/electronics/laptop/macbookSide.png";
 import macbookClosed from "../../../images/electronics/laptop/macbookClosed.jpg";
 
+
+
+const boldText = (value) => {
+  return <b>{value}</b>;
+};
+const liOne = [
+  boldText("Overview"),
+  <br />,
+  "Refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch LED-backlit display, 2560-by-1600 native resolution at 227 pixels per inch.",
+];
+const liTwo = [
+  boldText("Powerful Memory"),
+  <br />,
+  "8GB Unified Memory. 256GB SSD.",
+];
+const liThree = [
+  boldText("Crystal Clear Display"),
+  <br />,
+ "720p FaceTime HD Camera.",
+];
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -25,22 +46,23 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [macbookFront, macbookTop, macbookSide, macbookClosed];
-
-const laptop = {
-  name: "Refurbished 13.3-inch Apple MacBook Pro Apple M1 Chip with 9-Core CPU and 8-Core GPU",
-  price: 1059.00,
-  image1: <img src={macbookFront} className='productImg'></img>,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
 
 export function Laptop() {
+  const imageGallery = [macbookFront, macbookTop, macbookClosed, macbookSide];
+
   const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
+
+  const product = {
+    name: 'Refurbished 13.3-inch Apple MacBook Pro Apple M1 Chip with 9-Core CPU and 8-Core GPU',
+    price: 1059.00.toFixed(2),
+    image1: <img src={macbookFront} className="productImg"></img>,
+    stockQty: 10,
+    orderQty: 0,
+    orderTotal: 0,
+  };
 
   const handleQtyChange = (e) => {
     setQty(e.target.value);
@@ -62,17 +84,14 @@ export function Laptop() {
   };
 
   const addToCartClick = (product) => {
-    const parsedInt = parseInt(qty, 10)
-    
-    falseQtyBreak: if (qty <= 0)
-    {
+    const parsedInt = parseInt(qty, 10);
+
+    falseQtyBreak: if (qty <= 0) {
       break falseQtyBreak;
-    }
-   else if (userCartArr.includes(product)) {
+    } else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
-    
     } else {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
@@ -88,11 +107,11 @@ export function Laptop() {
         <div className="productNameWrap">
           {" "}
           <div className="productNameHeader">
-            {laptop.name}
+            {product.name}
             <div className="pricesWrapParent">
-              <div className="priceWrap">${laptop.price}.00</div>
+              <div className="priceWrap">${product.price}</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice">$1249.00</strike> Save $190.00
+                <strike className="strikedPrice">$1,249.00</strike> Save $190.00
               </div>
             </div>
           </div>
@@ -108,7 +127,7 @@ export function Laptop() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A macbook pro 13-3inch"
+                  alt="A 13 inch macbook pro"
                 ></img>
               </CSSTransition>
             </div>
@@ -123,7 +142,7 @@ export function Laptop() {
           </div>
           <div className="desktopBtnWrap">
             <div className="addToCartBtnWrap">
-            <input
+              <input
                 onChange={handleQtyChange}
                 className="cartQtyInput"
                 placeholder={qty}
@@ -133,7 +152,7 @@ export function Laptop() {
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"
-                onClick={(e) => addToCartClick(laptop)}
+                onClick={(e) => addToCartClick(product)}
               />
             </div>
           </div>
@@ -148,15 +167,9 @@ export function Laptop() {
         <CSSTransition in={open} timeout={120} classNames="detailsScroll">
           {open ? (
             <ul className="detailsBoxOne">
-              <li>
-                Refurbished Macbook Pro 13-Inch. Featuring a 13.3-inch
-                LED-backlit display, 2560-by-1600 native resolution at 227
-                pixels per inch.
-              </li>
-              <li>8GB Unified Memory</li>
-              <li>256GB SSD</li>
-              <li>Touch Bar and Touch ID</li>
-              <li>720p FaceTime HD Camera</li>
+              <li>{liOne}</li>
+              <li>{liTwo}</li>
+              <li> {liThree}</li>
             </ul>
           ) : (
             <div></div>

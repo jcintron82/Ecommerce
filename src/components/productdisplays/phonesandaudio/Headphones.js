@@ -9,6 +9,27 @@ import headphonesFront from "../../../images/electronics/sonyHeadphones/headphon
 import headphonesSide from "../../../images/electronics/sonyHeadphones/headphonesSide.png";
 import guySmilingWithHeadphones from "../../../images/electronics/sonyHeadphones/guySmilingWithHeadphones.png";
 
+
+
+const boldText = (value) => {
+  return <b>{value}</b>;
+};
+const liOne = [
+  boldText("Overview"),
+  <br />,
+  "Industry-leading noise cancellation optimized to you with Crystal clear hands-free calling and up to 30-hour battery life with quick charging (3 min charge for 3 hours of playback).",
+];
+const liTwo = [
+  boldText("For Your Daily Needs"),
+  <br />,
+  "For everyday convenience, just Speak-to-Chat and Quick Attention mode stop your music and let in ambient sound",
+];
+const liThree = [
+  boldText("Engineered Beauty"),
+  <br />,
+ "Magnificent Sound, engineered to perfectio.n",
+];
+
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -25,31 +46,30 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-const imageGallery = [headphones, headphonesFront, headphonesSide, guySmilingWithHeadphones];
-
-const product = {
-  name: "Sony WH-1000XM5 Wireless Industry Leading Noise Cancelling Headphones (Black)",
-  price: 369,
-  image1: headphones,
-  stockQty: 10,
-  orderQty: 0,
-  orderTotal: 0,
-};
 
 export function Headphones() {
-  const [qty, setQty] = useState(product.orderQty);
+  const imageGallery = [headphones, headphonesFront, headphonesSide, guySmilingWithHeadphones];
+
+  const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const product = {
+    name: 'Sony WH-1000XM5 Wireless Industry Leading Noise Cancelling Headphones (Black)',
+    price: 369.00.toFixed(2),
+    image1: <img src={headphonesFront} className="productImg"></img>,
+    stockQty: 10,
+    orderQty: 0,
+    orderTotal: 0,
+  };
 
   const handleQtyChange = (e) => {
     setQty(e.target.value);
   };
 
   const nextImageClick = () => {
-    if (counter === 3) {
+    if (counter === imageGallery.length - 1) {
       counter = 0;
       setPic2(imageGallery[counter]);
     } else {
@@ -65,9 +85,10 @@ export function Headphones() {
 
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10);
-    setIsLoading(!isLoading);
- 
-    if (userCartArr.includes(product)) {
+
+    falseQtyBreak: if (qty <= 0) {
+      break falseQtyBreak;
+    } else if (userCartArr.includes(product)) {
       product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       console.log(product);
@@ -77,7 +98,6 @@ export function Headphones() {
       userCartArr.push(product);
       console.log(product);
     }
-    setIsLoading(!isLoading);
   };
 
   return (
@@ -89,7 +109,7 @@ export function Headphones() {
           <div className="productNameHeader">
             {product.name}
             <div className="pricesWrapParent">
-              <div className="priceWrap">${product.price}.00</div>
+              <div className="priceWrap">${product.price}</div>
               <div className="savedPriceWrap">
                 <strike className="strikedPrice">$399.00</strike> Save $30.00
               </div>
@@ -107,7 +127,7 @@ export function Headphones() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A pair of Sony headphones, model WH-1000XM5"
+                  alt="A pair of sony wh-1000 headphones"
                 ></img>
               </CSSTransition>
             </div>
@@ -122,19 +142,13 @@ export function Headphones() {
           </div>
           <div className="desktopBtnWrap">
             <div className="addToCartBtnWrap">
-              <select
+              <input
                 onChange={handleQtyChange}
-                name="qty"
                 className="cartQtyInput"
+                placeholder={qty}
                 type="number"
-              >
-                {" "}
-                <option value="0"></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="4">3</option>
-                {" "}
-              </select>{" "}
+                min="1"
+              ></input>
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"
@@ -153,14 +167,9 @@ export function Headphones() {
         <CSSTransition in={open} timeout={120} classNames="detailsScroll">
           {open ? (
             <ul className="detailsBoxOne">
-              <li>
-              Up to 30-hour battery life with quick charging (3 min charge for 3 hours of playback)
-              </li>
-              <li>Industry-leading noise cancellation optimized to you</li>
-              <li>Crystal clear hands-free calling</li>
-              <li>Magnificent Sound, engineered to perfection</li>
-              <li>For everyday convenience, just Speak-to-Chat and 
-                Quick Attention mode stop your music and let in ambient sound</li>
+              <li>{liOne}</li>
+              <li>{liTwo}</li>
+              <li> {liThree}</li>
             </ul>
           ) : (
             <div></div>
