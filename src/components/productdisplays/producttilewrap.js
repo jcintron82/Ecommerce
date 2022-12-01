@@ -3,8 +3,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 //Imports for the product section photos
-import mainElectronics from "../../images/electronics/mainElectronics.avif";
-import homeGoodsMain from "../../images/homeGoods/homeGoodsMain.avif";
+import laptops from "../../images/electronics/laptops.avif";
+import televisions from "../../images/electronics/televisions.avif";
+import consoles from "../../images/electronics/consoles.avif";
+import phonesandaudio from "../../images/electronics/phonesandaudio.avif";
+
 export { arr, productFloat}
  const arr = [];
 
@@ -32,7 +35,7 @@ export function ProductTileWrap() {
       <ProductTiles
         onClick={(e) => onClick('electronics')}
         className="homePageProductTiles"
-        img={mainElectronics}
+        img={laptops}
         name='Laptops'
         imgWrap='homePageImageWrap'
         imgClass='homePageProducttileImages'
@@ -43,8 +46,8 @@ export function ProductTileWrap() {
       <ProductTiles
         onClick={(e) => onClick('televisions')}
         className="homePageProductTiles"
-        img={homeGoodsMain}
-        name='Television'
+        img={televisions}
+        name='Televisions'
         imgWrap='homePageImageWrap'
         imgClass='homePageProducttileImages'
         nameClass='homePageNames'
@@ -52,7 +55,7 @@ export function ProductTileWrap() {
       <ProductTiles
         onClick={(e) => onClick('gaming')}
         className="homePageProductTiles"
-        img={homeGoodsMain}
+        img={consoles}
         name='Games and Consoles'
         imgWrap='homePageImageWrap'
         imgClass='homePageProducttileImages'
@@ -61,8 +64,8 @@ export function ProductTileWrap() {
       <ProductTiles
         onClick={(e) => onClick('phonesandaudio')}
         className="homePageProductTiles"
-        img={homeGoodsMain}
-        name='Phones'
+        img={phonesandaudio}
+        name='Phones/Audio Devices'
         imgWrap='homePageImageWrap'
         imgClass='homePageProducttileImages'
         nameClass='homePageNames'
