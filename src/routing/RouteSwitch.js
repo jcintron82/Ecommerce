@@ -32,6 +32,12 @@ import { Gamecube } from '../components/productdisplays/gaming/Gamecube';
 import { PS5Bundle }from "../components/productdisplays/gaming/PS5Bundle";
 import { XboxSeriesS }from "../components/productdisplays/gaming/XboxSeriesS";
 
+import { MacbookAir }from "../components/productdisplays/laptops/MacbookAir";
+import { DellInspiron }from "../components/productdisplays/laptops/DellInspiron";
+import { DellXPS }from "../components/productdisplays/laptops/DellXPS";
+import { HPEnvy }from "../components/productdisplays/laptops/HPEnvy";
+import { HPSpectre }from "../components/productdisplays/laptops/HPSpectre";
+
 const RouteSwitch = () => {
   return (
     <BrowserRouter>
@@ -68,7 +74,11 @@ const RouteSwitch = () => {
         <Route path='/ps5bundle' element={<PS5Bundle />} />
         <Route path='/xboxmodelS' element={<XboxSeriesS />} />
 
-
+        <Route path='/macbookair' element={<MacbookAir />} />
+        <Route path='/dellinspiron14in' element={<DellInspiron />} />
+        <Route path='/dellxps15in' element={<DellXPS />} />
+        <Route path='/hpenvy' element={<HPEnvy />} />
+        <Route path='/hpspectre' element={<HPSpectre/>} />
       </Routes>
     </BrowserRouter>
   );

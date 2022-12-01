@@ -1,11 +1,12 @@
 import { Header } from "../../header.js";
 import { ProductTiles } from "../producttiles.js";
 import { useNavigate } from "react-router-dom";
-import iphoneOne from "../../../images/electronics/iphone/iphoneOne.jpg";
+import macbookAir from "../../../images/laptops/macbookair/top.jpg";
 import laptopMain from "../../../images/electronics/laptop/macbookTop.png";
-import airpodsOut from "../../../images/electronics/airpods/airpodsOut.jpg";
-import headphonesOne from "../../../images/electronics/sonyHeadphones/headphonesFront.png";
-import androidBoth from "../../../images/electronics/android/androidBoth.jpg";
+import hpenvy from "../../../images/laptops/hpenvy/front.jpg";
+import open from "../../../images/laptops/dellxps/front.jpg";
+import dellInspiron from "../../../images/laptops/dellinspiron14in/front.jpg";
+import hpspectre from "../../../images/laptops/hpspectre/front.jpg";
 
 const arr = [];
 
@@ -23,10 +24,10 @@ export function ElectronicsWrapper() {
       <Header />
       <div className="productsWrap">
         <ProductTiles
-          onClick={(e) => onClick("iphone")}
+          onClick={(e) => onClick("macbookair")}
           className="topTile"
-          img={iphoneOne}
-          name="Apple Iphone"
+          img={macbookAir}
+          name='Apple Macbook Air 13.6"'
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'
@@ -41,38 +42,38 @@ export function ElectronicsWrapper() {
           nameClass='nameWrap'
         />
         <ProductTiles
-          onClick={(e) => onClick("android")}
+          onClick={(e) => onClick("dellinspiron14in")}
           className="tileThree"
-          img={androidBoth}
-          name="Google Pixel 7 Pro"
+          img={dellInspiron}
+          name='Dell Inspiron 14" Laptop'
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'
 
         />
         <ProductTiles
-          onClick={(e) => onClick("headphones")}
+          onClick={(e) => onClick("dellxps15in")}
           className="tileFour"
-          img={headphonesOne}
-          name="Sony Headphones"
+          img={open}
+          name='Dell XPS 15" Laptop'
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'
         />
         <ProductTiles
-          onClick={(e) => onClick("airpods")}
+          onClick={(e) => onClick("hpenvy")}
           className="tileFive"
-          img={airpodsOut}
-          name="Apple Airpods"
+          img={hpenvy}
+          name='HP Envy 13"'
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'
         />
         <ProductTiles
-          onClick={(e) => onClick("xbox")}
+          onClick={(e) => onClick("hpspectre")}
           className="tileSix"
-          img={laptopMain}
-          name="Xbox One"
+          img={hpspectre}
+          name='HP Spectre 16" Laptop'
           imgWrap='imgWrap'
           imgClass='productTilesImage'
           nameClass='nameWrap'
