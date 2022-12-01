@@ -5,9 +5,9 @@ import macbookAd1 from "../images/ads/macbookAd1.jpg";
 import ps5ad from "../images/ads/ps5ad.png";
 import airpods from "../images/ads/airpods.jpg";
 const imageArr = [macbookAd1, airpods, ps5ad];
-const linkAdArray = ["/laptop", "/airpods", "/ps5bundle"];
+const linkAdArray = [ "/laptop", "/airpods", "/ps5bundle"];
 
-let counter = -1;
+let counter = 0;
 const seeMoreSVG = (
   <svg
     width="24px"
@@ -25,9 +25,9 @@ const seeMoreSVG = (
 );
 
 export function IntroBlurbWrap() {
-  const [picture, setPicture] = useState(imageArr[0]);
+  const [picture, setPicture] = useState(imageArr[counter]);
   const [newPic, setNewPic] = useState(true);
-  const [adCycle, setAdCycle] = useState(counter);
+  const [adCycle, setAdCycle] = useState(linkAdArray[counter]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,7 +42,7 @@ export function IntroBlurbWrap() {
         setAdCycle(linkAdArray[counter]);
         console.log(counter);
       }
-    }, 2000);
+    }, 1700);
   });
 
   // const nextAdvertisementClick = () => {
