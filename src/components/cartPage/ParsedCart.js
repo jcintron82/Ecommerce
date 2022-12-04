@@ -35,7 +35,7 @@ export function ParsedCart() {
   };
 
   const changeQtyUp = (product) => {
-    product.orderQty = product.orderQty + 1;
+    product.orderQty = parseInt(product.orderQty, 10) + 1;
     product.orderTotal = product.price * product.orderQty;
     changeData(product);
   };

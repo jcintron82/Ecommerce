@@ -1,34 +1,13 @@
 import Header from "../../header.js";
 import Footer from "../../Footer.js";
 import Button from "../../buttons.js";
-import {  useState } from "react";
+import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { userCartArr } from "../../cartPage/ParsedCart.js";
-import headphones from "../../../images/electronics/sonyHeadphones/headphones.png";
-import headphonesFront from "../../../images/electronics/sonyHeadphones/headphonesFront.png";
-import headphonesSide from "../../../images/electronics/sonyHeadphones/headphonesSide.png";
-import guySmilingWithHeadphones from "../../../images/electronics/sonyHeadphones/guySmilingWithHeadphones.png";
-
-
-
-const boldText = (value) => {
-  return <b>{value}</b>;
-};
-const liOne = [
-  boldText("Overview"),
-  <br />,
-  "Industry-leading noise cancellation optimized to you with Crystal clear hands-free calling and up to 30-hour battery life with quick charging (3 min charge for 3 hours of playback).",
-];
-const liTwo = [
-  boldText("For Your Daily Needs"),
-  <br />,
-  "For everyday convenience, just Speak-to-Chat and Quick Attention mode stop your music and let in ambient sound",
-];
-const liThree = [
-  boldText("Engineered Beauty"),
-  <br />,
- "Magnificent Sound, engineered to perfectio.n",
-];
+import androidFront from "../../../images/electronics/android/androidFront.jpg";
+import androidBack from "../../../images/electronics/android/androidBack.jpg";
+import androidBoth from "../../../images/electronics/android/androidBoth.jpg";
+import ladyHoldingPhone from "../../../images/electronics/android/ladyHoldingPhone.jpg";
 
 const seeMoreSVG = (
   <svg
@@ -46,28 +25,26 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-let qtyCounter = 0
-export function Headphones() {
-  const imageGallery = [headphones, headphonesFront, headphonesSide, guySmilingWithHeadphones];
+const imageGallery = [androidFront, androidBack, androidBoth, ladyHoldingPhone];
 
-  
-  const product = {
-    name: 'Sony WH-1000XM5 Wireless Industry Leading Noise Cancelling Headphones (Black)',
-    price: 369.00.toFixed(2),
-    image1: <img src={headphonesFront} className="productImg"></img>,
-    stockQty: 10,
-    orderQty: 0,
-    orderTotal: 0,
-  };
+const product = {
+  name: "Google Pixel 7 Pro 512GB (Unlocked) - Obsidian",
+  price: 979.00,
+  image1: <img src={androidFront} className='productImg'></img>,
+  stockQty: 10,
+  orderQty: 0,
+  orderTotal: 0,
+};
 
-  const [qty, setQty] = useState(product.orderQty);
+export function Android() {
+  const [qty, setQty] = useState(1);
   const [open, setOpen] = useState(false);
   const [pic2, setPic2] = useState(imageGallery[counter]);
   const [isEnter, setIsEnter] = useState(false);
 
   const handleQtyChange = (e) => {
-    setQty(e.target.value);
-  };
+      setQty(e.target.value);
+    }
 
   const nextImageClick = () => {
     if (counter === imageGallery.length - 1) {
@@ -85,24 +62,23 @@ export function Headphones() {
   };
 
   const addToCartClick = (product) => {
-    console.log(qty)
     const parsedInt = parseInt(qty, 10)
-   const productIndex = userCartArr.findIndex((obj => obj.name === product.name))
-    falseQtyBreak: if (qty <= 0) {
+    
+    falseQtyBreak: if (qty <= 0)
+    {
       break falseQtyBreak;
     }
-
-    else if (userCartArr.includes(userCartArr[productIndex])) {
-      userCartArr[productIndex].orderQty = (parseInt(userCartArr[productIndex].orderQty , 10)+ parsedInt);
-      userCartArr[productIndex].orderTotal = (product.price * userCartArr[productIndex].orderQty);
-      console.log('this workd');
+   else if (userCartArr.includes(product)) {
+      product.orderQty = product.orderQty + parsedInt;
+      product.orderTotal = product.price * product.orderQty;
+      console.log(product);
+    
     } else {
-      product.orderQty = qty;
+      product.orderQty = product.orderQty + parsedInt;
       product.orderTotal = product.price * product.orderQty;
       userCartArr.push(product);
       console.log(product);
     }
-    console.log(userCartArr)
   };
 
   return (
@@ -114,9 +90,9 @@ export function Headphones() {
           <div className="productNameHeader">
             {product.name}
             <div className="pricesWrapParent">
-              <div className="priceWrap">${product.price}</div>
+              <div className="priceWrap">${product.price}.00</div>
               <div className="savedPriceWrap">
-                <strike className="strikedPrice">$399.00</strike> Save $30.00
+                <strike className="strikedPrice"></strike>
               </div>
             </div>
           </div>
@@ -132,7 +108,7 @@ export function Headphones() {
                 <img
                   className="imageFadeIn"
                   src={pic2}
-                  alt="A pair of sony wh-1000 headphones"
+                  alt="A google pixel 7 pro phone 512GB Obsidian color"
                 ></img>
               </CSSTransition>
             </div>
@@ -147,14 +123,13 @@ export function Headphones() {
           </div>
           <div className="desktopBtnWrap">
             <div className="addToCartBtnWrap">
-            <input
-                  onChange={handleQtyChange}
-                  className="cartQtyInput"
-                  placeholder={qty}
-                  type="number"
-                  min="1"
-                 
-                ></input>
+              <input
+                onChange={handleQtyChange}
+                className="cartQtyInput"
+                value={qty}
+                type="number"
+                min="1"
+              ></input>
               <Button
                 text="Add To Cart"
                 className="addToCartBtn"
@@ -173,9 +148,28 @@ export function Headphones() {
         <CSSTransition in={open} timeout={120} classNames="detailsScroll">
           {open ? (
             <ul className="detailsBoxOne">
-              <li>{liOne}</li>
-              <li>{liTwo}</li>
-              <li> {liThree}</li>
+              <li>
+                {" "}
+                Compatible with all major U.S. carriers, including Verizon,
+                AT&T, Sprint and T-Mobile. Also compatible with prepaid carriers
+                including Cricket Wireless, MetroPCS, Google Fi, Simple Mobile,
+                Total Wireless, Tracfone, Net10, Mint, and H2O.
+              </li>
+              <li>
+                Google Tensor G2 makes Pixel 7 Pro faster, more efficient, and
+                more secure.₂ And it delivers even more helpful features and the
+                best photo and video quality yet on Pixel.
+              </li>
+              <li>
+                The Pixel 7 Pro 6.7-inch Smooth Display makes everything
+                stunning and immersive.₂ It intelligently adjusts up to 120Hz
+                for smoother, more responsive performance.
+              </li>
+              <li>Google Pixel 7 Pro runs on the Android operating system.</li>
+              <li>
+                Pixel's Adaptive Battery can last over 24 hours. Turn on Extreme
+                Battery Saver, and the battery can last up to 72 hours.
+              </li>
             </ul>
           ) : (
             <div></div>
@@ -191,4 +185,4 @@ export function Headphones() {
   );
 }
 
-export default Headphones;
+export default Android;
