@@ -73,19 +73,18 @@ export function NintendoSwitchOLED() {
   };
 
   const addToCartClick = (product) => {
-    const parsedInt = parseInt(qty, 10);
-
+    const parsedInt = parseInt(qty, 10)
+    const productIndex = userCartArr.findIndex((obj => obj.name === product.name))
     falseQtyBreak: if (qty <= 0) {
       break falseQtyBreak;
-    } else if (userCartArr.includes(product)) {
-      product.orderQty = product.orderQty + parsedInt;
-      product.orderTotal = product.price * product.orderQty;
-      console.log(product);
+    }
+    else if (userCartArr.includes(userCartArr[productIndex])) {
+      userCartArr[productIndex].orderQty = (parseInt(userCartArr[productIndex].orderQty , 10)+ parsedInt);
+      userCartArr[productIndex].orderTotal = (product.price * userCartArr[productIndex].orderQty);
     } else {
-      product.orderQty = product.orderQty + parsedInt;
+      product.orderQty = qty;
       product.orderTotal = product.price * product.orderQty;
       userCartArr.push(product);
-      console.log(product);
     }
   };
 
