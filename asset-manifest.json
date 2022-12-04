@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Magnolia-Marketplace/static/css/main.8b63e45f.css",
-    "main.js": "/Magnolia-Marketplace/static/js/main.6de5210e.js",
+    "main.js": "/Magnolia-Marketplace/static/js/main.58b020ca.js",
     "static/media/side.jpg": "/Magnolia-Marketplace/static/media/side.c513b3306ad3c65c165c.jpg",
     "static/media/front.jpg": "/Magnolia-Marketplace/static/media/front.c2ecd387e36467244d88.jpg",
     "static/media/ladyHoldingPhone.jpg": "/Magnolia-Marketplace/static/media/ladyHoldingPhone.52527c249046342053ae.jpg",
@@ -62,10 +62,10 @@
     "static/media/trashicon.svg": "/Magnolia-Marketplace/static/media/trashicon.e8a5c441d8f3c83b43823f872afd9d76.svg",
     "static/media/home.svg": "/Magnolia-Marketplace/static/media/home.25a35e2af9bd6deed21339561b6fe65b.svg",
     "main.8b63e45f.css.map": "/Magnolia-Marketplace/static/css/main.8b63e45f.css.map",
-    "main.6de5210e.js.map": "/Magnolia-Marketplace/static/js/main.6de5210e.js.map"
+    "main.58b020ca.js.map": "/Magnolia-Marketplace/static/js/main.58b020ca.js.map"
   },
   "entrypoints": [
     "static/css/main.8b63e45f.css",
-    "static/js/main.6de5210e.js"
+    "static/js/main.58b020ca.js"
   ]
 }
