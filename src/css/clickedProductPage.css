@@ -211,6 +211,7 @@ width: 100%;
 	width: 4rem;
 	border-radius: 8px;
 	height: 1.75rem;
+	text-align: center;
 }
 
 .cartQtyInput:hover{
@@ -358,11 +359,12 @@ ul {
 	.cartQtyInput {
 		min-width: 4rem;
 		height: 1.75rem;
+		max-width: 4rem;
 	}
 	.detailsScroll-enter-done {
 		opacity: 1;
 		height: 100%;
-		
+		padding-left:30px;
 	  }
 }
 
@@ -421,6 +423,9 @@ ul {
 	}
 	.cartQtyInput {
 		height: 2rem;
+		padding-left:16px;
+		text-align: center;
+		
 		
 	}
 

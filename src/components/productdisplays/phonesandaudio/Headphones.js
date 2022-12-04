@@ -46,7 +46,6 @@ const seeMoreSVG = (
   </svg>
 );
 let counter = 0;
-let qtyCounter = 0
 export function Headphones() {
   const imageGallery = [headphones, headphonesFront, headphonesSide, guySmilingWithHeadphones];
 
@@ -85,24 +84,19 @@ export function Headphones() {
   };
 
   const addToCartClick = (product) => {
-    console.log(qty)
     const parsedInt = parseInt(qty, 10)
-   const productIndex = userCartArr.findIndex((obj => obj.name === product.name))
+    const productIndex = userCartArr.findIndex((obj => obj.name === product.name))
     falseQtyBreak: if (qty <= 0) {
       break falseQtyBreak;
     }
-
     else if (userCartArr.includes(userCartArr[productIndex])) {
       userCartArr[productIndex].orderQty = (parseInt(userCartArr[productIndex].orderQty , 10)+ parsedInt);
       userCartArr[productIndex].orderTotal = (product.price * userCartArr[productIndex].orderQty);
-      console.log('this workd');
     } else {
       product.orderQty = qty;
       product.orderTotal = product.price * product.orderQty;
       userCartArr.push(product);
-      console.log(product);
     }
-    console.log(userCartArr)
   };
 
   return (
@@ -152,8 +146,7 @@ export function Headphones() {
                   className="cartQtyInput"
                   placeholder={qty}
                   type="number"
-                  min="1"
-                 
+                  min="1"      
                 ></input>
               <Button
                 text="Add To Cart"
