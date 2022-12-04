@@ -45,7 +45,7 @@ const RouteSwitch = () => {
         <Route path="/home" element={<App />} />
         <Route path="/usercart" element={<UserCart />} />
 
-        <Route path="/electronics" element={<LaptopsWrapper />} />
+        <Route path="/laptops" element={<LaptopsWrapper />} />
         <Route path="/macbookair" element={<MacbookAir />} />
         <Route path="/dellinspiron14in" element={<DellInspiron />} />
         <Route path="/dellxps15in" element={<DellXPS />} />

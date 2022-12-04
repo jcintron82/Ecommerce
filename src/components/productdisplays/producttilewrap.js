@@ -8,11 +8,10 @@ import televisions from "../../images/electronics/televisions.avif";
 import consoles from "../../images/electronics/consoles.avif";
 import phonesandaudio from "../../images/electronics/phonesandaudio.avif";
 
-export { arr, productFloat}
- const arr = [];
+export { arr, productFloat };
+const arr = [];
 
- const productFloat = {};
-
+const productFloat = {};
 
 export function ProductTileWrap() {
   const navigate = useNavigate();
@@ -25,52 +24,48 @@ export function ProductTileWrap() {
   const [tile6, setTile6] = useState();
 
   const onClick = (section) => {
-    let formattedArg = '/' + section;
+    let formattedArg = "/" + section;
     navigate(formattedArg);
   };
 
   return (
     <div className="homePageProductsWrap">
-  
       <ProductTiles
-        onClick={(e) => onClick('electronics')}
-        className="homePageProductTiles"
-        img={laptops}
-        name='Laptops'
-        imgWrap='homePageImageWrap'
-        imgClass='homePageProducttileImages'
-        nameClass='homePageNames'
-      />
-
-
-      <ProductTiles
-        onClick={(e) => onClick('televisions')}
-        className="homePageProductTiles"
-        img={televisions}
-        name='Televisions'
-        imgWrap='homePageImageWrap'
-        imgClass='homePageProducttileImages'
-        nameClass='homePageNames'
-      />
-      <ProductTiles
-        onClick={(e) => onClick('gaming')}
+        onClick={(e) => onClick("gaming")}
         className="homePageProductTiles"
         img={consoles}
-        name='Games and Consoles'
-        imgWrap='homePageImageWrap'
-        imgClass='homePageProducttileImages'
-        nameClass='homePageNames'
+        name="Games and Consoles"
+        imgWrap="homePageImageWrap"
+        imgClass="homePageProducttileImages"
+        nameClass="homePageNames"
       />
       <ProductTiles
-        onClick={(e) => onClick('phonesandaudio')}
+        onClick={(e) => onClick("phonesandaudio")}
         className="homePageProductTiles"
         img={phonesandaudio}
-        name='Phones/Audio Devices'
-        imgWrap='homePageImageWrap'
-        imgClass='homePageProducttileImages'
-        nameClass='homePageNames'
+        name="Phones/Audio Devices"
+        imgWrap="homePageImageWrap"
+        imgClass="homePageProducttileImages"
+        nameClass="homePageNames"
       />
-
+      <ProductTiles
+        onClick={(e) => onClick("laptops")}
+        className="homePageProductTiles"
+        img={laptops}
+        name="Laptops"
+        imgWrap="homePageImageWrap"
+        imgClass="homePageProducttileImages"
+        nameClass="homePageNames"
+      />
+      <ProductTiles
+        onClick={(e) => onClick("televisions")}
+        className="homePageProductTiles"
+        img={televisions}
+        name="Televisions"
+        imgWrap="homePageImageWrap"
+        imgClass="homePageProducttileImages"
+        nameClass="homePageNames"
+      />
     </div>
   );
 }

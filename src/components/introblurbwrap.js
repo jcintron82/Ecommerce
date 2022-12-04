@@ -45,17 +45,6 @@ export function IntroBlurbWrap() {
     }, 1700);
   });
 
-  // const nextAdvertisementClick = () => {
-  // 	if (counter === imageArr.length - 1){
-  // 		counter = 0;
-  // 		setPicture(imageArr[counter])
-  // 		setAdCycle(linkAdArray[counter])}
-  // 	else {
-  // 		counter++;
-  // 		setPicture(imageArr[counter])
-  // 	}
-  // }
-
   return (
     <div className="introBlurbWrap">
       {newPic ? (
