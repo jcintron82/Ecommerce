@@ -1,4 +1,4 @@
-#Magnolia Marketplace Ecommerce App
+# Magnolia Marketplace Ecommerce App
 
 Live Site- https://magnolia-marketplace.vercel.app/home
 
