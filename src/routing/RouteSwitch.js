@@ -40,7 +40,7 @@ import { Xbox } from "../components/productdisplays/gaming/Xbox.js";
 
 const RouteSwitch = () => {
   return (
-    <BrowserRouter basename="/home">
+    <BrowserRouter base={"/home"}>
       <Routes>
         <Route path="/home" element={<App />} />
         <Route path="/usercart" element={<UserCart />} />
