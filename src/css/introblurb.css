@@ -11,6 +11,7 @@
 	justify-content: center;
 	align-items: center;
 
+
 }
 
 
@@ -57,7 +58,7 @@ box-shadow: 7px 7px 6px 0px  #A3A3A3;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-	width: 101vw;
+	width: 100vw;
 	padding-bottom: 3rem;
 }
 
@@ -135,7 +136,7 @@ box-shadow: 7px 7px 6px 0px  #A3A3A3;
 		height: 90vh;
 		width: 25rem;
 		align-self: center;
-	
+
 	}
 
 
