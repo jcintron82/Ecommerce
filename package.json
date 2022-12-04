@@ -1,7 +1,7 @@
 {
   "name": "ecommerce",
   "version": "0.1.0",
-  "homepage": "https://magnoliamarketplace.netlify.app/home",
+  "homepage": "https://magnoliamarketplace.netlify.app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
