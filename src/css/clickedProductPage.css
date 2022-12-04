@@ -186,6 +186,10 @@ width: 100%;
 .addToCartBtn:hover {
 	cursor: pointer;
 }
+.addToCartBtn:active {
+	background-color: #166088;
+	
+}
 .addToCartBtnWrap {
 	display: flex;
 	justify-content: center;
@@ -415,11 +419,6 @@ ul {
 	.addToCartBtn {
 		width: 13rem;
 		height: 2rem;
-	}
-
-	.addToCartBtn:active {
-		background-color: #166088;
-		
 	}
 	.cartQtyInput {
 		height: 2rem;
