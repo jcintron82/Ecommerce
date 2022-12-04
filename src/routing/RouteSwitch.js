@@ -40,9 +40,9 @@ import { Xbox } from "../components/productdisplays/gaming/Xbox.js";
 
 const RouteSwitch = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/home" element={<App />} />
+        <Route path="/" element={<App />} />
         <Route path="/usercart" element={<UserCart />} />
 
         <Route path="/laptops" element={<LaptopsWrapper />} />
