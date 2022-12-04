@@ -185,7 +185,6 @@ export function IPhone() {
           )}
         </CSSTransition>
       </div>
-
       <div>
         {" "}
         <Footer className="footer" />

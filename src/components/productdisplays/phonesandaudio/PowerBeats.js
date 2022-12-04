@@ -185,7 +185,6 @@ export function PowerBeats() {
           )}
         </CSSTransition>
       </div>
-
       <div>
         {" "}
         <Footer className="footer" />

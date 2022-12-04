@@ -185,7 +185,6 @@ export function Airpods() {
           )}
         </CSSTransition>
       </div>
-
       <div>
         {" "}
         <Footer className="footer" />

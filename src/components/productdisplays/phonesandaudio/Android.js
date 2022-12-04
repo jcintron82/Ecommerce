@@ -90,7 +90,7 @@ export function Android() {
   const handleOpen = () => {
     setOpen(!open);
   };
-  
+
   const addToCartClick = (product) => {
     const parsedInt = parseInt(qty, 10)
     const productIndex = userCartArr.findIndex((obj => obj.name === product.name))
@@ -185,7 +185,6 @@ export function Android() {
           )}
         </CSSTransition>
       </div>
-
       <div>
         {" "}
         <Footer className="footer" />

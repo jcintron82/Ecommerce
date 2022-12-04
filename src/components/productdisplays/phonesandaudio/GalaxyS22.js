@@ -185,7 +185,6 @@ export function GalaxyS22() {
           )}
         </CSSTransition>
       </div>
-
       <div>
         {" "}
         <Footer className="footer" />
