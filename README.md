@@ -1,4 +1,4 @@
-**Magnolia Marketplace Ecommerce App**
+# **Magnolia Marketplace Ecommerce App**
 
 An ECommerce app which users can browse products and add selected products to their cart. Users have the ability to create orders, add items, update quantities and delete items. The cart page features totals displayed to the user to include a calculated tax amount.
 
@@ -25,3 +25,6 @@ https://github.com/jcintron82/Bulletin-Board
 
 **Inventory Management System**: 
 https://github.com/jcintron82/Inventory-System
+
+**Velgara Excavating:**
+https://github.com/jcintron82/Velgara-Excavating/blob/main/README.md
